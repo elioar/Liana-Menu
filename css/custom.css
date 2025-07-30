@@ -3212,7 +3212,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .page-menu{
-	padding: 100px 0;
+	padding: 100px 0px 0px 0;
 }
 
 .special-menu-list{
@@ -5781,8 +5781,14 @@ header.main-header .header-sticky.active{
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(6px);
 	overflow: visible; /* <-- allow box-shadow from children to show */
+	
   }
   
+  .sticky-header {
+	display: flex;
+	justify-content: center; /* centers horizontally */
+	align-items: center;     /* centers vertically */
+  }
   
   /* Horizontal scroll container */
   .menu-carousel {
@@ -5867,9 +5873,16 @@ header.main-header .header-sticky.active{
 
 
   /* New Menu Images Style 'class=menu-Image' */
-  .menu-image{
-	margin-right: 30px;
-}
+  .menu-image {
+	margin-right: 10px; /* default for mobile */
+  }
+  
+  @media (min-width: 768px) {
+	.menu-image {
+	  margin-right: 30px; /* for tablets and up */
+	}
+  }
+  
 
 .menu-image figure{
 	display: block;
