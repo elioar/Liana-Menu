@@ -5777,7 +5777,7 @@ header.main-header .header-sticky.active{
 	top: 0;
 	background-color: var(--dark-divider-color);
 	padding: 12px 0;
-	z-index: 1000;
+	z-index: 99;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(6px);
 	overflow: visible; /* <-- allow box-shadow from children to show */
