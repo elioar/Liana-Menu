@@ -5863,3 +5863,20 @@ header.main-header .header-sticky.active{
 	transform: scale(1.05);
   }
 
+
+
+
+  /* New Menu Images Style 'class=menu-Image' */
+  .menu-image{
+	margin-right: 30px;
+}
+
+.menu-image figure{
+	display: block;
+	max-width: 100px;
+}
+
+.menu-image img{
+	width: 100%;
+	object-fit: cover;
+}
