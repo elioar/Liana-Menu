@@ -2373,6 +2373,53 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const sections = document.querySelectorAll(".food-menu-item[id]");
+          const navLinks = document.querySelectorAll(".menu-list a");
+        
+          // Handle click so user click scrolls correctly and prevents stale .active
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              navLinks.forEach((l) => l.classList.remove("active"));
+              this.classList.add("active");
+            });
+          });
+        
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const id = entry.target.id;
+                  navLinks.forEach((link) => {
+                    const match = link.getAttribute("href") === `#${id}`;
+                    link.classList.toggle("active", match);
+        
+                    // only scroll into view if it's not already visible (optional)
+                    if (match) {
+                      link.scrollIntoView({
+                        behavior: "smooth",
+                        inline: "center",
+                        block: "nearest",
+                      });
+                    }
+                  });
+                }
+              });
+            },
+            {
+              root: null,
+              rootMargin: "0px 0px -60% 0px",
+              threshold: 0.3,
+            }
+          );
+        
+          sections.forEach((section) => observer.observe(section));
+        });
+        </script>
+        
+
 </body>
 
 </html>
