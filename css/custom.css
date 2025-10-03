@@ -5895,7 +5895,7 @@ header.main-header .header-sticky.active{
 	object-fit: cover;
 }
 
-/* Menu Legend CSS */
+/* 13. Menu Legend CSS */
 .menu-legend {
     display: flex;
     justify-content: center;
@@ -5941,13 +5941,13 @@ header.main-header .header-sticky.active{
 }
 
 .badge-vegan {
-    background-color: #4CAF50 !important;
-    border: 1px solid #2e7d32 !important;
+    background-color: rgba(76, 175, 80, 0.3) !important;
+    border: 1px solid rgba(46, 125, 50, 0.8) !important;
     color: white !important;
 }
 
 .badge-vegetarian {
-    background-color: #8BC34A !important;
-    border: 1px solid #558b2f !important;
+    background-color: rgba(139, 195, 74, 0.3) !important;
+    border: 1px solid rgba(85, 139, 47, 0.8) !important;
     color: white !important;
 }
