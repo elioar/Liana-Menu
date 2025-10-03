@@ -597,7 +597,7 @@ header.main-header .header-sticky.active{
 }
 
 .slicknav_btn{
-	background: var(--accent-color);
+	background: rgba(166, 161, 130, 0.3); 
 	padding: 0;
 	display: flex;
 	align-items: center;
@@ -5896,6 +5896,7 @@ header.main-header .header-sticky.active{
 }
 
 /* 13. Menu Legend CSS */
+/* Default (desktop/tablet) */
 .menu-legend {
     display: flex;
     justify-content: center;
@@ -5904,15 +5905,29 @@ header.main-header .header-sticky.active{
     border-radius: 12px;
     padding: 15px 20px;
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 600px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(166, 161, 130, 0.2);
 }
 
+/* Mobile: stack items vertically */
+@media (max-width: 600px) {
+    .menu-legend {
+        flex-direction: column;
+        align-items: flex-start; /* or center if you want them centered */
+        gap: 15px; /* smaller gap for mobile */
+    }
+
+    .legend-item {
+        justify-content: flex-start; /* keep icon + text aligned */
+    }
+}
+
+
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
 .legend-text {
@@ -5940,9 +5955,9 @@ header.main-header .header-sticky.active{
     transform: scale(1.1);
 }
 
-.badge-vegan {
-    background-color: rgba(76, 175, 80, 0.3) !important;
-    border: 1px solid rgba(46, 125, 50, 0.8) !important;
+.badge-spicy {
+    background-color: rgba(175, 76, 76, 0.3) !important;
+    border: 1px solid rgba(125, 46, 46, 0.8) !important;
     color: white !important;
 }
 
