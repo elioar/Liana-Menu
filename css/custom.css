@@ -5951,3 +5951,9 @@ header.main-header .header-sticky.active{
     border: 1px solid rgba(85, 139, 47, 0.8) !important;
     color: white !important;
 }
+
+.badge-chesse {
+    background-color: rgba(187, 195, 74, 0.3) !important;
+    border: 1px solid rgba(139, 133, 47, 0.8) !important;
+    color: white !important;
+}
