@@ -18,6 +18,7 @@
 10. Our Ingredients Css
 11. Our Testimonial Css
 12. Our Blog Css
+13. Menu Legend Css
 13. Reserve Table Css
 14. Footer Css
 15. About Us Page Css
@@ -5892,4 +5893,61 @@ header.main-header .header-sticky.active{
 .menu-image img{
 	width: 100%;
 	object-fit: cover;
+}
+
+/* Menu Legend CSS */
+.menu-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgba(166, 161, 130, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(166, 161, 130, 0.2);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Food Badge Classes */
+.food-badge {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    font-size: 16px !important;
+    transition: transform 0.2s ease !important;
+    padding: 0 !important;
+    background: none !important;
+}
+
+.food-badge:hover {
+    transform: scale(1.1);
+}
+
+.badge-vegan {
+    background-color: #4CAF50 !important;
+    border: 1px solid #2e7d32 !important;
+    color: white !important;
+}
+
+.badge-vegetarian {
+    background-color: #8BC34A !important;
+    border: 1px solid #558b2f !important;
+    color: white !important;
 }
