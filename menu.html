@@ -2927,31 +2927,54 @@
         document.addEventListener("DOMContentLoaded", function () {
           const sections = document.querySelectorAll(".food-menu-item[id]");
           const navLinks = document.querySelectorAll(".menu-list a");
-        
-          // Handle click so user click scrolls correctly and prevents stale .active
+          const stickyHeader = document.querySelector(".sticky-header");
+          let isScrolling = false;
+
+          // Handle click: prevent default, manually scroll with offset
           navLinks.forEach((link) => {
-            link.addEventListener("click", function () {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const targetId = this.getAttribute("href").substring(1);
+              const targetSection = document.getElementById(targetId);
+              if (!targetSection) return;
+
+              // Calculate offset: sticky header height + main header if fixed
+              const mainHeader = document.querySelector(".header-sticky.active");
+              const mainHeaderHeight = mainHeader ? mainHeader.offsetHeight : 0;
+              const stickyHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+              const offset = mainHeaderHeight + stickyHeight + 20;
+
+              const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+
+              // Set active state immediately
               navLinks.forEach((l) => l.classList.remove("active"));
               this.classList.add("active");
+
+              // Scroll the nav link into view in the carousel
+              this.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+
+              // Prevent observer from fighting with click scroll
+              isScrolling = true;
+              window.scrollTo({ top: targetPosition, behavior: "smooth" });
+
+              // Re-enable observer after scroll finishes
+              setTimeout(() => { isScrolling = false; }, 1000);
             });
           });
-        
+
+          // IntersectionObserver for scroll-based active state
           const observer = new IntersectionObserver(
             (entries) => {
+              if (isScrolling) return;
               entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                   const id = entry.target.id;
                   navLinks.forEach((link) => {
                     const match = link.getAttribute("href") === `#${id}`;
                     link.classList.toggle("active", match);
-        
-                    // only scroll into view if it's not already visible (optional)
+
                     if (match) {
-                      link.scrollIntoView({
-                        behavior: "smooth",
-                        inline: "center",
-                        block: "nearest",
-                      });
+                      link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
                     }
                   });
                 }
@@ -2959,11 +2982,11 @@
             },
             {
               root: null,
-              rootMargin: "0px 0px -60% 0px",
-              threshold: 0.3,
+              rootMargin: "-80px 0px -50% 0px",
+              threshold: 0.1,
             }
           );
-        
+
           sections.forEach((section) => observer.observe(section));
         });
         </script>
