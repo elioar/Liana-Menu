@@ -63,29 +63,9 @@
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item submenu"><a class="nav-link" href="#">Home</a>
-                                    <ul>
-                                        <li class="nav-item"><a class="nav-link" href="#">Home - Image</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Home - Video</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Home - Slider</a></li>
-                                    </ul>
+                                <li class="nav-item"><a class="nav-link" href="#">Home</a>
                                 </li>                                
-                                <li class="nav-item"><a class="nav-link" href="#">About Us</a>
-                                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#">menu</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
-                                    <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="#">Services Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Our Chefs</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Chef Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Image Gallery</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Video Gallery</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">404</a></li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>                           
                             </ul>
@@ -133,17 +113,36 @@
                         <h3 class="wow fadeInUp">taste the best that surprise you</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">our special <span>menu</span></h2>
                         <div class="menu-legend wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="legend-item">
-                                <span class="food-badge badge-vegetarian">🥬</span>
-                                <span class="legend-text">Vegetarian Friendly</span>
-                            </div>
-                            <div class="legend-item">
-                                <span class="food-badge badge-chesse">🧀</span>
-                                <span class="legend-text">Contains milk and dairy products</span>
-                            </div>
-                                <div class="legend-item">
-                                <span class="food-badge badge-spicy">🌶️</span>
-                                <span class="legend-text">Spicy dish</span>
+                            <div class="legend-cards">
+                                <div class="legend-card legend-card--vegetarian">
+                                    <div class="legend-card__icon-wrap">
+                                        <span class="legend-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                                    </div>
+                                    <div class="legend-card__body">
+                                        <strong>Vegetarian</strong>
+                                        <span>No meat or fish</span>
+                                    </div>
+                                </div>
+                                <div class="legend-divider"></div>
+                                <div class="legend-card legend-card--dairy">
+                                    <div class="legend-card__icon-wrap">
+                                        <span class="legend-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
+                                    </div>
+                                    <div class="legend-card__body">
+                                        <strong>Contains Dairy</strong>
+                                        <span>Milk &amp; dairy products</span>
+                                    </div>
+                                </div>
+                                <div class="legend-divider"></div>
+                                <div class="legend-card legend-card--spicy">
+                                    <div class="legend-card__icon-wrap">
+                                        <span class="legend-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg></span>
+                                    </div>
+                                    <div class="legend-card__body">
+                                        <strong>Spicy</strong>
+                                        <span>Hot &amp; spicy dish</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,7 +213,7 @@
         <div class="menu-item-title">
             <h3>Spicy peppers</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€1,90</span>
@@ -241,8 +240,8 @@
         <div class="menu-item-title">
             <h3>Grilled feta</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
-                <span class="food-badge badge-chesse">🧀</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
             </div>
             <hr>
             <span>€5,50</span>
@@ -263,8 +262,8 @@
         <div class="menu-item-title">
             <h3>Feta cheese</h3>
                                         <div class="legend-item"> 
-                                 <span class="food-badge badge-vegetarian">🥬</span>
-                                                 <span class="food-badge badge-chesse">🧀</span>
+                                 <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                                                 <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
 
                              </div>
             <hr>
@@ -286,7 +285,7 @@
         <div class="menu-item-title">
             <h3>Cheese fritters</h3>
                                         <div class="legend-item"> 
-                                 <span class="food-badge badge-vegetarian">🥬</span>
+                                 <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                              </div>
             <hr>
             <span>€5,50</span>
@@ -307,7 +306,7 @@
         <div class="menu-item-title">
             <h3>Fried potatoes</h3>
                             <div class="legend-item"> 
-                                 <span class="food-badge badge-vegetarian">🥬</span>
+                                 <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                              </div>
             <hr>
             <span>€5,00</span>
@@ -328,7 +327,7 @@
         <div class="menu-item-title">
             <h3>Halloumi cheese</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,00</span>
@@ -349,7 +348,7 @@
         <div class="menu-item-title">
             <h3>Talagani cheese</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,00</span>
@@ -369,7 +368,7 @@
         <div class="menu-item-title">
             <h3>Kefalotyri Saganaki</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,00</span>
@@ -390,7 +389,7 @@
         <div class="menu-item-title">
             <h3>Fried Courgettes</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€5,00</span>
@@ -429,7 +428,7 @@
         <div class="menu-item-title">
             <h3>Roast Stuffed Aubergine</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,50</span>
@@ -450,7 +449,7 @@
         <div class="menu-item-title">
             <h3>Stuffed Potato</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,50</span>
@@ -471,7 +470,7 @@
         <div class="menu-item-title">
             <h3>Grilled Mushrooms</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 
             </div>
             <hr>
@@ -493,7 +492,7 @@
         <div class="menu-item-title">
             <h3>Stuffed Mushrooms</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,50</span>
@@ -514,9 +513,9 @@
         <div class="menu-item-title">
             <h3>Buyurdi</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
-                <span class="food-badge badge-chesse">🧀</span>
-                <span class="food-badge badge-spicy">🌶️</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
+                <span class="food-badge badge-spicy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg></span>
             </div>
             <hr>
             <span>€6,00</span>
@@ -537,7 +536,7 @@
         <div class="menu-item-title">
             <h3>Bruschetta</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€5,50</span>
@@ -558,7 +557,7 @@
         <div class="menu-item-title">
             <h3>Zucchini Patties</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                
             </div>
             <hr>
@@ -580,7 +579,7 @@
         <div class="menu-item-title">
             <h3>Stuffed Vine Leaves</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,00</span>
@@ -601,7 +600,7 @@
         <div class="menu-item-title">
             <h3>Feta with Phyllo Crust</h3>
             <div class="legend-item">
-                <span class="food-badge badge-vegetarian">🥬</span>
+                <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
             </div>
             <hr>
             <span>€6,70</span>
@@ -642,8 +641,8 @@
             <div class="menu-item-title">
                 <h3>Tzatziki</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
-                    <span class="food-badge badge-chesse">🧀</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                    <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
                 </div>
                 <hr>
                 <span>€5,00</span>
@@ -666,8 +665,8 @@
             <div class="menu-item-title">
                 <h3>Cheese Salad Spread</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
-                    <span class="food-badge badge-chesse">🧀</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                    <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
                 </div>
                 <hr>
                 <span>€4,50</span>
@@ -690,7 +689,7 @@
             <div class="menu-item-title">
                 <h3>Taramosalata</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 </div>
                 <hr>
                 <span>€4,50</span>
@@ -713,7 +712,7 @@
             <div class="menu-item-title">
                 <h3>Aubergine Spread</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 </div>
                 <hr>
                 <span>€4,50</span>
@@ -866,7 +865,7 @@
             <div class="menu-item-title">
                 <h3>Cucumber - Tomato Salad</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 </div>
                 <hr>
                 <span>€6,00</span>
@@ -889,8 +888,8 @@
             <div class="menu-item-title">
                 <h3>Greek Salad</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
-                    <span class="food-badge badge-chesse">🧀</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                    <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
                 </div>
                 <hr>
                 <span>€9,80</span>
@@ -913,8 +912,8 @@
             <div class="menu-item-title">
                 <h3>Cretan Dakos</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
-                    <span class="food-badge badge-chesse">🧀</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                    <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
                 </div>
                 <hr>
                 <span>€8,50</span>
@@ -937,8 +936,8 @@
             <div class="menu-item-title">
                 <h3>Green Salad</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
-                    <span class="food-badge badge-chesse">🧀</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                    <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
                 </div>
                 <hr>
                 <span>€8,50</span>
@@ -961,7 +960,7 @@
             <div class="menu-item-title">
                 <h3>Boiled Greens</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 </div>
                 <hr>
                 <span>€6,50</span>
@@ -984,7 +983,7 @@
             <div class="menu-item-title">
                 <h3>Liana Salad</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 </div>
                 <hr>
                 <span>€9,70</span>
@@ -1047,8 +1046,8 @@
             <div class="menu-item-title">
                 <h3>Salad with Manouri Cheese</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
-                    <span class="food-badge badge-chesse">🧀</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
+                    <span class="food-badge badge-chesse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></span>
                 </div>
                 <hr>
                 <span>€9,50</span>
@@ -1071,7 +1070,7 @@
             <div class="menu-item-title">
                 <h3>Politiki Salad</h3>
                 <div class="legend-item">
-                    <span class="food-badge badge-vegetarian">🥬</span>
+                    <span class="food-badge badge-vegetarian"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/></svg></span>
                 </div>
                 <hr>
                 <span>€6,50</span>
@@ -1435,7 +1434,7 @@
                     <div class="our-menu-item wow fadeInUp">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Grilled Sardines">
+                                <img src="images/pork-neck.png" alt="Grilled Sardines">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1455,7 +1454,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Fried Anchovy">
+                                <img src="images/pork-neck.png" alt="Fried Anchovy">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1475,7 +1474,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="0.4s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Red Mullet">
+                                <img src="images/pork-neck.png" alt="Red Mullet">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1495,7 +1494,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="0.6s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Grilled Swordfish">
+                                <img src="images/pork-neck.png" alt="Grilled Swordfish">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1515,7 +1514,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="0.8s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Grilled Gilt-Head Bream">
+                                <img src="images/pork-neck.png" alt="Grilled Gilt-Head Bream">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1535,7 +1534,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="1s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Grilled Sea Bass">
+                                <img src="images/pork-neck.png" alt="Grilled Sea Bass">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1555,7 +1554,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="1.2s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Grilled Red Snapper">
+                                <img src="images/pork-neck.png" alt="Grilled Red Snapper">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -1575,7 +1574,7 @@
                     <div class="our-menu-item wow fadeInUp" data-wow-delay="1.4s">
                         <div class="our-menu-image">
                             <figure>
-                                <img src="images/grilled-sardines-png.webp" alt="Fried Cod">
+                                <img src="images/pork-neck.png" alt="Fried Cod">
                             </figure>
                         </div>
                         <div class="menu-item-body">
@@ -2099,7 +2098,7 @@
                         <div class="our-menu-list">
                             <div class="our-menu-item wow fadeInUp">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Apple Juice"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Apple Juice"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2111,7 +2110,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Orange Juice"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Orange Juice"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2123,7 +2122,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-3.png" alt="Peach Juice"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Peach Juice"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2135,7 +2134,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-4.png" alt="Banana Juice"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Banana Juice"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2147,7 +2146,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Mixed Juice"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Mixed Juice"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2180,7 +2179,7 @@
                         <div class="our-menu-list">
                             <div class="our-menu-item wow fadeInUp">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Coca Cola 250ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Coca Cola 250ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2192,7 +2191,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Coca Cola Zero 250ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Coca Cola Zero 250ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2204,7 +2203,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Sprite 250ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Sprite 250ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2216,7 +2215,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-3.png" alt="Fanta Orange 250ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Fanta Orange 250ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2228,7 +2227,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-4.png" alt="Fanta Lemon 250ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Fanta Lemon 250ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2240,7 +2239,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Souroti 250ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Souroti 250ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2252,7 +2251,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Souroti 750ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Souroti 750ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2264,7 +2263,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-6.png" alt="Nestea Peach 330ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Nestea Peach 330ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2276,7 +2275,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-6.png" alt="Nestea Lemon 330ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Nestea Lemon 330ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2288,7 +2287,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Water 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Water 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2300,7 +2299,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Water 1L"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Water 1L"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2333,7 +2332,7 @@
                         <div class="our-menu-list">
                             <div class="our-menu-item wow fadeInUp">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Amstel 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Amstel 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2345,7 +2344,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Amstel Radler 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Amstel Radler 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2357,7 +2356,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-3.png" alt="Amstel Free 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Amstel Free 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2369,7 +2368,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-4.png" alt="Alfa 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Alfa 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2381,7 +2380,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Mythos 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Mythos 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2393,7 +2392,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-6.png" alt="Heineken 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Heineken 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2405,7 +2404,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Vergina 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Vergina 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2417,7 +2416,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Mamos 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Mamos 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2450,7 +2449,7 @@
                         <div class="our-menu-list">
                             <div class="our-menu-item wow fadeInUp">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Retsina Malamatina 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Retsina Malamatina 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2462,7 +2461,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Retsina Kechribari 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Retsina Kechribari 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2474,7 +2473,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-3.png" alt="Retsina Vasiliki 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Retsina Vasiliki 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2486,7 +2485,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-4.png" alt="Ouzo Georgiadi 50ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Ouzo Georgiadi 50ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2498,7 +2497,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Ouzo glass 80ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Ouzo glass 80ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2510,7 +2509,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-6.png" alt="Tsipouro glass 80ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Tsipouro glass 80ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2522,7 +2521,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Tsipouro 200ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Tsipouro 200ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2534,7 +2533,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Metaxa 5* 50ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Metaxa 5* 50ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2546,7 +2545,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-3.png" alt="Ouzo Plomari"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Ouzo Plomari"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2558,7 +2557,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-4.png" alt="Ouzo 12"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Ouzo 12"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2570,7 +2569,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="Ouzo Mini"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Ouzo Mini"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2582,7 +2581,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="2.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-6.png" alt="Apostolaki Tsipouro"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Apostolaki Tsipouro"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2618,7 +2617,7 @@
                         <div class="our-menu-list">
                             <div class="our-menu-item wow fadeInUp">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="Red dry glass"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Red dry glass"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2630,7 +2629,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="Red dry 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Red dry 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2642,7 +2641,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-3.png" alt="Red semisweet glass"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Red semisweet glass"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2654,7 +2653,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-4.png" alt="Red semisweet 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="Red semisweet 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2666,7 +2665,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-5.png" alt="White dry glass"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="White dry glass"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2678,7 +2677,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-6.png" alt="White dry 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="White dry 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2690,7 +2689,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.2s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-1.png" alt="White semisweet glass"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="White semisweet glass"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
@@ -2702,7 +2701,7 @@
                             </div>
                             <div class="our-menu-item wow fadeInUp" data-wow-delay="1.4s">
                                 <div class="our-menu-image">
-                                    <figure><img src="images/beverages-img-2.png" alt="White semisweet 500ml"></figure>
+                                    <figure><img src="images/pork-neck.png" alt="White semisweet 500ml"></figure>
                                 </div>
                                 <div class="menu-item-body">
                                     <div class="menu-item-title">
