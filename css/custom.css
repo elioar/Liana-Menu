@@ -1592,6 +1592,23 @@ header.main-header .header-sticky.active{
 	flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+	.menu-item-title h3{
+		white-space: normal;
+		word-break: break-word;
+		font-size: 13px;
+	}
+	.menu-item-title > span{
+		font-size: 12px;
+		padding: 3px 8px;
+	}
+	.food-badge{
+		width: 22px !important;
+		height: 22px !important;
+		font-size: 12px !important;
+	}
+}
+
 .menu-item-title .legend-item{
 	flex-shrink: 0;
 }
@@ -2422,11 +2439,15 @@ header.main-header .header-sticky.active{
 
 .page-header{
     position: relative;
-	background: url('../images/page-header-bg.jpg');
+	background: url('../icons/Toli_family_restaurant.jpg');
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center 30%;
 	background-size: cover;
-	padding: 270px 0 155px;
+	background-attachment: scroll;
+	min-height: 500px;
+	display: flex;
+	align-items: center;
+	padding: 220px 0 140px;
 }
 
 .page-header::before{
@@ -4467,28 +4488,45 @@ header.main-header .header-sticky.active{
 
 	.our-menu-item{
 		width: 100%;
-	}	
+	}
 
 	.our-menu-image{
-		margin-right: 20px;
+		margin-right: 12px;
 	}
 
 	.our-menu-image figure{
-		max-width: 80px;
+		width: 70px;
+		height: 70px;
+	}
+
+	.our-menu-image img{
+		width: 70px;
+		height: 70px;
 	}
 
 	.menu-item-body{
-		width: calc(100% - 100px);
+		flex: 1;
+		min-width: 0;
+		width: auto;
 	}
 
 	.menu-item-title{
-		gap: 10px;
+		gap: 6px;
 		margin-bottom: 5px;
+		flex-wrap: nowrap;
 	}
 
 	.menu-item-title h3{
-        font-size: 16px;
-    }
+		font-size: 14px;
+		white-space: normal;
+		word-break: break-word;
+	}
+
+	.menu-item-title hr{
+		flex: 1;
+		min-width: 6px;
+		width: auto;
+	}
 
 	.our-menu .section-footer-text{
 		margin-top: 30px;
@@ -4690,7 +4728,8 @@ header.main-header .header-sticky.active{
 	}
 
 	.page-header{
-		padding: 170px 0 80px;
+		padding: 100px 0 60px;
+		min-height: 320px;
 	}
 
 	.page-header-box h1{
@@ -4919,11 +4958,15 @@ header.main-header .header-sticky.active{
 	}
 
 	.food-menu-item .menu-item-body{
-		width: calc(100% - 95px);
+		flex: 1;
+		min-width: 0;
+		width: auto;
 	}
-	
+
 	.food-menu-item .our-menu-item .menu-item-title hr{
-		width: 70%;
+		flex: 1;
+		min-width: 6px;
+		width: auto;
 	}
 
 	.page-blog{
@@ -5332,28 +5375,34 @@ header.main-header .header-sticky.active{
 	}
 
 	.our-menu-image figure{
-		max-width: 70px;
+		width: 60px;
+		height: 60px;
+	}
+
+	.our-menu-image img{
+		width: 60px;
+		height: 60px;
 	}
 
 	.menu-item-body{
-		width: calc(100% - 80px);
-	}
-
-	.our-menu-image{
-		margin-right: 10px;
+		flex: 1;
+		min-width: 0;
+		width: auto;
 	}
 
 	.menu-item-title span{
-		font-size: 14px;
-		padding: 3px 10px;
+		font-size: 13px;
+		padding: 3px 8px;
 	}
 
 	.menu-item-content p{
-		font-size: 14px;
+		font-size: 13px;
 	}
 
 	.menu-item-title hr{
-		width: 30%;
+		flex: 1;
+		min-width: 6px;
+		width: auto;
 	}
 
 	.intro-video-box{
@@ -5526,6 +5575,11 @@ header.main-header .header-sticky.active{
 
 	.footer-copyright-text{
 		text-align: center;
+	}
+
+	.page-header{
+		padding: 100px 0 60px;
+		min-height: 260px;
 	}
 
 	.page-header-box h1{
@@ -5705,12 +5759,16 @@ header.main-header .header-sticky.active{
 	}
 
 	.food-menu-item .menu-item-body{
-        width: calc(100% - 80px);
-    }
+		flex: 1;
+		min-width: 0;
+		width: auto;
+	}
 
 	.food-menu-item .our-menu-item .menu-item-title hr{
-        width: 25%;
-    }
+		flex: 1;
+		min-width: 6px;
+		width: auto;
+	}
 
 	.post-single-meta ol li i{
         font-size: 14px;
