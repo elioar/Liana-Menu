@@ -3,14 +3,21 @@
 
   var LANGUAGE_STORAGE_KEY = "lianaMenuLanguage";
   var TITLE_BY_LANGUAGE = {
-    en: "Toli Family Restaurant - Menu",
-    el: "Εστιατόριο Toli Family - Μενού",
+    en: "Toli Family Tavern Menu | Ofrinio, Kavala",
+    el: "Μενού Toli Family Tavern | Οφρύνιο, Καβάλα",
+    de: "Speisekarte Toli Family Tavern | Ofrinio, Kavala",
   };
 
   var EL_PLACEHOLDER_TRANSLATIONS = {
     "e.g. John": "π.χ. Γιάννης",
     "e.g. John@example.com": "π.χ. giannis@example.com",
     "e.g. + 123 456 8792": "π.χ. +30 69 1234 5678",
+  };
+
+  var DE_PLACEHOLDER_TRANSLATIONS = {
+    "e.g. John": "z. B. Hans",
+    "e.g. John@example.com": "z. B. hans@example.com",
+    "e.g. + 123 456 8792": "z. B. +49 170 1234567",
   };
 
   var EL_TRANSLATIONS = {
@@ -264,6 +271,208 @@
     "Cover charge includes bread or pita with olive oil and oregano.": "Το κουβέρ περιλαμβάνει ψωμί ή πίτα με ελαιόλαδο και ρίγανη.",
   };
 
+  var DE_TRANSLATIONS = {
+    Home: "Startseite",
+    menu: "Speisekarte",
+    "Contact Us": "Kontakt",
+    "book a table": "Tisch reservieren",
+    "SEE THE MENU": "SPEISEKARTE ANSEHEN",
+    "taste the best that surprise you": "genießen Sie die besten Geschmäcker, die Sie überraschen",
+    "our special": "unsere Spezialitäten",
+    Vegetarian: "Vegetarisch",
+    "No meat or fish": "Ohne Fleisch oder Fisch",
+    "Contains Dairy": "Enthält Milchprodukte",
+    "Milk & dairy products": "Milch & Milchprodukte",
+    Spicy: "Scharf",
+    "Hot & spicy dish": "Scharfes Gericht",
+    Starters: "Vorspeisen",
+    Salads: "Salate",
+    Soups: "Suppen",
+    Seafood: "Meeresfrüchte",
+    seafood: "Meeresfrüchte",
+    Fishes: "Fisch",
+    Meats: "Fleisch",
+    Pasta: "Pasta",
+    Juices: "Säfte",
+    Refreshments: "Erfrischungsgetränke",
+    Beers: "Biere",
+    "Alcoholic Drinks": "Alkoholische Getränke",
+    Wine: "Wein",
+    "menu & pricing": "Speisekarte & Preise",
+    "Menu & Pricing": "Speisekarte & Preise",
+    "reserve a table": "Tisch reservieren",
+    "reserve now your table and": "reservieren Sie jetzt Ihren Tisch und",
+    "enjoy dining experience.": "genießen Sie ein besonderes Essen.",
+    "open hours": "Öffnungszeiten",
+    "Mon - Thu": "Mo - Do",
+    "Fri - Sat": "Fr - Sa",
+    Sun: "So",
+    Closed: "Geschlossen",
+    "your name": "Ihr Name",
+    "email address": "E-Mail-Adresse",
+    "phone number": "Telefonnummer",
+    date: "Datum",
+    time: "Uhrzeit",
+    "Number Of Person": "Anzahl der Personen",
+    "number of person": "Anzahl der Personen",
+    "Select time": "Uhrzeit wählen",
+    "1 Person": "1 Person",
+    "5 Person": "5 Personen",
+    "10 Person": "10 Personen",
+    "15 Person": "15 Personen",
+    "20 Person": "20 Personen",
+    "reserve now": "jetzt reservieren",
+    "Copyright Â© 2026 All Rights Reserved.": "Urheberrecht © 2026. Alle Rechte vorbehalten.",
+    "Copyright Ã‚Â© 2026 All Rights Reserved.": "Urheberrecht © 2026. Alle Rechte vorbehalten.",
+
+    "Spicy peppers": "Scharfe Paprika",
+    "Grilled feta": "Gegrillter Feta",
+    "Feta cheese": "Fetakäse",
+    "Cheese fritters": "Käsekroketten",
+    "Fried potatoes": "Gebratene Kartoffeln",
+    "Halloumi cheese": "Halloumi",
+    "Talagani cheese": "Talagani-Käse",
+    "Kefalotyri Saganaki": "Kefalotyri-Saganaki",
+    Tzatziki: "Tzatziki",
+    Taramosalata: "Taramosalata",
+    "Aubergine Spread": "Auberginencreme",
+    "Cheese Salad Spread": "Käseaufstrich",
+    "Stuffed Vine Leaves": "Gefüllte Weinblätter",
+    "Boiled Greens": "Gekochtes Blattgemüse",
+    "Fried Courgettes": "Gebratene Zucchini",
+    "Grilled Mushrooms": "Gegrillte Pilze",
+    "Roast Stuffed Aubergine": "Gefüllte Ofenaubergine",
+    "Stuffed Mushrooms": "Gefüllte Pilze",
+    "Stuffed Potato": "Gefüllte Kartoffel",
+    "Feta with Phyllo Crust": "Feta im Filoteig",
+    "Zucchini Patties": "Zucchini-Frikadellen",
+    Buyurdi: "Bougiourdi",
+    Bruschetta: "Bruschetta",
+    "Cucumber - Tomato Salad": "Gurken-Tomaten-Salat",
+    "Greek Salad": "Griechischer Salat",
+    "Green Salad": "Grüner Salat",
+    "Caesar's Salad": "Caesar-Salat",
+    "Cretan Dakos": "Kretischer Dakos",
+    "Liana Salad": "Liana-Salat",
+    "Salad with Manouri Cheese": "Salat mit Manouri",
+    "Salad with Prawns": "Salat mit Garnelen",
+    "Politiki Salad": "Politiki-Salat",
+    "Cold Yoghurt Soup": "Kalte Joghurtsuppe",
+    "Boiled Beef Soup": "Rindersuppe",
+    "Chicken Soup": "Hühnersuppe",
+    "Fish Soup": "Fischsuppe",
+    Anchovies: "Sardellen",
+    "Marinated Anchovies": "Marinierte Sardellen",
+    "Sardine Fillets": "Sardinenfilets",
+    "Smoked Mackerel": "Geräucherte Makrele",
+    "Salted Cured Tuna": "Gesalzener Thunfisch",
+    "Grilled Sardines": "Gegrillte Sardinen",
+    "Grilled Gilt-Head Bream": "Gegrillte Dorade",
+    "Grilled Sea Bass": "Gegrillter Wolfsbarsch",
+    "Grilled Red Snapper": "Gegrillter Schnapper",
+    "Fried Anchovy": "Gebratene Sardellen",
+    "Red Mullet": "Rotbarbe",
+    "Fried Cod": "Gebratener Kabeljau",
+    "Grilled Swordfish": "Gegrillter Schwertfisch",
+    "Grilled Squid": "Gegrillter Tintenfisch",
+    "Stuffed Squid": "Gefüllter Tintenfisch",
+    "Fried Squid": "Frittierter Tintenfisch",
+    "Grilled Octopus": "Gegrillter Oktopus",
+    "Steamed Mussels": "Gedämpfte Miesmuscheln",
+    "Mussels in Saganaki": "Miesmuscheln Saganaki",
+    Horiatiki: "Horiatiki",
+    "Shrimp Saganaki": "Garnelen Saganaki",
+    "Grilled Prawns": "Gegrillte Garnelen",
+    "Shrimps with Potato Crust": "Garnelen mit Kartoffelkruste",
+    "Seafood Mix For Two": "Meeresfrüchteplatte für zwei",
+    "Pirate's Dish": "Piratenteller",
+    "Pork Souvlaki": "Schweine-Souvlaki",
+    "Chicken Souvlaki": "Hähnchen-Souvlaki",
+    "Chicken Fillet": "Hähnchenfilet",
+    "Pork Neck": "Schweinenacken",
+    "Pork Belly Strips": "Schweinebauchstreifen",
+    "Country-Style Sausage": "Bauernwurst",
+    Soutzoukakia: "Soutzoukakia",
+    "Handmade Burger": "Hausgemachter Burger",
+    "Special Fried Pork": "Spezial-Schweinepfanne",
+    "Veal Steak": "Kalbssteak",
+    "Black Angus Fillet": "Black-Angus-Filet",
+    "Black Angus Sirloin Steak": "Black-Angus-Sirloin",
+    "Lamb Chops": "Lammkoteletts",
+    "Selection of Meat Dishes (for two)": "Fleischplatte (für zwei)",
+    Napolitana: "Napolitana",
+    Bolognese: "Bolognese",
+    Carbonara: "Carbonara",
+    "Orzo with Prawns": "Kritharaki mit Garnelen",
+    "Mushrooms Risotto": "Pilzrisotto",
+    "Seafood Risotto": "Meeresfrüchterisotto",
+    "Seafood Pasta": "Meeresfrüchte-Pasta",
+    "Cover Charge": "Gedeck",
+    Orange: "Orange",
+    Apple: "Apfel",
+    Banana: "Banane",
+    Peach: "Pfirsich",
+    Mixed: "Gemischt",
+    "Water 500ml": "Wasser 500ml",
+    "Water 1L": "Wasser 1L",
+    "Tsipouro 200ml": "Tsipouro 200ml",
+    "Tsipouro glass 80ml": "Tsipouro Glas 80ml",
+    "Without anise.": "Ohne Anis.",
+    "Apostolaki Tsipouro": "Apostolaki Tsipouro",
+    "Ouzo 12": "Ouzo 12",
+    "Ouzo Mini": "Ouzo Mini",
+    "Ouzo Plomari": "Ouzo Plomari",
+    "Ouzo glass 80ml": "Ouzo Glas 80ml",
+    "Ouzo Georgiadi 50ml": "Ouzo Georgiadi 50ml",
+    "Metaxa 5* 50ml": "Metaxa 5* 50ml",
+    "Retsina Kechribari 500ml": "Retsina Kechribari 500ml",
+    "Retsina Malamatina 500ml": "Retsina Malamatina 500ml",
+    "Retsina Vasiliki 500ml": "Retsina Vasiliki 500ml",
+    "Red dry glass": "Rotwein trocken Glas",
+    "Red dry 500ml": "Rotwein trocken 500ml",
+    "Red semisweet glass": "Rotwein halbsüß Glas",
+    "Red semisweet 500ml": "Rotwein halbsüß 500ml",
+    "White dry glass": "Weißwein trocken Glas",
+    "White dry 500ml": "Weißwein trocken 500ml",
+    "White semisweet glass": "Weißwein halbsüß Glas",
+    "White semisweet 500ml": "Weißwein halbsüß 500ml",
+    "Nestea Lemon 330ml": "Nestea Zitrone 330ml",
+    "Nestea Peach 330ml": "Nestea Pfirsich 330ml",
+
+    "Grilled green spicy peppers.": "Gegrillte grüne scharfe Paprika.",
+    "Crispy fried potatoes seasoned with salt.": "Knusprig gebratene Kartoffeln mit Salz.",
+    "Traditional Greek yogurt dip with cucumber and garlic.": "Traditioneller griechischer Joghurt-Dip mit Gurke und Knoblauch.",
+    "Traditional fish roe spread, smooth and flavorful.": "Traditioneller Fischrogenaufstrich, cremig und aromatisch.",
+    "Rich and creamy aubergine spread, perfect for dipping.": "Reichhaltiger und cremiger Auberginenaufstrich, perfekt zum Dippen.",
+    "Stuffed vine leaves, a classic Greek treat.": "Gefüllte Weinblätter, eine klassische griechische Spezialität.",
+    "Seasonal boiled greens, a healthy option.": "Saisonales gekochtes Blattgemüse, eine gesunde Wahl.",
+    "Fried courgettes, crispy and golden.": "Gebratene Zucchini, knusprig und goldbraun.",
+    "Steamed mussels with garlic.": "Gedämpfte Miesmuscheln mit Knoblauch.",
+    "Crispy fried squid served with a dipping sauce.": "Knusprig frittierter Tintenfisch mit Dip.",
+    "Perfectly grilled squid, tender and flavorful.": "Perfekt gegrillter Tintenfisch, zart und aromatisch.",
+    "Succulent grilled prawns, seasoned to perfection.": "Saftige gegrillte Garnelen, perfekt gewürzt.",
+    "A delightful assortment of seafood for two.": "Eine köstliche Meeresfrüchteauswahl für zwei Personen.",
+    "Tender pieces of pork grilled on skewers.": "Zarte Schweinefleischstücke am Spieß gegrillt.",
+    "Tender chicken fillet grilled to juicy perfection.": "Zartes Hähnchenfilet, saftig gegrillt.",
+    "Classic Napolitana sauce for a delightful taste.": "Klassische Napolitana-Sauce für ein hervorragendes Aroma.",
+    "Rich and meaty bolognese sauce over pasta.": "Kräftige Bolognese mit Fleisch über Pasta.",
+    "Carbonara with bacon, mushrooms, and sour cream.": "Carbonara mit Speck, Pilzen und Sauerrahm.",
+    "Delicious risotto made with fresh mushrooms.": "Leckeres Risotto mit frischen Pilzen.",
+    "Rich and creamy seafood risotto.": "Reichhaltiges und cremiges Meeresfrüchterisotto.",
+    "Pasta with shrimps, mussels, and squid.": "Pasta mit Garnelen, Miesmuscheln und Tintenfisch.",
+    "Cover charge includes bread or pita with olive oil and oregano.": "Gedeck beinhaltet Brot oder Pita mit Olivenöl und Oregano."
+  };
+
+  var TEXT_TRANSLATIONS_BY_LANGUAGE = {
+    el: EL_TRANSLATIONS,
+    de: DE_TRANSLATIONS,
+  };
+
+  var PLACEHOLDER_TRANSLATIONS_BY_LANGUAGE = {
+    el: EL_PLACEHOLDER_TRANSLATIONS,
+    de: DE_PLACEHOLDER_TRANSLATIONS,
+  };
+
   function normalizeText(value) {
     return (value || "").replace(/\s+/g, " ").trim();
   }
@@ -345,30 +554,35 @@
     });
 
     function applyLanguage(language) {
-      var currentLanguage = language === "el" ? "el" : "en";
-      var useGreek = currentLanguage === "el";
+      var currentLanguage = language === "el" || language === "de" ? language : "en";
+      var textTranslations = TEXT_TRANSLATIONS_BY_LANGUAGE[currentLanguage] || null;
+      var placeholderTranslations = PLACEHOLDER_TRANSLATIONS_BY_LANGUAGE[currentLanguage] || null;
 
       textNodeRecords.forEach(function (record) {
-        if (!useGreek) {
+        if (!textTranslations) {
           record.node.nodeValue = record.original;
           return;
         }
 
-        var translated = EL_TRANSLATIONS[record.key];
+        var translated = textTranslations[record.key];
         if (translated) {
           record.node.nodeValue = record.leading + translated + record.trailing;
+        } else {
+          record.node.nodeValue = record.original;
         }
       });
 
       placeholderRecords.forEach(function (record) {
-        if (!useGreek) {
+        if (!placeholderTranslations) {
           record.element.setAttribute("placeholder", record.original);
           return;
         }
 
-        var translated = EL_PLACEHOLDER_TRANSLATIONS[record.original];
+        var translated = placeholderTranslations[record.original];
         if (translated) {
           record.element.setAttribute("placeholder", translated);
+        } else {
+          record.element.setAttribute("placeholder", record.original);
         }
       });
 
@@ -389,7 +603,7 @@
     });
 
     var initialLanguage = getStoredLanguage();
-    applyLanguage(initialLanguage === "el" ? "el" : "en");
+    applyLanguage(initialLanguage === "el" || initialLanguage === "de" ? initialLanguage : "en");
   }
 
   document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
