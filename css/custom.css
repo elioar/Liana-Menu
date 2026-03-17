@@ -5985,7 +5985,10 @@ header.main-header .header-sticky.active{
 /* 13. Menu Legend CSS */
 .menu-legend {
     margin: 36px auto 0;
-    max-width: 680px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 
@@ -5997,6 +6000,15 @@ header.main-header .header-sticky.active{
     border-radius: 60px;
     padding: 10px 24px;
     backdrop-filter: blur(8px);
+    margin: 0 auto;
+}
+
+.page-menu .section-row .section-title {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .legend-card {
@@ -6036,6 +6048,16 @@ header.main-header .header-sticky.active{
 
 .legend-card--vegetarian .legend-card__icon svg {
     stroke: #8BC34A;
+}
+
+.legend-card--gluten .legend-card__icon-wrap {
+    background-color: rgba(245, 173, 66, 0.15);
+    border: 1px solid rgba(189, 127, 28, 0.5);
+    color: #f5ad42;
+}
+
+.legend-card--gluten .legend-card__icon i {
+    color: #f5ad42;
 }
 
 .legend-card--dairy .legend-card__icon-wrap {
@@ -6093,7 +6115,11 @@ header.main-header .header-sticky.active{
     flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
+    .menu-legend {
+        padding: 0 12px;
+    }
+
     .legend-cards {
         flex-direction: column;
         border-radius: 16px;
@@ -6120,6 +6146,22 @@ header.main-header .header-sticky.active{
     flex-shrink: 0;
 }
 
+.menu-item-title .legend-item .food-badge.badge-gluten {
+    order: 1;
+}
+
+.menu-item-title .legend-item .food-badge.badge-chesse {
+    order: 2;
+}
+
+.menu-item-title .legend-item .food-badge.badge-vegetarian {
+    order: 3;
+}
+
+.menu-item-title .legend-item .food-badge.badge-spicy {
+    order: 4;
+}
+
 /* Food Badge Classes */
 .food-badge {
     display: flex !important;
@@ -6137,6 +6179,23 @@ header.main-header .header-sticky.active{
 
 .food-badge:hover {
     transform: scale(1.1);
+}
+
+.food-badge i {
+    font-size: 12px;
+    line-height: 1;
+}
+
+.badge-gluten {
+    background-color: rgba(245, 173, 66, 0.3) !important;
+    border: 1px solid rgba(189, 127, 28, 0.8) !important;
+    color: #f5ad42 !important;
+}
+
+.badge-gluten i,
+.badge-gluten svg {
+    color: #f5ad42;
+    stroke: #f5ad42;
 }
 
 .badge-spicy {
