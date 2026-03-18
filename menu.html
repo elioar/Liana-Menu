@@ -257,6 +257,390 @@
                 cursor: auto !important;
             }
         }
+
+        .menu-review-cta {
+            padding: 56px 0 88px;
+            background: linear-gradient(180deg, #0e110d 0%, #101511 100%);
+        }
+
+        .menu-review-cta__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 122px;
+            padding: 30px 34px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+        }
+
+        .menu-review-cta__text h3 {
+            margin: 0 0 8px;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+
+        .menu-review-cta__text p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.74);
+        }
+
+        .menu-review-cta__text {
+            max-width: 760px;
+        }
+
+        .menu-review-cta__btn {
+            white-space: nowrap;
+        }
+
+        @media (min-width: 1200px) {
+            .menu-review-cta__inner {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+
+        .review-swipe-prompt {
+            position: fixed;
+            left: 24px;
+            bottom: 18px;
+            width: min(460px, calc(100% - 36px));
+            transform: translateX(-26px);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(14, 20, 16, 0.95);
+            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+            padding: 14px;
+            z-index: 11000;
+            transition: transform 0.28s ease, opacity 0.28s ease, visibility 0.28s ease;
+        }
+
+        .review-swipe-prompt.is-visible {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .review-swipe-prompt__title {
+            margin: 0 0 5px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+        }
+
+        .review-swipe-prompt__text {
+            margin: 0 0 12px;
+            font-size: 13px;
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .review-swipe-prompt__actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .review-swipe-prompt__btn {
+            flex: 1;
+            border: none;
+            border-radius: 9px;
+            padding: 10px 12px;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.2;
+            transition: all 0.2s ease;
+        }
+
+        .review-swipe-prompt__btn--ghost {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .review-swipe-prompt__btn--ghost:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .review-swipe-prompt__btn--primary {
+            background: #ce9b35;
+            color: #ffffff;
+        }
+
+        .review-swipe-prompt__btn--primary:hover {
+            background: #e0ac43;
+        }
+
+        .review-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 12000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.22s ease, visibility 0.22s ease;
+        }
+
+        .review-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .review-modal__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(5, 8, 6, 0.76);
+            backdrop-filter: blur(3px);
+        }
+
+        .review-modal__dialog {
+            position: relative;
+            width: min(540px, calc(100% - 20px));
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #141a16;
+            padding: 28px 26px 24px;
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+            transform: translateY(10px) scale(0.98);
+            transition: transform 0.22s ease;
+        }
+
+        .review-modal.is-open .review-modal__dialog {
+            transform: translateY(0) scale(1);
+        }
+
+        .review-modal__close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .review-modal__close:hover {
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+        }
+
+        .review-modal__dialog h3 {
+            margin: 0 0 10px;
+            font-size: 32px;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+
+        .review-modal__dialog p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .review-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 24px 0 22px;
+        }
+
+        .review-star {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .review-star i {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .review-star:hover,
+        .review-star.is-active {
+            background: rgba(206, 155, 53, 0.2);
+            color: #ce9b35;
+            transform: translateY(-2px);
+        }
+
+        .review-modal__actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .review-modal__btn {
+            flex: 1;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            transition: all 0.2s ease;
+        }
+
+        .review-modal__btn--ghost {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+        }
+
+        .review-modal__btn--ghost:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .review-modal__btn--primary {
+            background: #ce9b35;
+            color: #ffffff;
+        }
+
+        .review-modal__btn--primary:hover {
+            background: #e0ac43;
+            color: #ffffff;
+        }
+
+        .review-modal__btn--primary.is-disabled {
+            pointer-events: none;
+            opacity: 0.45;
+        }
+
+        body.review-modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 991px) {
+            .menu-review-cta {
+                padding: 28px 0 64px;
+            }
+
+            .menu-review-cta__inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .menu-review-cta {
+                padding: 24px 0 56px;
+            }
+
+            .menu-review-cta__inner {
+                padding: 22px 18px;
+            }
+
+            .menu-review-cta__text h3 {
+                font-size: 24px;
+            }
+
+            .review-modal__dialog {
+                padding: 24px 18px 18px;
+            }
+
+            .review-modal__dialog h3 {
+                font-size: 27px;
+                padding-right: 28px;
+            }
+
+            .review-stars {
+                gap: 8px;
+            }
+
+            .review-star {
+                width: 44px;
+                height: 44px;
+            }
+
+            .review-swipe-prompt {
+                width: calc(100% - 14px);
+                bottom: 8px;
+                padding: 12px;
+                left: 7px;
+                transform: translateX(-16px);
+            }
+
+            .review-swipe-prompt__title {
+                font-size: 15px;
+            }
+
+            .review-swipe-prompt__actions {
+                flex-direction: column;
+            }
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(13, 18, 15, 0.78);
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .scroll-to-top:hover {
+            color: #ffffff;
+            background: #ce9b35;
+            border-color: #ce9b35;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top i {
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        @media (max-width: 767px) {
+            .scroll-to-top {
+                right: 14px;
+                bottom: 14px;
+                width: 42px;
+                height: 42px;
+            }
+        }
 	</style>
 </head>
 <body>
@@ -2658,6 +3042,65 @@
         </div>
     </div>
     <!-- Reserve Table Section End -->
+
+    <!-- Review CTA Start -->
+    <section class="menu-review-cta">
+        <div class="container">
+            <div class="menu-review-cta__inner wow fadeInUp">
+                <div class="menu-review-cta__text">
+                    <h3>Loved your meal?</h3>
+                    <p>Share your experience with a quick Google review.</p>
+                </div>
+                <button type="button" class="btn-default menu-review-cta__btn" id="openReviewModal">Leave a Review</button>
+            </div>
+        </div>
+    </section>
+    <!-- Review CTA End -->
+
+    <!-- Review Modal Start -->
+    <div class="review-modal" id="reviewModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle">
+        <div class="review-modal__overlay" data-close-review-modal></div>
+        <div class="review-modal__dialog">
+            <button type="button" class="review-modal__close" data-close-review-modal aria-label="Close review popup">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <h3 id="reviewModalTitle">How was your experience?</h3>
+            <p>Tap the stars and continue to Google to post your review.</p>
+            <div class="review-stars" role="radiogroup" aria-label="Star rating">
+                <button type="button" class="review-star" data-rating="1" aria-label="1 star">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="review-star" data-rating="2" aria-label="2 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="review-star" data-rating="3" aria-label="3 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="review-star" data-rating="4" aria-label="4 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="review-star" data-rating="5" aria-label="5 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="review-modal__actions">
+                <button type="button" class="review-modal__btn review-modal__btn--ghost" data-close-review-modal>Not now</button>
+                <a id="reviewContinueLink" class="review-modal__btn review-modal__btn--primary is-disabled" href="#" target="_blank" rel="noopener noreferrer">Continue to Google</a>
+            </div>
+        </div>
+    </div>
+    <!-- Review Modal End -->
+
+    <!-- Review Swipe Prompt Start -->
+    <div class="review-swipe-prompt" id="reviewSwipePrompt" aria-live="polite">
+        <p class="review-swipe-prompt__title">Would you like to leave a review?</p>
+        <p class="review-swipe-prompt__text">It takes less than a minute and helps us a lot.</p>
+        <div class="review-swipe-prompt__actions">
+            <button type="button" class="review-swipe-prompt__btn review-swipe-prompt__btn--ghost" id="reviewSwipeNo">Not now</button>
+            <button type="button" class="review-swipe-prompt__btn review-swipe-prompt__btn--primary" id="reviewSwipeYes">Yes, leave review</button>
+        </div>
+    </div>
+    <!-- Review Swipe Prompt End -->
     
     <!-- Main Footer Section Start -->
     <footer class="main-footer">
@@ -2729,6 +3172,9 @@
         </div>
     </footer>
     <!-- Main Footer Section End -->
+    <a href="#top" class="scroll-to-top" aria-label="Go to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
 
     <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -2771,6 +3217,41 @@
     <script src="js/jquery.mb.YTPlayer.min.js"></script>
     <!-- Wow js file -->
     <script src="js/wow.min.js"></script>
+    <script>
+        (function () {
+          var formatDelay = function (value) {
+            var fixed = value.toFixed(2);
+            return fixed.replace(/\.00$/, "").replace(/(\.\d)0$/, "$1") + "s";
+          };
+
+          var tuneMenuAnimationSpeed = function () {
+            var sections = document.querySelectorAll(".food-menu-item");
+
+            sections.forEach(function (section) {
+              var items = section.querySelectorAll(".our-menu-item.wow.fadeInUp");
+
+              items.forEach(function (item, index) {
+                // Keep staggered reveal but cap long waits so items feel responsive.
+                var delay = Math.min(index * 0.08, 0.64);
+                item.setAttribute("data-wow-delay", formatDelay(delay));
+                item.setAttribute("data-wow-duration", "0.45s");
+              });
+            });
+
+            document.querySelectorAll(".page-header-tagline .wow, .menu-legend-note.wow, .menu-legend.wow, .food-menu-sidebar .section-title h3.wow").forEach(function (element) {
+              if (!element.getAttribute("data-wow-duration")) {
+                element.setAttribute("data-wow-duration", "0.45s");
+              }
+            });
+          };
+
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", tuneMenuAnimationSpeed);
+          } else {
+            tuneMenuAnimationSpeed();
+          }
+        })();
+    </script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
     <script src="js/menu-i18n.js"></script>
@@ -2780,7 +3261,16 @@
           const sections = document.querySelectorAll(".food-menu-item[id]");
           const navLinks = document.querySelectorAll(".menu-list a");
           const stickyHeader = document.querySelector(".sticky-header");
+          const scrollTopButton = document.querySelector(".scroll-to-top");
           let isScrolling = false;
+
+          const toggleScrollTopButton = () => {
+            if (!scrollTopButton) return;
+            scrollTopButton.classList.toggle("is-visible", window.scrollY > 520);
+          };
+
+          window.addEventListener("scroll", toggleScrollTopButton, { passive: true });
+          toggleScrollTopButton();
 
           // Handle click: prevent default, manually scroll with offset
           navLinks.forEach((link) => {
@@ -2842,6 +3332,108 @@
           sections.forEach((section) => observer.observe(section));
         });
         </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Replace this with your exact Google "write review" URL when available.
+          const GOOGLE_REVIEW_URL = "https://www.google.com/search?client=opera&hs=EgO&sa=X&sca_esv=0f1789b80fec1324&sxsrf=ANbL-n4y6-MWf2iFOFNsLN8EgoiXpkL-dw:1773792123025&q=Toli+Family+Tavern+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDAwMDYwNTQ3NDWzNDMwsLQ0NNvAyPiKUSokPydTwS0xNzOnUiEksSy1KE8hKLUsM7W8eBErHkkA1T1F8FUAAAA&rldimm=10003051715696009916&tbm=lcl&hl=en-GR&ved=2ahUKEwimxpfLkqiTAxWOVfEDHWXVBJIQ9fQKegQILRAG&biw=1866&bih=912&dpr=1#lkt=LocalPoiReviews&lrd=0x14a88f2a6034b659:0x8ad1fa8977ec22bc,3,,,,";
+          const REVIEW_PROMPT_DELAY_MS = 25000;
+
+          const openReviewButton = document.getElementById("openReviewModal");
+          const reviewModal = document.getElementById("reviewModal");
+          const reviewContinueLink = document.getElementById("reviewContinueLink");
+          const closeReviewTriggers = document.querySelectorAll("[data-close-review-modal]");
+          const starButtons = document.querySelectorAll(".review-star");
+          const reviewSwipePrompt = document.getElementById("reviewSwipePrompt");
+          const reviewSwipeYes = document.getElementById("reviewSwipeYes");
+          const reviewSwipeNo = document.getElementById("reviewSwipeNo");
+
+          if (!openReviewButton || !reviewModal || !reviewContinueLink || !starButtons.length || !reviewSwipePrompt || !reviewSwipeYes || !reviewSwipeNo) {
+            return;
+          }
+
+          let selectedRating = 0;
+
+          const updateStars = function (rating) {
+            selectedRating = rating;
+            starButtons.forEach((button) => {
+              const buttonRating = Number(button.getAttribute("data-rating"));
+              button.classList.toggle("is-active", buttonRating <= rating);
+            });
+            reviewContinueLink.classList.toggle("is-disabled", rating < 1);
+            reviewContinueLink.setAttribute("href", GOOGLE_REVIEW_URL);
+          };
+
+          const openReviewModal = function () {
+            reviewModal.classList.add("is-open");
+            reviewModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("review-modal-open");
+          };
+
+          const closeReviewModal = function () {
+            reviewModal.classList.remove("is-open");
+            reviewModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("review-modal-open");
+          };
+
+          const openReviewSwipePrompt = function () {
+            reviewSwipePrompt.classList.add("is-visible");
+          };
+
+          const closeReviewSwipePrompt = function () {
+            reviewSwipePrompt.classList.remove("is-visible");
+          };
+
+          openReviewButton.addEventListener("click", function () {
+            closeReviewSwipePrompt();
+            openReviewModal();
+          });
+
+          closeReviewTriggers.forEach((trigger) => {
+            trigger.addEventListener("click", closeReviewModal);
+          });
+
+          reviewSwipeYes.addEventListener("click", function () {
+            closeReviewSwipePrompt();
+            openReviewModal();
+          });
+
+          reviewSwipeNo.addEventListener("click", closeReviewSwipePrompt);
+
+          starButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+              const rating = Number(this.getAttribute("data-rating"));
+              if (!Number.isNaN(rating)) {
+                updateStars(rating);
+              }
+            });
+          });
+
+          reviewContinueLink.addEventListener("click", function (event) {
+            if (selectedRating < 1) {
+              event.preventDefault();
+              return;
+            }
+            closeReviewModal();
+          });
+
+          document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && reviewModal.classList.contains("is-open")) {
+              closeReviewModal();
+              return;
+            }
+            if (event.key === "Escape" && reviewSwipePrompt.classList.contains("is-visible")) {
+              closeReviewSwipePrompt();
+            }
+          });
+
+          window.setTimeout(function () {
+            if (!reviewModal.classList.contains("is-open") && !reviewSwipePrompt.classList.contains("is-visible")) {
+              openReviewSwipePrompt();
+            }
+          }, REVIEW_PROMPT_DELAY_MS);
+        });
+    </script>
         
 
 </body>
