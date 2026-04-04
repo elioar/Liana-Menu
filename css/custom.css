@@ -708,7 +708,7 @@ header.main-header .header-sticky.active{
 
 .hero{
 	position: relative;
-	background: url('../images/hero-bg.png');
+	background: url('../images/hero-bg.webp');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -753,7 +753,7 @@ header.main-header .header-sticky.active{
 
 .hero.hero-slider-layout .hero-slide{
 	position: relative;
-	background: url('../images/hero-bg.png');
+	background: url('../images/hero-bg.webp');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
