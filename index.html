@@ -1,20 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from html.awaikenthemes.com/spicyhunt/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Jul 2025 23:41:44 GMT -->
-
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Awaiken">
+    <meta name="description" content="Toli Family Tavern in Ormylia, Halkidiki — authentic Greek cuisine, fresh seafood, grilled meats, and traditional flavors. Open every day 11:00–23:00.">
+    <meta name="keywords" content="Toli Family Tavern, Ormylia restaurant, Greek tavern Halkidiki, seafood Ormylia, Greek food, traditional Greek cuisine">
+    <meta name="author" content="Toli Family Tavern">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#0f0f0f">
     <!-- Page Title -->
-    <title>Spicyhunt - Restaurant HTML Template</title>
+    <title>Toli Family Tavern | Ormylia, Halkidiki</title>
+    <link rel="canonical" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/index.html">
+    <link rel="alternate" hreflang="de" href="/index.html">
+    <link rel="alternate" hreflang="ru" href="/index.html">
+    <link rel="alternate" hreflang="bg" href="/index.html">
+    <link rel="alternate" hreflang="el" href="/index.html">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Toli Family Tavern">
+    <meta property="og:title" content="Toli Family Tavern | Ormylia, Halkidiki">
+    <meta property="og:description" content="Toli Family Tavern in Ormylia, Halkidiki — authentic Greek cuisine, fresh seafood, grilled meats, and traditional flavors. Open every day 11:00–23:00.">
+    <meta property="og:url" content="/index.html">
+    <meta property="og:image" content="images/toli-meta-image.webp">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="bg_BG">
+    <meta property="og:locale:alternate" content="el_GR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toli Family Tavern | Ormylia, Halkidiki">
+    <meta name="twitter:description" content="Toli Family Tavern in Ormylia, Halkidiki — authentic Greek cuisine, fresh seafood, grilled meats, and traditional flavors. Open every day 11:00–23:00.">
+    <meta name="twitter:image" content="images/toli-meta-image.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Toli Family Tavern",
+      "url": "/index.html",
+      "image": "images/toli-meta-image.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Aggelaki Agapitou",
+        "addressLocality": "Ormylia",
+        "postalCode": "630 71",
+        "addressCountry": "GR"
+      },
+      "telephone": "+302375309009",
+      "servesCuisine": ["Greek", "Mediterranean", "Seafood"],
+      "openingHours": "Mo-Su 11:00-23:00",
+      "inLanguage": ["en", "el", "de", "ru", "bg"],
+      "hasMenu": "/menu.html"
+    }
+    </script>
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/loader.png">
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -135,6 +178,98 @@
                 cursor: auto !important;
             }
         }
+
+        .scroll-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(13, 18, 15, 0.78);
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .scroll-to-top:hover {
+            color: #ffffff;
+            background: #ce9b35;
+            border-color: #ce9b35;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top i {
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        @media (max-width: 767px) {
+            .scroll-to-top {
+                right: 14px;
+                bottom: 14px;
+                width: 42px;
+                height: 42px;
+            }
+        }
+
+        /* Mobile language dropdown */
+        .mobile-language-switcher { position: relative; }
+
+        .lang-mobile-trigger {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            transition: border-color 0.25s ease, background 0.25s ease;
+        }
+        .lang-mobile-trigger i { font-size: 13px; line-height: 1; }
+        .lang-mobile-trigger__code { font-size: 7.5px; font-weight: 700; letter-spacing: 0.4px; line-height: 1; text-transform: uppercase; }
+        .lang-mobile-trigger:hover,
+        .mobile-language-switcher.lang-open .lang-mobile-trigger {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .lang-mobile-panel {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            flex-direction: row;
+            gap: 6px;
+            background: rgba(13, 18, 15, 0.97);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 10px;
+            z-index: 10001;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+        }
+        .mobile-language-switcher.lang-open .lang-mobile-panel { display: flex; }
     </style>
 </head>
 
@@ -172,7 +307,7 @@
                         </div>
                         <!-- Header Contact Box Start -->
                         <div class="header-btn">
-                            <a href="#" class="btn-default">See </a>
+                            <a href="menu.html" class="btn-default">See Menu</a>
                         </div>
                         <div class="language-switcher" aria-label="Language switcher">
                             <button type="button" class="lang-btn lang-btn-flag active" data-lang="en"
@@ -230,55 +365,27 @@
                     </div>
                     <!-- Main Menu End -->
                     <div class="mobile-language-switcher" aria-label="Mobile language switcher">
-                        <button type="button" class="lang-btn lang-btn-flag active" data-lang="en" aria-label="English">
-                            <svg class="flag-icon" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"
-                                aria-hidden="true" focusable="false">
-                                <rect width="60" height="30" fill="#012169"></rect>
-                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path>
-                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.5"></path>
-                                <rect x="24" width="12" height="30" fill="#fff"></rect>
-                                <rect y="9" width="60" height="12" fill="#fff"></rect>
-                                <rect x="26" width="8" height="30" fill="#C8102E"></rect>
-                                <rect y="11" width="60" height="8" fill="#C8102E"></rect>
-                            </svg>
+                        <button type="button" class="lang-mobile-trigger" aria-label="Select language" aria-expanded="false">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-mobile-trigger__code">EN</span>
                         </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="de" aria-label="German">
-                            <svg class="flag-icon" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice"
-                                aria-hidden="true" focusable="false">
-                                <rect width="5" height="1" y="0" fill="#000000"></rect>
-                                <rect width="5" height="1" y="1" fill="#DD0000"></rect>
-                                <rect width="5" height="1" y="2" fill="#FFCE00"></rect>
-                            </svg>
-                        </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="ru" aria-label="Russian">
-                            <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice"
-                                aria-hidden="true" focusable="false">
-                                <rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect>
-                                <rect width="3" height="0.6667" y="0.6667" fill="#0039A6"></rect>
-                                <rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"></rect>
-                            </svg>
-                        </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="bg" aria-label="Bulgarian">
-                            <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice"
-                                aria-hidden="true" focusable="false">
-                                <rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect>
-                                <rect width="3" height="0.6667" y="0.6667" fill="#00966E"></rect>
-                                <rect width="3" height="0.6667" y="1.3333" fill="#D62612"></rect>
-                            </svg>
-                        </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="el" aria-label="Greek">
-                            <svg class="flag-icon" viewBox="0 0 27 18" preserveAspectRatio="xMidYMid slice"
-                                aria-hidden="true" focusable="false">
-                                <rect width="27" height="18" fill="#0D5EAF"></rect>
-                                <rect y="2" width="27" height="2" fill="#fff"></rect>
-                                <rect y="6" width="27" height="2" fill="#fff"></rect>
-                                <rect y="10" width="27" height="2" fill="#fff"></rect>
-                                <rect y="14" width="27" height="2" fill="#fff"></rect>
-                                <rect width="10" height="10" fill="#0D5EAF"></rect>
-                                <rect x="4" width="2" height="10" fill="#fff"></rect>
-                                <rect y="4" width="10" height="2" fill="#fff"></rect>
-                            </svg>
-                        </button>
+                        <div class="lang-mobile-panel" aria-label="Select language">
+                            <button type="button" class="lang-btn lang-btn-flag active" data-lang="en" aria-label="English">
+                                <svg class="flag-icon" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.5"></path><rect x="24" width="12" height="30" fill="#fff"></rect><rect y="9" width="60" height="12" fill="#fff"></rect><rect x="26" width="8" height="30" fill="#C8102E"></rect><rect y="11" width="60" height="8" fill="#C8102E"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="de" aria-label="German">
+                                <svg class="flag-icon" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="5" height="1" y="0" fill="#000000"></rect><rect width="5" height="1" y="1" fill="#DD0000"></rect><rect width="5" height="1" y="2" fill="#FFCE00"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="ru" aria-label="Russian">
+                                <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect><rect width="3" height="0.6667" y="0.6667" fill="#0039A6"></rect><rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="bg" aria-label="Bulgarian">
+                                <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect><rect width="3" height="0.6667" y="0.6667" fill="#00966E"></rect><rect width="3" height="0.6667" y="1.3333" fill="#D62612"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="el" aria-label="Greek">
+                                <svg class="flag-icon" viewBox="0 0 27 18" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="27" height="18" fill="#0D5EAF"></rect><rect y="2" width="27" height="2" fill="#fff"></rect><rect y="6" width="27" height="2" fill="#fff"></rect><rect y="10" width="27" height="2" fill="#fff"></rect><rect y="14" width="27" height="2" fill="#fff"></rect><rect width="10" height="10" fill="#0D5EAF"></rect><rect x="4" width="2" height="10" fill="#fff"></rect><rect y="4" width="10" height="2" fill="#fff"></rect></svg>
+                            </button>
+                        </div>
                     </div>
                     <div class="navbar-toggle"></div>
                 </div>
@@ -469,1089 +576,247 @@
     </div>
     <!-- About Us Section End -->
 
-    <!-- Our Dishes Section Start -->
-    <div class="our-dishes">
-        <div class="container">
-            <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">our main dishes</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Satisfy your cravings with our
-                            <span>signature mains</span>
-                        </h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <!-- Our Dish Item Start -->
-                    <div class="our-dish-item wow fadeInUp">
-                        <div class="our-dish-img">
-                            <figure class="image-anime">
-                                <img src="images/our-dish-image-1.jpg" alt="">
-                            </figure>
-                        </div>
-                        <div class="our-dish-content">
-                            <h3>soups</h3>
-                            <p>Warm, comforting, and full of flavor, our soups avre the perfect start to any meal.</p>
-                        </div>
-                    </div>
-                    <!-- Our Dish Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Our Dish Item Start -->
-                    <div class="our-dish-item wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="our-dish-img">
-                            <figure class="image-anime">
-                                <img src="images/our-dish-image-2.jpg" alt="">
-                            </figure>
-                        </div>
-                        <div class="our-dish-content">
-                            <h3>salads</h3>
-                            <p>Refreshing, vibrant, and full of fresh flavors, our salads are crafted to senses.</p>
-                        </div>
-                    </div>
-                    <!-- Our Dish Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Our Dish Item Start -->
-                    <div class="our-dish-item wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="our-dish-img">
-                            <figure class="image-anime">
-                                <img src="images/our-dish-image-3.jpg" alt="">
-                            </figure>
-                        </div>
-                        <div class="our-dish-content">
-                            <h3>main dishes</h3>
-                            <p>Offering bold flavors and expertly crafted recipes that cater to every taste.</p>
-                        </div>
-                    </div>
-                    <!-- Our Dish Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Our Dish Item Start -->
-                    <div class="our-dish-item wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="our-dish-img">
-                            <figure class="image-anime">
-                                <img src="images/our-dish-image-4.jpg" alt="">
-                            </figure>
-                        </div>
-                        <div class="our-dish-content">
-                            <h3>appetizers</h3>
-                            <p>Our appetizers are the perfect way to begin your dining experience flavors.</p>
-                        </div>
-                    </div>
-                    <!-- Our Dish Item End -->
-                </div>
-
-                <div class="col-lg-12">
-                    <!-- Section Footer Text Start -->
-                    <div class="section-footer-text wow fadeInUp" data-wow-delay="0.8s">
-                        <p>Hungry for Something Delicious? <a href="menu.html">View All Dishes!</a></p>
-                    </div>
-                    <!-- Section Footer Text End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Our Dishes Section End -->
-
-    <!-- Daily Offer Section Start -->
-    <div class="daily-offer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <!-- Daily Offer Image Start -->
-                    <div class="daily-offer-image">
-                        <div class="daily-offer-img">
-                            <figure>
-                                <img src="images/daily-offer-image.png" alt="">
-                            </figure>
-                        </div>
-
-                        <!-- Delicious Burger Box Start -->
-                        <div class="delicious-burger-box">
-                            <div class="delicious-burger-title">
-                                <h3>Delicious Burger</h3>
-                            </div>
-                            <div class="delicious-burger-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="delicious-burger-list">
-                                <ul>
-                                    <li>tomato sauces</li>
-                                    <li>vegitables</li>
-                                    <li>lettuce</li>
-                                    <li>cheese slice</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Delicious Burger Box End -->
-                    </div>
-                    <!-- Daily Offer Image End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Daily Offer Content Start -->
-                    <div class="daily-offer-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">our daily offers</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">taste the savings with our <span>daily
-                                    specials</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Every day is an opportunity to enjoy your
-                                favorites at a discounted price. Explore our daily rotating specials and indulge in
-                                flavorful meals at a fraction of the cost.</p>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- Daily Offer List Start -->
-                        <div class="daily-offer-list wow fadeInUp" data-wow-delay="0.4s">
-                            <ul>
-                                <li>seasonal & locally sourced ingredients</li>
-                                <li>vegetarian & dietary-friendly options</li>
-                                <li>exquisite pairings & unique flavors</li>
-                            </ul>
-                        </div>
-                        <!-- Daily Offer List End -->
-
-                        <!-- Daily Offer Button Start -->
-                        <div class="daily-offer-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="contact.html" class="btn-default">book table</a>
-                            <a href="menu.html" class="btn-default btn-highlighted">explore menu</a>
-                        </div>
-                        <!-- Daily Offer Button End -->
-                    </div>
-                    <!-- Daily Offer Content End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Daily Offer Section End -->
-
+    
     <!-- Our Menu Section Start -->
     <div class="our-menu">
         <div class="container">
             <div class="row section-row">
                 <div class="col-lg-12">
-                    <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">from our menu</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">An Inspired Menu That <span>Blends
-                                Tradition</span></h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">An Inspired Menu That <span>Blends Tradition</span></h2>
                     </div>
-                    <!-- Section Title End -->
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- Our Menu Tab Start -->
                     <div class="our-menu-tab">
-                        <!-- Sidebar Our Menu Nav start -->
                         <div class="our-menu-tab-nav wow fadeInUp" data-wow-delay="0.2s">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="appetizers-tab" data-bs-toggle="tab"
-                                        data-bs-target="#appetizers" type="button" role="tab"
-                                        aria-selected="true">appetizers</button>
+                                    <button class="nav-link active" id="starters-tab" data-bs-toggle="tab"
+                                        data-bs-target="#starters" type="button" role="tab"
+                                        aria-selected="true">starters</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="maincourses-tab" data-bs-toggle="tab"
-                                        data-bs-target="#maincourses" type="button" role="tab"
-                                        aria-selected="false">main courses</button>
+                                    <button class="nav-link" id="salads-tab" data-bs-toggle="tab"
+                                        data-bs-target="#salads" type="button" role="tab"
+                                        aria-selected="false">salads</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="sides-tab" data-bs-toggle="tab" data-bs-target="#sides"
-                                        type="button" role="tab" aria-selected="false">sides</button>
+                                    <button class="nav-link" id="seafood-tab" data-bs-toggle="tab"
+                                        data-bs-target="#seafood" type="button" role="tab"
+                                        aria-selected="false">seafood</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="desserts-tab" data-bs-toggle="tab"
-                                        data-bs-target="#desserts" type="button" role="tab"
-                                        aria-selected="false">desserts</button>
+                                    <button class="nav-link" id="meats-tab" data-bs-toggle="tab"
+                                        data-bs-target="#meats" type="button" role="tab"
+                                        aria-selected="false">meats</button>
                                 </li>
                             </ul>
                         </div>
-                        <!-- Sidebar Our Menu Nav End -->
 
-                        <!-- Menu Box Start -->
                         <div class="tab-content" id="myTabContent">
-                            <!-- Menu Item Start -->
-                            <div class="tab-pane fade show active" id="appetizers" role="tabpanel">
+                            <!-- Starters Tab -->
+                            <div class="tab-pane fade show active" id="starters" role="tabpanel">
                                 <div class="row align-items-center">
                                     <div class="col-lg-12">
-                                        <!-- Our Menu List Start -->
                                         <div class="our-menu-list">
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-1.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>chips & dip</h3>
-                                                        <hr>
-                                                        <span>$16.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Grilled Feta</h3><hr><span>&euro;5,00</span></div>
+                                                    <div class="menu-item-content"><p>Grilled feta cheese drizzled with olive oil and herbs.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-2.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>caprese salad</h3>
-                                                        <hr>
-                                                        <span>$12.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Cheese Fritters</h3><hr><span>&euro;5,50</span></div>
+                                                    <div class="menu-item-content"><p>Crispy cheese fritters served with a dip.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-3.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>garlic fries</h3>
-                                                        <hr>
-                                                        <span>$26.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Tzatziki</h3><hr><span>&euro;3,50</span></div>
+                                                    <div class="menu-item-content"><p>Creamy Greek yoghurt dip with cucumber, garlic, and fresh dill.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-4.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>tortilla soup</h3>
-                                                        <hr>
-                                                        <span>$20.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Stuffed Vine Leaves</h3><hr><span>&euro;5,50</span></div>
+                                                    <div class="menu-item-content"><p>Hand-rolled vine leaves filled with rice and herbs.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-5.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>kale salad</h3>
-                                                        <hr>
-                                                        <span>$10.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Bruschetta</h3><hr><span>&euro;5,50</span></div>
+                                                    <div class="menu-item-content"><p>Toasted bread topped with fresh tomatoes, olive oil, and basil.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-6.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>thai curry</h3>
-                                                        <hr>
-                                                        <span>$22.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Fried Potatoes</h3><hr><span>&euro;4,00</span></div>
+                                                    <div class="menu-item-content"><p>Golden crispy fried potatoes, seasoned and served hot.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
                                         </div>
-                                        <!-- Our Menu List End -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- Menu Item End -->
 
-                            <!-- Menu Item Start -->
-                            <div class="tab-pane fade" id="maincourses" role="tabpanel">
+                            <!-- Salads Tab -->
+                            <div class="tab-pane fade" id="salads" role="tabpanel">
                                 <div class="row align-items-center">
                                     <div class="col-lg-12">
-                                        <!-- Our Menu List Start -->
                                         <div class="our-menu-list">
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-1.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Fish fry</h3>
-                                                        <hr>
-                                                        <span>$26.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Greek Salad</h3><hr><span>&euro;9,00</span></div>
+                                                    <div class="menu-item-content"><p>Cucumber, tomato, onion, peppers, feta cheese, olives, rock samphire, and capers.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-2.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Prawn masala</h3>
-                                                        <hr>
-                                                        <span>$28.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Cucumber &amp; Tomato Salad</h3><hr><span>&euro;5,50</span></div>
+                                                    <div class="menu-item-content"><p>A refreshing mix of cucumber and tomato.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-3.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Pasta alfredo</h3>
-                                                        <hr>
-                                                        <span>$30.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Cretan Dakos</h3><hr><span>&euro;8,50</span></div>
+                                                    <div class="menu-item-content"><p>Traditional Cretan Dakos with tomato, olives, rocket, and creamy cheese.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-4.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Sushi platter</h3>
-                                                        <hr>
-                                                        <span>$20.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Green Salad</h3><hr><span>&euro;8,00</span></div>
+                                                    <div class="menu-item-content"><p>Lettuce mix, cherry tomatoes, sun-dried tomatoes, grated feta, and balsamic sauce with honey.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-5.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Veg biryani</h3>
-                                                        <hr>
-                                                        <span>$29.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Caesar's Salad</h3><hr><span>&euro;9,00</span></div>
+                                                    <div class="menu-item-content"><p>Iceberg lettuce, chicken, bacon, sweet corn, cherry tomatoes, parmesan flakes, Caesar's sauce.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-6.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Mutton curry</h3>
-                                                        <hr>
-                                                        <span>$24.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Liana Salad</h3><hr><span>&euro;9,70</span></div>
+                                                    <div class="menu-item-content"><p>Lettuce mix, cherry tomatoes, onions, parmesan flakes, roast vegetables, and balsamic sauce.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
                                         </div>
-                                        <!-- Our Menu List End -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- Approch Item End -->
 
-                            <!-- Menu Item Start -->
-                            <div class="tab-pane fade" id="sides" role="tabpanel">
+                            <!-- Seafood Tab -->
+                            <div class="tab-pane fade" id="seafood" role="tabpanel">
                                 <div class="row align-items-center">
                                     <div class="col-lg-12">
-                                        <!-- Our Menu List Start -->
                                         <div class="our-menu-list">
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-1.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Fries</h3>
-                                                        <hr>
-                                                        <span>$6.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Grilled Squid</h3><hr><span>&euro;11,00</span></div>
+                                                    <div class="menu-item-content"><p>Perfectly grilled squid, tender and flavorful.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-2.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Veggies</h3>
-                                                        <hr>
-                                                        <span>$8.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Grilled Prawns</h3><hr><span>&euro;12,00</span></div>
+                                                    <div class="menu-item-content"><p>Succulent grilled prawns, seasoned to perfection.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-3.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Chips</h3>
-                                                        <hr>
-                                                        <span>$7.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Grilled Octopus</h3><hr><span>&euro;12,50</span></div>
+                                                    <div class="menu-item-content"><p>Delicately grilled octopus with a light seasoning.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-4.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Mash</h3>
-                                                        <hr>
-                                                        <span>$9.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Shrimp Saganaki</h3><hr><span>&euro;13,00</span></div>
+                                                    <div class="menu-item-content"><p>Shrimps cooked in a small pan with flavorful ingredients.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-5.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Salad</h3>
-                                                        <hr>
-                                                        <span>$4.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Mussels in Saganaki</h3><hr><span>&euro;8,50</span></div>
+                                                    <div class="menu-item-content"><p>Mussels cooked in a small pan with a touch of Greek spices.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-6.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Slaw</h3>
-                                                        <hr>
-                                                        <span>$10.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Seafood Mix For Two</h3><hr><span>&euro;34,00</span></div>
+                                                    <div class="menu-item-content"><p>A delightful assortment of seafood for two.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
                                         </div>
-                                        <!-- Our Menu List End -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- Approch Item End -->
 
-                            <!-- Menu Item Start -->
-                            <div class="tab-pane fade" id="desserts" role="tabpanel">
+                            <!-- Meats Tab -->
+                            <div class="tab-pane fade" id="meats" role="tabpanel">
                                 <div class="row align-items-center">
                                     <div class="col-lg-12">
-                                        <!-- Our Menu List Start -->
                                         <div class="our-menu-list">
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-1.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Tang yuan</h3>
-                                                        <hr>
-                                                        <span>$16.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Pork Souvlaki</h3><hr><span>&euro;8,50</span></div>
+                                                    <div class="menu-item-content"><p>Tender pieces of pork grilled on skewers.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-2.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Egg custard</h3>
-                                                        <hr>
-                                                        <span>$26.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Pork Belly Strips</h3><hr><span>&euro;8,50</span></div>
+                                                    <div class="menu-item-content"><p>Deliciously tender pork belly strips for a hearty meal.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-3.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Zabaione</h3>
-                                                        <hr>
-                                                        <span>$21.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Lamb Chops</h3><hr><span>&euro;11,50</span></div>
+                                                    <div class="menu-item-content"><p>Succulent grilled lamb chops for a rich taste.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-4.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Almond soup</h3>
-                                                        <hr>
-                                                        <span>$30.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Chicken Souvlaki</h3><hr><span>&euro;9,00</span></div>
+                                                    <div class="menu-item-content"><p>Grilled chicken pieces skewered for a delicious meal.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-5.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Bomboloni</h3>
-                                                        <hr>
-                                                        <span>$28.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Pork Neck</h3><hr><span>&euro;9,00</span></div>
+                                                    <div class="menu-item-content"><p>Flavorful and juicy pork neck cuts grilled to perfection.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
-
-                                            <!-- Our Menu Item Start -->
                                             <div class="our-menu-item">
-                                                <!-- Our Menu Image Start -->
-                                                <div class="our-menu-image">
-                                                    <figure>
-                                                        <img src="images/our-menu-image-6.png" alt="">
-                                                    </figure>
-                                                </div>
-                                                <!-- Our Menu Image End -->
-
-                                                <!-- Menu Item Body Start -->
                                                 <div class="menu-item-body">
-                                                    <!-- Menu Item Title Start -->
-                                                    <div class="menu-item-title">
-                                                        <h3>Tiramisu</h3>
-                                                        <hr>
-                                                        <span>$22.00</span>
-                                                    </div>
-                                                    <!-- Menu Item Title End -->
-
-                                                    <!-- Menu Item Content Start -->
-                                                    <div class="menu-item-content">
-                                                        <p>A perfect pairing of crispy, freshly made chips and rich,
-                                                            flavorful dips that bring a burst of taste in every bite.
-                                                        </p>
-                                                    </div>
-                                                    <!-- Menu Item Content End -->
+                                                    <div class="menu-item-title"><h3>Soutzoukakia</h3><hr><span>&euro;9,00</span></div>
+                                                    <div class="menu-item-content"><p>Greek meatballs with a rich tomato sauce.</p></div>
                                                 </div>
-                                                <!-- Menu Item Body End -->
                                             </div>
-                                            <!-- Our Menu Item End -->
                                         </div>
-                                        <!-- Our Menu List End -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- Approch Item End -->
                         </div>
-                        <!-- Approch Box End -->
+                        <!-- Menu Content End -->
                     </div>
-                    <!-- Our Approch Tab End -->
                 </div>
 
                 <div class="col-lg-12">
-                    <!-- Section Footer Text Start -->
                     <div class="section-footer-text wow fadeInUp" data-wow-delay="0.4s">
-                        <p>Ready to Savor the Best? <a href="menu.html">Check Our Dishes!</a></p>
+                        <p>Ready to Savor the Best? <a href="menu.html">See the Full Menu!</a></p>
                     </div>
-                    <!-- Section Footer Text End -->
                 </div>
             </div>
         </div>
     </div>
     <!-- Our Menu Section End -->
 
-    <!-- Intro Video Section Start -->
-    <div class="intro-video">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Intro Video Box Start -->
-                    <div class="intro-video-box">
-                        <div class="intro-bg-video">
-                            <!-- Selfhosted Video Start -->
-                            <!-- <video autoplay muted loop id="myVideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video> -->
-                            <video autoplay muted loop id="myVideo">
-                                <source src="https://demo.awaikenthemes.com/assets/videos/spicyhunt-intro-bg-video.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <!-- Selfhosted Video End -->
-
-                            <!-- Youtube Video Start -->
-                            <!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
-                            <!-- Youtube Video End -->
-                        </div>
-                        <!-- Video Play Button Start -->
-                        <div class="video-play-button">
-                            <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video"
-                                data-cursor-text="Play">play</a>
-                        </div>
-                        <!-- Video Play Button End -->
-                    </div>
-                    <!-- Intro Video Box End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Intro Video Section End -->
+    
 
     <!-- Our Ingredients Section Start -->
     <div class="our-ingredients">
@@ -1621,12 +886,9 @@
                     <div class="our-ingredients-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">our ingredients</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Crafting Dishes with <span>freshest
-                                    Flavors</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">We take pride in using only the freshest,
-                                hand-picked ingredients that are free from preservatives and artificial additives. Taste
-                                the difference with every bite as we serve dishes made from nature's finest.</p>
+                            <h3 class="wow fadeInUp">our philosophy</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Crafting Dishes with <span>Fresh Greek Flavors</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">At Toli Family Tavern we take pride in using only the freshest, locally sourced ingredients. Every dish is prepared with care, drawing on 30 years of family tradition and the rich flavors of Halkidiki.</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -1638,7 +900,7 @@
                                     <img src="images/icon-ingredients-list-1.svg" alt="">
                                 </div>
                                 <div class="ingredients-list-content">
-                                    <h3>best qualities</h3>
+                                    <h3>fresh local ingredients</h3>
                                 </div>
                             </div>
                             <!-- Ingredients List Item End -->
@@ -1649,7 +911,7 @@
                                     <img src="images/icon-ingredients-list-2.svg" alt="">
                                 </div>
                                 <div class="ingredients-list-content">
-                                    <h3>discount system</h3>
+                                    <h3>authentic Greek recipes</h3>
                                 </div>
                             </div>
                             <!-- Ingredients List Item End -->
@@ -1660,7 +922,7 @@
                                     <img src="images/icon-ingredients-list-3.svg" alt="">
                                 </div>
                                 <div class="ingredients-list-content">
-                                    <h3>first delivery</h3>
+                                    <h3>family tradition since 1994</h3>
                                 </div>
                             </div>
                             <!-- Ingredients List Item End -->
@@ -1669,7 +931,7 @@
 
                         <!-- Our Ingredients Button Start -->
                         <div class="our-ingredients-btn wow fadeInUp" data-wow-delay="0.6s">
-                            <a href="contact.html" class="btn-default">book table</a>
+                            <a href="menu.html" class="btn-default">explore menu</a>
                         </div>
                         <!-- Our Ingredients Button End -->
                     </div>
@@ -1685,8 +947,8 @@
                                 <img src="images/icon-ingredient-counter-1.svg" alt="">
                             </div>
                             <div class="ingredient-counter-content">
-                                <h2><span class="counter">309</span></h2>
-                                <p>Professional chefs</p>
+                                <h2><span class="counter">30</span>+</h2>
+                                <p>Years of experience</p>
                             </div>
                         </div>
                         <!-- Ingredient Counter Item End -->
@@ -1697,8 +959,8 @@
                                 <img src="images/icon-ingredient-counter-2.svg" alt="">
                             </div>
                             <div class="ingredient-counter-content">
-                                <h2><span class="counter">453</span></h2>
-                                <p>Items of food</p>
+                                <h2><span class="counter">50</span>+</h2>
+                                <p>Dishes on the menu</p>
                             </div>
                         </div>
                         <!-- Ingredient Counter Item End -->
@@ -1709,8 +971,8 @@
                                 <img src="images/icon-ingredient-counter-3.svg" alt="">
                             </div>
                             <div class="ingredient-counter-content">
-                                <h2><span class="counter">25</span>+</h2>
-                                <p>Years of experience</p>
+                                <h2><span class="counter">5</span></h2>
+                                <p>Languages spoken</p>
                             </div>
                         </div>
                         <!-- Ingredient Counter Item End -->
@@ -1721,8 +983,8 @@
                                 <img src="images/icon-ingredient-counter-4.svg" alt="">
                             </div>
                             <div class="ingredient-counter-content">
-                                <h2><span class="counter">300</span>+</h2>
-                                <p>Satisfied clients</p>
+                                <h2><span class="counter">1000</span>+</h2>
+                                <p>Happy guests</p>
                             </div>
                         </div>
                         <!-- Ingredient Counter Item End -->
@@ -1755,26 +1017,18 @@
                     <div class="testimonial-slider">
                         <div class="swiper">
                             <div class="swiper-wrapper" data-cursor-text="Drag">
-                                <!-- Testimonial Slide Start -->
+                                <!-- Testimonial Slide Start — replace with your actual Google reviews -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
                                         <div class="testimonial-quote">
                                             <img src="images/testimonial-quote.svg" alt="">
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>From the moment we walked in, the ambiance was welcoming, and the service
-                                                was top-notch. The dish was absolutely delicious, full of fresh flavors,
-                                                and perfectly cooked. I especially loved how the staff took the time to
-                                                explain the menu and suggest pairings for our meal.</p>
+                                            <p><!-- REPLACE: paste your first Google review text here --></p>
                                         </div>
                                         <div class="author-info">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-1.jpg" alt="">
-                                                </figure>
-                                            </div>
                                             <div class="author-content">
-                                                <h3>wade l warren, developer</h3>
+                                                <h3><!-- Reviewer name -->, Google Review ⭐⭐⭐⭐⭐</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -1788,19 +1042,29 @@
                                             <img src="images/testimonial-quote.svg" alt="">
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>From the moment we walked in, the ambiance was welcoming, and the service
-                                                was top-notch. The dish was absolutely delicious, full of fresh flavors,
-                                                and perfectly cooked. I especially loved how the staff took the time to
-                                                explain the menu and suggest pairings for our meal.</p>
+                                            <p><!-- REPLACE: paste your second Google review text here --></p>
                                         </div>
                                         <div class="author-info">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-2.jpg" alt="">
-                                                </figure>
-                                            </div>
                                             <div class="author-content">
-                                                <h3>liya allen, manager</h3>
+                                                <h3><!-- Reviewer name -->, Google Review ⭐⭐⭐⭐⭐</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide End -->
+
+                                <!-- Testimonial Slide Start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-quote">
+                                            <img src="images/testimonial-quote.svg" alt="">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p><!-- REPLACE: paste your third Google review text here --></p>
+                                        </div>
+                                        <div class="author-info">
+                                            <div class="author-content">
+                                                <h3><!-- Reviewer name -->, Google Review ⭐⭐⭐⭐⭐</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -1820,93 +1084,6 @@
     </div>
     <!-- Our Testimonial Section End -->
 
-    <!-- Our Blog Section Start -->
-    <div class="our-blog">
-        <div class="container">
-            <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">Latest blog</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Explore our latest news <span>and
-                                updates</span></h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Post Item Start -->
-                    <div class="post-item wow fadeInUp">
-                        <div class="post-featured-image">
-                            <a href="blog-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/post-1.jpg" alt="">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="blog-item-body">
-                            <div class="post-item-content">
-                                <h3><a href="blog-single.html">5 Tips for Perfecting Your Home Dining Experience</a>
-                                </h3>
-                            </div>
-                            <div class="blog-item-btn">
-                                <a href="blog-single.html" class="readmore-btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Post Item End -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!-- Post Item Start -->
-                    <div class="post-item wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="post-featured-image">
-                            <a href="blog-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/post-2.jpg" alt="">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="blog-item-body">
-                            <div class="post-item-content">
-                                <h3><a href="blog-single.html">Why Locally Sourced Ingredients Make a Difference</a>
-                                </h3>
-                            </div>
-                            <div class="blog-item-btn">
-                                <a href="blog-single.html" class="readmore-btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Post Item End -->
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <!-- Post Item Start -->
-                    <div class="post-item wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="post-featured-image">
-                            <a href="blog-single.html" data-cursor-text="View">
-                                <figure class="image-anime">
-                                    <img src="images/post-3.jpg" alt="">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="blog-item-body">
-                            <div class="post-item-content">
-                                <h3><a href="blog-single.html">Creating Memorable Dining Moments with Friends</a></h3>
-                            </div>
-                            <div class="blog-item-btn">
-                                <a href="blog-single.html" class="readmore-btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Post Item End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Our Blog Section End -->
 
     <!-- Reserve Table Section Start -->
     <div class="reserve-table">
@@ -1927,9 +1104,7 @@
                         <div class="reserve-table-body wow fadeInUp" data-wow-delay="0.2s">
                             <h3>open hours</h3>
                             <ul>
-                                <li>Mon - Thu <span>10:00 AM - 09:00 PM</span></li>
-                                <li>Fri - Sat <span>09:00 AM - 10:00 PM</span></li>
-                                <li>Sun <span>Closed</span></li>
+                                <li>Every Day <span>11:00 AM - 11:00 PM</span></li>
                             </ul>
                         </div>
                         <!-- Reserve Table Body End -->
@@ -2120,8 +1295,60 @@
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
     <script src="js/menu-i18n.js"></script>
-</body>
+    <script>
+        /* Mobile language dropdown */
+        (function () {
+            var switcher = document.querySelector('.mobile-language-switcher');
+            var trigger = switcher && switcher.querySelector('.lang-mobile-trigger');
+            var codeEl = trigger && trigger.querySelector('.lang-mobile-trigger__code');
+            var panel = switcher && switcher.querySelector('.lang-mobile-panel');
+            if (!switcher || !trigger || !panel) return;
 
-<!-- Mirrored from html.awaikenthemes.com/spicyhunt/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Jul 2025 23:41:53 GMT -->
+            function syncCode() {
+                var active = panel.querySelector('.lang-btn-flag.active');
+                if (active && codeEl) {
+                    codeEl.textContent = (active.getAttribute('data-lang') || 'en').toUpperCase();
+                }
+            }
+
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = switcher.classList.toggle('lang-open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            Array.prototype.forEach.call(panel.querySelectorAll('.lang-btn[data-lang]'), function (btn) {
+                btn.addEventListener('click', function () {
+                    switcher.classList.remove('lang-open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                    setTimeout(syncCode, 60);
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!switcher.contains(e.target)) {
+                    switcher.classList.remove('lang-open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            var observer = new MutationObserver(syncCode);
+            observer.observe(panel, { attributes: true, subtree: true, attributeFilter: ['class'] });
+            setTimeout(syncCode, 150);
+        })();
+    </script>
+
+    <script>
+        (function () {
+            var btn = document.querySelector(".scroll-to-top");
+            if (!btn) return;
+            var toggle = function () {
+                btn.classList.toggle("is-visible", window.scrollY > 520);
+            };
+            window.addEventListener("scroll", toggle, { passive: true });
+            toggle();
+        })();
+    </script>
+</body>
 
 </html>

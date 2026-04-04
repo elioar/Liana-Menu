@@ -177,6 +177,7 @@
             .mobile-language-switcher {
                 display: inline-flex;
                 margin-right: 8px;
+                position: relative;
             }
 
             .page-header-box {
@@ -641,6 +642,50 @@
                 height: 42px;
             }
         }
+
+        /* Mobile language dropdown */
+        .mobile-language-switcher { position: relative; }
+
+        .lang-mobile-trigger {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            transition: border-color 0.25s ease, background 0.25s ease;
+        }
+        .lang-mobile-trigger i { font-size: 13px; line-height: 1; }
+        .lang-mobile-trigger__code { font-size: 7.5px; font-weight: 700; letter-spacing: 0.4px; line-height: 1; text-transform: uppercase; }
+        .lang-mobile-trigger:hover,
+        .mobile-language-switcher.lang-open .lang-mobile-trigger {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .lang-mobile-panel {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            flex-direction: row;
+            gap: 6px;
+            background: rgba(13, 18, 15, 0.97);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 10px;
+            z-index: 10001;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+        }
+        .mobile-language-switcher.lang-open .lang-mobile-panel { display: flex; }
 	</style>
 </head>
 <body>
@@ -729,50 +774,27 @@
 					</div>
                     <!-- Main Menu End -->
                     <div class="mobile-language-switcher" aria-label="Mobile language switcher">
-                        <button type="button" class="lang-btn lang-btn-flag active" data-lang="en" aria-label="English">
-                            <svg class="flag-icon" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                                <rect width="60" height="30" fill="#012169"></rect>
-                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path>
-                                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.5"></path>
-                                <rect x="24" width="12" height="30" fill="#fff"></rect>
-                                <rect y="9" width="60" height="12" fill="#fff"></rect>
-                                <rect x="26" width="8" height="30" fill="#C8102E"></rect>
-                                <rect y="11" width="60" height="8" fill="#C8102E"></rect>
-                            </svg>
+                        <button type="button" class="lang-mobile-trigger" aria-label="Select language" aria-expanded="false">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-mobile-trigger__code">EN</span>
                         </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="de" aria-label="German">
-                            <svg class="flag-icon" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                                <rect width="5" height="1" y="0" fill="#000000"></rect>
-                                <rect width="5" height="1" y="1" fill="#DD0000"></rect>
-                                <rect width="5" height="1" y="2" fill="#FFCE00"></rect>
-                            </svg>
-                        </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="ru" aria-label="Russian">
-                            <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                                <rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect>
-                                <rect width="3" height="0.6667" y="0.6667" fill="#0039A6"></rect>
-                                <rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"></rect>
-                            </svg>
-                        </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="bg" aria-label="Bulgarian">
-                            <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                                <rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect>
-                                <rect width="3" height="0.6667" y="0.6667" fill="#00966E"></rect>
-                                <rect width="3" height="0.6667" y="1.3333" fill="#D62612"></rect>
-                            </svg>
-                        </button>
-                        <button type="button" class="lang-btn lang-btn-flag" data-lang="el" aria-label="Greek">
-                            <svg class="flag-icon" viewBox="0 0 27 18" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                                <rect width="27" height="18" fill="#0D5EAF"></rect>
-                                <rect y="2" width="27" height="2" fill="#fff"></rect>
-                                <rect y="6" width="27" height="2" fill="#fff"></rect>
-                                <rect y="10" width="27" height="2" fill="#fff"></rect>
-                                <rect y="14" width="27" height="2" fill="#fff"></rect>
-                                <rect width="10" height="10" fill="#0D5EAF"></rect>
-                                <rect x="4" width="2" height="10" fill="#fff"></rect>
-                                <rect y="4" width="10" height="2" fill="#fff"></rect>
-                            </svg>
-                        </button>
+                        <div class="lang-mobile-panel" aria-label="Select language">
+                            <button type="button" class="lang-btn lang-btn-flag active" data-lang="en" aria-label="English">
+                                <svg class="flag-icon" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.5"></path><rect x="24" width="12" height="30" fill="#fff"></rect><rect y="9" width="60" height="12" fill="#fff"></rect><rect x="26" width="8" height="30" fill="#C8102E"></rect><rect y="11" width="60" height="8" fill="#C8102E"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="de" aria-label="German">
+                                <svg class="flag-icon" viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="5" height="1" y="0" fill="#000000"></rect><rect width="5" height="1" y="1" fill="#DD0000"></rect><rect width="5" height="1" y="2" fill="#FFCE00"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="ru" aria-label="Russian">
+                                <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect><rect width="3" height="0.6667" y="0.6667" fill="#0039A6"></rect><rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="bg" aria-label="Bulgarian">
+                                <svg class="flag-icon" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="3" height="0.6667" y="0" fill="#FFFFFF"></rect><rect width="3" height="0.6667" y="0.6667" fill="#00966E"></rect><rect width="3" height="0.6667" y="1.3333" fill="#D62612"></rect></svg>
+                            </button>
+                            <button type="button" class="lang-btn lang-btn-flag" data-lang="el" aria-label="Greek">
+                                <svg class="flag-icon" viewBox="0 0 27 18" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="27" height="18" fill="#0D5EAF"></rect><rect y="2" width="27" height="2" fill="#fff"></rect><rect y="6" width="27" height="2" fill="#fff"></rect><rect y="10" width="27" height="2" fill="#fff"></rect><rect y="14" width="27" height="2" fill="#fff"></rect><rect width="10" height="10" fill="#0D5EAF"></rect><rect x="4" width="2" height="10" fill="#fff"></rect><rect y="4" width="10" height="2" fill="#fff"></rect></svg>
+                            </button>
+                        </div>
                     </div>
 					<div class="navbar-toggle"></div>
 				</div>
@@ -3436,6 +3458,48 @@
     </script>
         
 
+    <script>
+        /* Mobile language dropdown */
+        (function () {
+            var switcher = document.querySelector('.mobile-language-switcher');
+            var trigger = switcher && switcher.querySelector('.lang-mobile-trigger');
+            var codeEl = trigger && trigger.querySelector('.lang-mobile-trigger__code');
+            var panel = switcher && switcher.querySelector('.lang-mobile-panel');
+            if (!switcher || !trigger || !panel) return;
+
+            function syncCode() {
+                var active = panel.querySelector('.lang-btn-flag.active');
+                if (active && codeEl) {
+                    codeEl.textContent = (active.getAttribute('data-lang') || 'en').toUpperCase();
+                }
+            }
+
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = switcher.classList.toggle('lang-open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            Array.prototype.forEach.call(panel.querySelectorAll('.lang-btn[data-lang]'), function (btn) {
+                btn.addEventListener('click', function () {
+                    switcher.classList.remove('lang-open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                    setTimeout(syncCode, 60);
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!switcher.contains(e.target)) {
+                    switcher.classList.remove('lang-open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            var observer = new MutationObserver(syncCode);
+            observer.observe(panel, { attributes: true, subtree: true, attributeFilter: ['class'] });
+            setTimeout(syncCode, 150);
+        })();
+    </script>
 </body>
 
 </html>
