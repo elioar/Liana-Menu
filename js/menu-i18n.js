@@ -10,6 +10,150 @@
     bg: "Меню Toli Family Tavern | Ормиля, Халкидики",
   };
 
+  var HOME_TITLE_BY_LANGUAGE = {
+    en: "Greek Restaurant in Ormylia, Halkidiki | Toli Family Tavern",
+    el: "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc \u0395\u03c3\u03c4\u03b9\u03b1\u03c4\u03cc\u03c1\u03b9\u03bf \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae | Toli Family Tavern",
+    de: "Griechisches Restaurant in Ormylia, Chalkidiki | Toli Family Tavern",
+    ru: "\u0413\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 | Toli Family Tavern",
+    bg: "\u0413\u0440\u044a\u0446\u043a\u0438 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u0442 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 | Toli Family Tavern",
+  };
+
+  var MENU_TITLE_BY_LANGUAGE = {
+    en: "Toli Family Tavern Menu | Ormylia, Halkidiki",
+    el: "\u039c\u03b5\u03bd\u03bf\u03cd Toli Family Tavern | \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, Halkidiki",
+    de: "Speisekarte Toli Family Tavern | Ormylia, Chalkidiki",
+    ru: "\u041c\u0435\u043d\u044e Toli Family Tavern | \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+    bg: "\u041c\u0435\u043d\u044e Toli Family Tavern | \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+  };
+
+  var CONTACT_TITLE_BY_LANGUAGE = {
+    en: "Contact Toli Family Tavern | Ormylia, Halkidiki",
+    el: "\u0395\u03c0\u03b9\u03ba\u03bf\u03b9\u03bd\u03c9\u03bd\u03af\u03b1 Toli Family Tavern | \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae",
+    de: "Kontakt Toli Family Tavern | Ormylia, Chalkidiki",
+    ru: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b Toli Family Tavern | \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+    bg: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442 Toli Family Tavern | \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+  };
+
+  function getCurrentPageType() {
+    var path = (window.location.pathname || "").toLowerCase();
+
+    if (/menu\.html$/.test(path)) {
+      return "menu";
+    }
+
+    if (/contact\.html$/.test(path)) {
+      return "contact";
+    }
+
+    return "home";
+  }
+
+  function getTitleByLanguageForCurrentPage() {
+    var pageType = getCurrentPageType();
+
+    if (pageType === "menu") {
+      return MENU_TITLE_BY_LANGUAGE;
+    }
+
+    if (pageType === "contact") {
+      return CONTACT_TITLE_BY_LANGUAGE;
+    }
+
+    return HOME_TITLE_BY_LANGUAGE;
+  }
+
+  TITLE_BY_LANGUAGE = getTitleByLanguageForCurrentPage();
+
+  var LANGUAGE_TO_LOCALE = {
+    en: "en_US",
+    el: "el_GR",
+    de: "de_DE",
+    ru: "ru_RU",
+    bg: "bg_BG",
+  };
+
+  var HOME_META_BY_LANGUAGE = {
+    en: {
+      title: HOME_TITLE_BY_LANGUAGE.en,
+      description: "Toli Family Tavern is a Greek restaurant in Ormylia, Halkidiki serving fresh seafood, grilled meats, meze, salads, and warm family hospitality. View the menu and book a table.",
+      keywords: "Toli Family Tavern, Greek restaurant Ormylia, tavern Halkidiki, seafood restaurant Ormylia, Greek meze, grilled meats Halkidiki, Greek food",
+      imageAlt: "Toli Family Tavern in Ormylia, Halkidiki",
+    },
+    el: {
+      title: HOME_TITLE_BY_LANGUAGE.el,
+      description: "\u03a4\u03bf Toli Family Tavern \u03b5\u03af\u03bd\u03b1\u03b9 \u03ad\u03bd\u03b1 \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc \u03b5\u03c3\u03c4\u03b9\u03b1\u03c4\u03cc\u03c1\u03b9\u03bf \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1 \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae\u03c2 \u03bc\u03b5 \u03c6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03c8\u03b7\u03c4\u03ac, \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2, \u03c3\u03b1\u03bb\u03ac\u03c4\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03b6\u03b5\u03c3\u03c4\u03ae \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03ae \u03c6\u03b9\u03bb\u03bf\u03be\u03b5\u03bd\u03af\u03b1. \u0394\u03b5\u03af\u03c4\u03b5 \u03c4\u03bf \u03bc\u03b5\u03bd\u03bf\u03cd \u03ba\u03b1\u03b9 \u03ba\u03bb\u03b5\u03af\u03c3\u03c4\u03b5 \u03c4\u03c1\u03b1\u03c0\u03ad\u03b6\u03b9.",
+      keywords: "Toli Family Tavern, Greek restaurant Ormylia, tavern Halkidiki, seafood restaurant Ormylia, Greek meze, grilled meats Halkidiki, Greek food",
+      imageAlt: "Toli Family Tavern \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae",
+    },
+    de: {
+      title: HOME_TITLE_BY_LANGUAGE.de,
+      description: "Toli Family Tavern ist ein griechisches Restaurant in Ormylia, Chalkidiki mit frischen Meeresfruechten, Grillgerichten, Meze, Salaten und herzlicher familiaerer Gastfreundschaft. Sehen Sie die Speisekarte an und reservieren Sie einen Tisch.",
+      keywords: "Toli Family Tavern, Greek restaurant Ormylia, tavern Halkidiki, seafood restaurant Ormylia, Greek meze, grilled meats Halkidiki, Greek food",
+      imageAlt: "Toli Family Tavern in Ormylia, Chalkidiki",
+    },
+    ru: {
+      title: HOME_TITLE_BY_LANGUAGE.ru,
+      description: "\u0421\u0435\u043c\u0435\u0439\u043d\u0430\u044f \u0442\u0430\u0432\u0435\u0440\u043d\u0430 Toli Family Tavern \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u0441\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u043c\u0435\u0437\u0435, \u0433\u0440\u0438\u043b\u044c, \u0441\u0430\u043b\u0430\u0442\u044b \u0438 \u0442\u0435\u043f\u043b\u043e\u0435 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u043e\u0435 \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u043e. \u041e\u0442\u043a\u0440\u043e\u0439\u0442\u0435 \u043c\u0435\u043d\u044e \u0438 \u0437\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u0443\u0439\u0442\u0435 \u0441\u0442\u043e\u043b.",
+      keywords: "Toli Family Tavern, Greek restaurant Ormylia, tavern Halkidiki, seafood restaurant Ormylia, Greek meze, grilled meats Halkidiki, Greek food",
+      imageAlt: "Toli Family Tavern \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+    },
+    bg: {
+      title: HOME_TITLE_BY_LANGUAGE.bg,
+      description: "Toli Family Tavern е гръцки ресторант в Ормилия, Халкидики с пресни морски дарове, меса на скара, мезе, салати и топло семейно гостоприемство. Виж менюто и резервирай маса.",
+      keywords: "Toli Family Tavern, Greek restaurant Ormylia, tavern Halkidiki, seafood restaurant Ormylia, Greek meze, grilled meats Halkidiki, Greek food",
+      imageAlt: "Toli Family Tavern в Ормилия, Халкидики",
+    },
+  };
+
+  var CONTACT_META_BY_LANGUAGE = {
+    en: {
+      title: CONTACT_TITLE_BY_LANGUAGE.en,
+      description: "Contact Toli Family Tavern in Ormylia, Halkidiki for reservations, directions, opening hours, and restaurant details.",
+      keywords: "Toli Family Tavern contact, Ormylia restaurant phone, Halkidiki tavern contact, restaurant directions Ormylia, Toli Family Tavern reservations",
+      imageAlt: "Toli Family Tavern contact page in Ormylia, Halkidiki",
+    },
+    el: {
+      title: CONTACT_TITLE_BY_LANGUAGE.el,
+      description: "\u0395\u03c0\u03b9\u03ba\u03bf\u03b9\u03bd\u03c9\u03bd\u03ae\u03c3\u03c4\u03b5 \u03bc\u03b5 \u03c4\u03bf Toli Family Tavern \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae \u03b3\u03b9\u03b1 \u03ba\u03c1\u03b1\u03c4\u03ae\u03c3\u03b5\u03b9\u03c2, \u03bf\u03b4\u03b7\u03b3\u03af\u03b5\u03c2, \u03c9\u03c1\u03ac\u03c1\u03b9\u03bf \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03af\u03b1\u03c2 \u03ba\u03b1\u03b9 \u03c3\u03c4\u03bf\u03b9\u03c7\u03b5\u03af\u03b1 \u03c4\u03b7\u03c2 \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1\u03c2.",
+      keywords: "Toli Family Tavern contact, Ormylia restaurant phone, Halkidiki tavern contact, restaurant directions Ormylia, Toli Family Tavern reservations",
+      imageAlt: "Σελίδα επικοινωνίας του Toli Family Tavern στην Ορμύλια, Χαλκιδική",
+    },
+    de: {
+      title: CONTACT_TITLE_BY_LANGUAGE.de,
+      description: "Kontaktieren Sie Toli Family Tavern in Ormylia, Chalkidiki fuer Reservierungen, Wegbeschreibung, Oeffnungszeiten und Restaurantinformationen.",
+      keywords: "Toli Family Tavern Kontakt, Restauranttelefon Ormylia, Taverne Chalkidiki Kontakt, Restaurant Wegbeschreibung Ormylia, Toli Family Tavern Reservierungen",
+      imageAlt: "Kontaktseite von Toli Family Tavern in Ormylia, Chalkidiki",
+    },
+    ru: {
+      title: CONTACT_TITLE_BY_LANGUAGE.ru,
+      description: "\u0421\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 Toli Family Tavern \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 \u043f\u043e \u0432\u043e\u043f\u0440\u043e\u0441\u0430\u043c \u0431\u0440\u043e\u043d\u0438, \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0430, \u0447\u0430\u0441\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b \u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u0435.",
+      keywords: "Toli Family Tavern контакты, телефон ресторана Ормилия, контакт таверны Халкидики, маршрут до ресторана Ормилия, бронирование Toli Family Tavern",
+      imageAlt: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 Toli Family Tavern \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+    },
+    bg: {
+      title: CONTACT_TITLE_BY_LANGUAGE.bg,
+      description: "\u0421\u0432\u044a\u0440\u0436\u0435\u0442\u0435 \u0441\u0435 \u0441 Toli Family Tavern \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 \u0437\u0430 \u0440\u0435\u0437\u0435\u0440\u0432\u0430\u0446\u0438\u0438, \u0443\u043f\u044a\u0442\u0432\u0430\u043d\u0435, \u0440\u0430\u0431\u043e\u0442\u043d\u043e \u0432\u0440\u0435\u043c\u0435 \u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u0442\u0430.",
+      keywords: "Toli Family Tavern контакт, телефон на ресторант Ормилия, контакт таверна Халкидики, упътване до ресторант Ормилия, резервации Toli Family Tavern",
+      imageAlt: "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0437\u0430 \u043a\u043e\u043d\u0442\u0430\u043a\u0442 \u043d\u0430 Toli Family Tavern \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+    },
+  };
+
+  function getMetaByLanguageForCurrentPage() {
+    var pageType = getCurrentPageType();
+
+    if (pageType === "home") {
+      return HOME_META_BY_LANGUAGE;
+    }
+
+    if (pageType === "contact") {
+      return CONTACT_META_BY_LANGUAGE;
+    }
+
+    return null;
+  }
+
+  var META_BY_LANGUAGE = getMetaByLanguageForCurrentPage();
+
   var EL_PLACEHOLDER_TRANSLATIONS = {
     "e.g. John": "π.χ. Γιάννης",
     "e.g. John@example.com": "π.χ. giannis@example.com",
@@ -1413,11 +1557,342 @@
     bg: Object.assign(buildAliasTranslationPatch(Object.assign({}, BG_TRANSLATIONS, BG_ADDITIONAL_TRANSLATIONS), MENU_PAGE_ALIAS_MAP), MENU_PAGE_MANUAL_TRANSLATIONS.bg)
   };
 
+  var INDEX_PAGE_MANUAL_TRANSLATIONS = {
+    el: {
+      "See the Menu": "\u0394\u03b5\u03af\u03c4\u03b5 \u03c4\u03bf \u039c\u03b5\u03bd\u03bf\u03cd",
+      "authentic greek tavern": "\u03b1\u03c5\u03b8\u03b5\u03bd\u03c4\u03b9\u03ba\u03ae \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1",
+      "Fresh Seafood, Meze & Grilled Favorites in": "\u03a6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03b1\u03b3\u03b1\u03c0\u03b7\u03bc\u03ad\u03bd\u03b1 \u03c8\u03b7\u03c4\u03ac \u03c3\u03c4\u03b7\u03bd",
+      "Ormylia": "\u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1",
+      "Toli Family Tavern brings together classic Greek flavors, fresh seafood, seasonal salads, and grilled meats in a relaxed family setting in the heart of Halkidiki.": "\u03a3\u03c4\u03bf Toli Family Tavern \u03b8\u03b1 \u03b2\u03c1\u03b5\u03af\u03c4\u03b5 \u03ba\u03bb\u03b1\u03c3\u03b9\u03ba\u03ad\u03c2 \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ad\u03c2 \u03b3\u03b5\u03cd\u03c3\u03b5\u03b9\u03c2, \u03c6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03b5\u03c0\u03bf\u03c7\u03b9\u03ba\u03ad\u03c2 \u03c3\u03b1\u03bb\u03ac\u03c4\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03c8\u03b7\u03c4\u03ac \u03ba\u03c1\u03ad\u03b1\u03c4\u03b1 \u03c3\u03b5 \u03ad\u03bd\u03b1 \u03c7\u03b1\u03bb\u03b1\u03c1\u03cc \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03cc \u03c0\u03b5\u03c1\u03b9\u03b2\u03ac\u03bb\u03bb\u03bf\u03bd \u03c3\u03c4\u03b7\u03bd \u03ba\u03b1\u03c1\u03b4\u03b9\u03ac \u03c4\u03b7\u03c2 \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae\u03c2.",
+      "Book a Table": "\u039a\u03bb\u03b5\u03af\u03c3\u03c4\u03b5 \u03a4\u03c1\u03b1\u03c0\u03ad\u03b6\u03b9",
+      "A Family Tavern Built on": "\u039c\u03b9\u03b1 \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03ae \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1 \u03b2\u03b1\u03c3\u03b9\u03c3\u03bc\u03ad\u03bd\u03b7 \u03c3\u03c4\u03b7\u03bd",
+      "Greek Hospitality": "\u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03c6\u03b9\u03bb\u03bf\u03be\u03b5\u03bd\u03af\u03b1",
+      "For more than 30 years, we have welcomed locals and visitors to Ormylia with generous portions, honest cooking, and a menu shaped by Greek tradition and the flavors of Halkidiki.": "\u0393\u03b9\u03b1 \u03c0\u03b5\u03c1\u03b9\u03c3\u03c3\u03cc\u03c4\u03b5\u03c1\u03b1 \u03b1\u03c0\u03cc 30 \u03c7\u03c1\u03cc\u03bd\u03b9\u03b1 \u03c5\u03c0\u03bf\u03b4\u03b5\u03c7\u03cc\u03bc\u03b1\u03c3\u03c4\u03b5 \u03bd\u03c4\u03cc\u03c0\u03b9\u03bf\u03c5\u03c2 \u03ba\u03b1\u03b9 \u03b5\u03c0\u03b9\u03c3\u03ba\u03ad\u03c0\u03c4\u03b5\u03c2 \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1 \u03bc\u03b5 \u03b3\u03b5\u03bd\u03bd\u03b1\u03b9\u03cc\u03b4\u03c9\u03c1\u03b5\u03c2 \u03bc\u03b5\u03c1\u03af\u03b4\u03b5\u03c2, \u03b5\u03b9\u03bb\u03b9\u03ba\u03c1\u03b9\u03bd\u03ae \u03bc\u03b1\u03b3\u03b5\u03b9\u03c1\u03b9\u03ba\u03ae \u03ba\u03b1\u03b9 \u03ad\u03bd\u03b1 \u03bc\u03b5\u03bd\u03bf\u03cd \u03c0\u03bf\u03c5 \u03b4\u03b9\u03b1\u03bc\u03bf\u03c1\u03c6\u03ce\u03bd\u03b5\u03c4\u03b1\u03b9 \u03b1\u03c0\u03cc \u03c4\u03b7\u03bd \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03c0\u03b1\u03c1\u03ac\u03b4\u03bf\u03c3\u03b7 \u03ba\u03b1\u03b9 \u03c4\u03b9\u03c2 \u03b3\u03b5\u03cd\u03c3\u03b5\u03b9\u03c2 \u03c4\u03b7\u03c2 \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae\u03c2.",
+      "fresh seafood, local produce, and Greek meze": "\u03c6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03c4\u03bf\u03c0\u03b9\u03ba\u03ac \u03c0\u03c1\u03bf\u03ca\u03cc\u03bd\u03c4\u03b1 \u03ba\u03b1\u03b9 \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03bf\u03af \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2",
+      "comfortable family atmosphere for lunch and dinner": "\u03ac\u03bd\u03b5\u03c4\u03b7 \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03ae \u03b1\u03c4\u03bc\u03cc\u03c3\u03c6\u03b1\u03b9\u03c1\u03b1 \u03b3\u03b9\u03b1 \u03bc\u03b5\u03c3\u03b7\u03bc\u03b5\u03c1\u03b9 \u03ba\u03b1\u03b9 \u03b2\u03c1\u03b1\u03b4\u03b9\u03bd\u03cc",
+      "friendly service for locals, families, and travelers": "\u03c6\u03b9\u03bb\u03b9\u03ba\u03ae \u03b5\u03be\u03c5\u03c0\u03b7\u03c1\u03ad\u03c4\u03b7\u03c3\u03b7 \u03b3\u03b9\u03b1 \u03bd\u03c4\u03cc\u03c0\u03b9\u03bf\u03c5\u03c2, \u03bf\u03b9\u03ba\u03bf\u03b3\u03ad\u03bd\u03b5\u03b9\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03c4\u03b1\u03be\u03b9\u03b4\u03b9\u03ce\u03c4\u03b5\u03c2",
+      "Call Us": "\u039a\u03b1\u03bb\u03ad\u03c3\u03c4\u03b5 \u03bc\u03b1\u03c2",
+      "fresh ingredients": "\u03c6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03c5\u03bb\u03b9\u03ba\u03ac",
+      "We cook with quality produce, seafood, and ingredients selected for flavor.": "\u039c\u03b1\u03b3\u03b5\u03b9\u03c1\u03b5\u03cd\u03bf\u03c5\u03bc\u03b5 \u03bc\u03b5 \u03c0\u03bf\u03b9\u03bf\u03c4\u03b9\u03ba\u03ac \u03c0\u03c1\u03bf\u03ca\u03cc\u03bd\u03c4\u03b1, \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac \u03ba\u03b1\u03b9 \u03c5\u03bb\u03b9\u03ba\u03ac \u03b5\u03c0\u03b9\u03bb\u03b5\u03b3\u03bc\u03ad\u03bd\u03b1 \u03b3\u03b9\u03b1 \u03c4\u03b7 \u03b3\u03b5\u03cd\u03c3\u03b7 \u03c4\u03bf\u03c5\u03c2.",
+      "traditional recipes": "\u03c0\u03b1\u03c1\u03b1\u03b4\u03bf\u03c3\u03b9\u03b1\u03ba\u03ad\u03c2 \u03c3\u03c5\u03bd\u03c4\u03b1\u03b3\u03ad\u03c2",
+      "Greek favorites prepared simply, carefully, and the way guests love them.": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac \u03b1\u03b3\u03b1\u03c0\u03b7\u03bc\u03ad\u03bd\u03b1 \u03c0\u03b9\u03ac\u03c4\u03b1 \u03bc\u03b1\u03b3\u03b5\u03b9\u03c1\u03b5\u03bc\u03ad\u03bd\u03b1 \u03b1\u03c0\u03bb\u03ac, \u03c0\u03c1\u03bf\u03c3\u03b5\u03ba\u03c4\u03b9\u03ba\u03ac \u03ba\u03b1\u03b9 \u03cc\u03c0\u03c9\u03c2 \u03c4\u03b1 \u03c0\u03c1\u03bf\u03c4\u03b9\u03bc\u03bf\u03cd\u03bd \u03bf\u03b9 \u03b5\u03c0\u03b9\u03c3\u03ba\u03ad\u03c0\u03c4\u03b5\u03c2.",
+      "warm hospitality": "\u03b6\u03b5\u03c3\u03c4\u03ae \u03c6\u03b9\u03bb\u03bf\u03be\u03b5\u03bd\u03af\u03b1",
+      "A welcoming tavern experience for couples, families, and groups.": "\u039c\u03b9\u03b1 \u03c6\u03b9\u03bb\u03cc\u03be\u03b5\u03bd\u03b7 \u03b5\u03bc\u03c0\u03b5\u03b9\u03c1\u03af\u03b1 \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1\u03c2 \u03b3\u03b9\u03b1 \u03b6\u03b5\u03c5\u03b3\u03ac\u03c1\u03b9\u03b1, \u03bf\u03b9\u03ba\u03bf\u03b3\u03ad\u03bd\u03b5\u03b9\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03c0\u03b1\u03c1\u03ad\u03b5\u03c2.",
+      "popular dishes": "\u03b4\u03b7\u03bc\u03bf\u03c6\u03b9\u03bb\u03ae \u03c0\u03b9\u03ac\u03c4\u03b1",
+      "Discover Local Favorites from": "\u0391\u03bd\u03b1\u03ba\u03b1\u03bb\u03cd\u03c8\u03c4\u03b5 \u03c4\u03bf\u03c0\u03b9\u03ba\u03ac \u03b1\u03b3\u03b1\u03c0\u03b7\u03bc\u03ad\u03bd\u03b1 \u03c0\u03b9\u03ac\u03c4\u03b1 \u03b1\u03c0\u03cc \u03c4\u03bf",
+      "Our Menu": "\u03bc\u03b5\u03bd\u03bf\u03cd \u03bc\u03b1\u03c2",
+      "A quick look at the dishes guests order most for lunch and dinner in Ormylia.": "\u039c\u03b9\u03b1 \u03c3\u03cd\u03bd\u03c4\u03bf\u03bc\u03b7 \u03bc\u03b1\u03c4\u03b9\u03ac \u03c3\u03c4\u03b1 \u03c0\u03b9\u03ac\u03c4\u03b1 \u03c0\u03bf\u03c5 \u03c0\u03c1\u03bf\u03c4\u03b9\u03bc\u03bf\u03cd\u03bd \u03c0\u03b5\u03c1\u03b9\u03c3\u03c3\u03cc\u03c4\u03b5\u03c1\u03bf \u03bf\u03b9 \u03b5\u03c0\u03b9\u03c3\u03ba\u03ad\u03c0\u03c4\u03b5\u03c2 \u03b3\u03b9\u03b1 \u03bc\u03b5\u03c3\u03b7\u03bc\u03b5\u03c1\u03b9\u03b1\u03bd\u03cc \u03ba\u03b1\u03b9 \u03b2\u03c1\u03b1\u03b4\u03b9\u03bd\u03cc \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1.",
+      "Looking for the complete food and drinks list?": "\u03a8\u03ac\u03c7\u03bd\u03b5\u03c4\u03b5 \u03cc\u03bb\u03bf \u03c4\u03bf\u03bd \u03ba\u03b1\u03c4\u03ac\u03bb\u03bf\u03b3\u03bf \u03c6\u03b1\u03b3\u03b7\u03c4\u03ce\u03bd \u03ba\u03b1\u03b9 \u03c0\u03bf\u03c4\u03ce\u03bd;",
+      "Open the full menu and prices.": "\u0391\u03bd\u03bf\u03af\u03be\u03c4\u03b5 \u03c4\u03bf \u03c0\u03bb\u03ae\u03c1\u03b5\u03c2 \u03bc\u03b5\u03bd\u03bf\u03cd \u03ba\u03b1\u03b9 \u03c4\u03b9\u03bc\u03ad\u03c2.",
+      "guest reviews": "\u03ba\u03c1\u03b9\u03c4\u03b9\u03ba\u03ad\u03c2 \u03c0\u03b5\u03bb\u03b1\u03c4\u03ce\u03bd",
+      "What Guests Love About": "\u03a4\u03b9 \u03b1\u03b3\u03b1\u03c0\u03bf\u03cd\u03bd \u03bf\u03b9 \u03b5\u03c0\u03b9\u03c3\u03ba\u03ad\u03c0\u03c4\u03b5\u03c2 \u03c3\u03c4\u03bf",
+      "Book your table and": "\u039a\u03bb\u03b5\u03af\u03c3\u03c4\u03b5 \u03c4\u03bf \u03c4\u03c1\u03b1\u03c0\u03ad\u03b6\u03b9 \u03c3\u03b1\u03c2 \u03ba\u03b1\u03b9",
+      "enjoy Greek hospitality.": "\u03b1\u03c0\u03bf\u03bb\u03b1\u03cd\u03c3\u03c4\u03b5 \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03c6\u03b9\u03bb\u03bf\u03be\u03b5\u03bd\u03af\u03b1.",
+      "Open every day in Ormylia for lunch and dinner. Reservations are recommended during the summer season.": "\u0391\u03bd\u03bf\u03b9\u03c7\u03c4\u03ac \u03ba\u03ac\u03b8\u03b5 \u03bc\u03ad\u03c1\u03b1 \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1 \u03b3\u03b9\u03b1 \u03bc\u03b5\u03c3\u03b7\u03bc\u03b5\u03c1\u03b9 \u03ba\u03b1\u03b9 \u03b2\u03c1\u03b1\u03b4\u03b9\u03bd\u03cc. \u03a3\u03c5\u03bd\u03b9\u03c3\u03c4\u03ce\u03bd\u03c4\u03b1\u03b9 \u03ba\u03c1\u03b1\u03c4\u03ae\u03c3\u03b5\u03b9\u03c2 \u03ba\u03b1\u03c4\u03ac \u03c4\u03b7 \u03ba\u03b1\u03bb\u03bf\u03ba\u03b1\u03b9\u03c1\u03b9\u03bd\u03ae \u03c0\u03b5\u03c1\u03af\u03bf\u03b4\u03bf.",
+      "Traditional Greek food, seafood, and grilled favorites in Ormylia, Halkidiki.": "\u03a0\u03b1\u03c1\u03b1\u03b4\u03bf\u03c3\u03b9\u03b1\u03ba\u03cc \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc \u03c6\u03b1\u03b3\u03b7\u03c4\u03cc, \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac \u03ba\u03b1\u03b9 \u03b1\u03b3\u03b1\u03c0\u03b7\u03bc\u03ad\u03bd\u03b1 \u03c8\u03b7\u03c4\u03ac \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae.",
+      "Beautiful family tavern with generous portions, very friendly service, and one of the best grilled octopus dishes we tried in Halkidiki.": "\u038c\u03bc\u03bf\u03c1\u03c6\u03b7 \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03ae \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1 \u03bc\u03b5 \u03bc\u03b5\u03b3\u03ac\u03bb\u03b5\u03c2 \u03bc\u03b5\u03c1\u03af\u03b4\u03b5\u03c2, \u03c0\u03bf\u03bb\u03cd \u03c6\u03b9\u03bb\u03b9\u03ba\u03ae \u03b5\u03be\u03c5\u03c0\u03b7\u03c1\u03ad\u03c4\u03b7\u03c3\u03b7 \u03ba\u03b1\u03b9 \u03ad\u03bd\u03b1 \u03b1\u03c0\u03cc \u03c4\u03b1 \u03ba\u03b1\u03bb\u03cd\u03c4\u03b5\u03c1\u03b1 \u03c8\u03b7\u03c4\u03ac \u03c7\u03c4\u03b1\u03c0\u03cc\u03b4\u03b9\u03b1 \u03c0\u03bf\u03c5 \u03b4\u03bf\u03ba\u03b9\u03bc\u03ac\u03c3\u03b1\u03bc\u03b5 \u03c3\u03c4\u03b7 \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae.",
+      "We came for lunch and returned again for dinner. Fresh seafood, clean flavors, fast service, and a warm atmosphere for families.": "\u0389\u03c1\u03b8\u03b1\u03bc\u03b5 \u03b3\u03b9\u03b1 \u03bc\u03b5\u03c3\u03b7\u03bc\u03b5\u03c1\u03b9\u03b1\u03bd\u03cc \u03ba\u03b1\u03b9 \u03b5\u03c0\u03b9\u03c3\u03c4\u03c1\u03ad\u03c8\u03b1\u03bc\u03b5 \u03be\u03b1\u03bd\u03ac \u03b3\u03b9\u03b1 \u03b2\u03c1\u03b1\u03b4\u03b9\u03bd\u03cc. \u03a6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03ba\u03b1\u03b8\u03b1\u03c1\u03ad\u03c2 \u03b3\u03b5\u03cd\u03c3\u03b5\u03b9\u03c2, \u03b3\u03c1\u03ae\u03b3\u03bf\u03c1\u03b7 \u03b5\u03be\u03c5\u03c0\u03b7\u03c1\u03ad\u03c4\u03b7\u03c3\u03b7 \u03ba\u03b1\u03b9 \u03b6\u03b5\u03c3\u03c4\u03ae \u03b1\u03c4\u03bc\u03cc\u03c3\u03c6\u03b1\u03b9\u03c1\u03b1 \u03b3\u03b9\u03b1 \u03bf\u03b9\u03ba\u03bf\u03b3\u03ad\u03bd\u03b5\u03b9\u03b5\u03c2.",
+      "Excellent souvlaki, tasty meze, fair prices, and staff who made us feel welcome even on a busy evening. We will definitely come back.": "\u0395\u03be\u03b1\u03b9\u03c1\u03b5\u03c4\u03b9\u03ba\u03cc \u03c3\u03bf\u03c5\u03b2\u03bb\u03ac\u03ba\u03b9, \u03bd\u03cc\u03c3\u03c4\u03b9\u03bc\u03bf\u03b9 \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2, \u03b4\u03af\u03ba\u03b1\u03b9\u03b5\u03c2 \u03c4\u03b9\u03bc\u03ad\u03c2 \u03ba\u03b1\u03b9 \u03c0\u03c1\u03bf\u03c3\u03c9\u03c0\u03b9\u03ba\u03cc \u03c0\u03bf\u03c5 \u03bc\u03b1\u03c2 \u03ad\u03ba\u03b1\u03bd\u03b5 \u03bd\u03b1 \u03bd\u03b9\u03ce\u03c3\u03bf\u03c5\u03bc\u03b5 \u03b5\u03c5\u03c0\u03c1\u03cc\u03c3\u03b4\u03b5\u03ba\u03c4\u03bf\u03b9 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03ba\u03b1\u03b9 \u03c3\u03b5 \u03c0\u03bf\u03bb\u03cd \u03c0\u03bf\u03bb\u03c5\u03ac\u03c3\u03c7\u03bf\u03bb\u03b7 \u03b2\u03c1\u03b1\u03b4\u03b9\u03ac. \u0398\u03b1 \u03be\u03b1\u03bd\u03b1\u03ad\u03c1\u03b8\u03bf\u03c5\u03bc\u03b5 \u03c3\u03af\u03b3\u03bf\u03c5\u03c1\u03b1.",
+      "Maria K., Google Review 5/5": "Maria K., \u0391\u03be\u03b9\u03bf\u03bb\u03cc\u03b3\u03b7\u03c3\u03b7 Google 5/5",
+      "Thomas R., Google Review 5/5": "Thomas R., \u0391\u03be\u03b9\u03bf\u03bb\u03cc\u03b3\u03b7\u03c3\u03b7 Google 5/5",
+      "Elena P., Google Review 5/5": "Elena P., \u0391\u03be\u03b9\u03bf\u03bb\u03cc\u03b3\u03b7\u03c3\u03b7 Google 5/5"
+    },
+    de: {
+      "See the Menu": "Speisekarte ansehen",
+      "authentic greek tavern": "authentische griechische Taverne",
+      "Fresh Seafood, Meze & Grilled Favorites in": "Frische Meeresfruechte, Meze und Grillgerichte in",
+      "Toli Family Tavern brings together classic Greek flavors, fresh seafood, seasonal salads, and grilled meats in a relaxed family setting in the heart of Halkidiki.": "Toli Family Tavern verbindet klassische griechische Aromen, frische Meeresfruechte, saisonale Salate und Grillgerichte in einer entspannten familiaeren Atmosphaere im Herzen von Chalkidiki.",
+      "Book a Table": "Tisch reservieren",
+      "A Family Tavern Built on": "Eine Familien-Taverne mit",
+      "Greek Hospitality": "griechischer Gastfreundschaft",
+      "For more than 30 years, we have welcomed locals and visitors to Ormylia with generous portions, honest cooking, and a menu shaped by Greek tradition and the flavors of Halkidiki.": "Seit mehr als 30 Jahren empfangen wir Einheimische und Besucher in Ormylia mit grosszuegigen Portionen, ehrlicher Kueche und einer Speisekarte, die von griechischer Tradition und den Aromen Chalkidikis gepraegt ist.",
+      "fresh seafood, local produce, and Greek meze": "frische Meeresfruechte, lokale Produkte und griechische Meze",
+      "comfortable family atmosphere for lunch and dinner": "angenehme familiaere Atmosphaere fuer Mittag- und Abendessen",
+      "friendly service for locals, families, and travelers": "freundlicher Service fuer Einheimische, Familien und Reisende",
+      "Call Us": "Rufen Sie uns an",
+      "fresh ingredients": "frische Zutaten",
+      "We cook with quality produce, seafood, and ingredients selected for flavor.": "Wir kochen mit hochwertigen Produkten, Meeresfruechten und sorgfaeltig ausgewaehlten Zutaten.",
+      "traditional recipes": "traditionelle Rezepte",
+      "Greek favorites prepared simply, carefully, and the way guests love them.": "Griechische Klassiker, einfach und sorgfaeltig zubereitet, so wie unsere Gaeste sie lieben.",
+      "warm hospitality": "herzliche Gastfreundschaft",
+      "A welcoming tavern experience for couples, families, and groups.": "Ein einladendes Taverna-Erlebnis fuer Paare, Familien und Gruppen.",
+      "popular dishes": "beliebte Gerichte",
+      "Discover Local Favorites from": "Entdecken Sie lokale Favoriten aus",
+      "Our Menu": "unserer Speisekarte",
+      "A quick look at the dishes guests order most for lunch and dinner in Ormylia.": "Ein kurzer Blick auf die Gerichte, die unsere Gaeste in Ormylia am haeufigsten zum Mittag- und Abendessen bestellen.",
+      "Looking for the complete food and drinks list?": "Suchen Sie die komplette Liste mit Speisen und Getraenken?",
+      "Open the full menu and prices.": "Oeffnen Sie die vollstaendige Speisekarte mit Preisen.",
+      "guest reviews": "Gaestebewertungen",
+      "What Guests Love About": "Was Gaeste an",
+      "Book your table and": "Reservieren Sie Ihren Tisch und",
+      "enjoy Greek hospitality.": "geniessen Sie griechische Gastfreundschaft.",
+      "Open every day in Ormylia for lunch and dinner. Reservations are recommended during the summer season.": "Taeglich in Ormylia fuer Mittag- und Abendessen geoeffnet. In der Sommersaison werden Reservierungen empfohlen.",
+      "Traditional Greek food, seafood, and grilled favorites in Ormylia, Halkidiki.": "Traditionelles griechisches Essen, Meeresfruechte und beliebte Grillgerichte in Ormylia, Chalkidiki.",
+      "Beautiful family tavern with generous portions, very friendly service, and one of the best grilled octopus dishes we tried in Halkidiki.": "Wunderschoene Familien-Taverne mit grosszuegigen Portionen, sehr freundlichem Service und einem der besten gegrillten Oktopusgerichte, die wir in Chalkidiki probiert haben.",
+      "We came for lunch and returned again for dinner. Fresh seafood, clean flavors, fast service, and a warm atmosphere for families.": "Wir kamen zum Mittagessen und kehrten zum Abendessen wieder zurueck. Frische Meeresfruechte, klare Aromen, schneller Service und eine warme Atmosphaere fuer Familien.",
+      "Excellent souvlaki, tasty meze, fair prices, and staff who made us feel welcome even on a busy evening. We will definitely come back.": "Ausgezeichnetes Souvlaki, leckere Meze, faire Preise und ein Team, das uns selbst an einem vollen Abend willkommen fuehlen liess. Wir kommen auf jeden Fall wieder.",
+      "Maria K., Google Review 5/5": "Maria K., Google-Bewertung 5/5",
+      "Thomas R., Google Review 5/5": "Thomas R., Google-Bewertung 5/5",
+      "Elena P., Google Review 5/5": "Elena P., Google-Bewertung 5/5"
+    },
+    ru: {
+      "See the Menu": "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043c\u0435\u043d\u044e",
+      "authentic greek tavern": "\u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0447\u043d\u0430\u044f \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0430\u044f \u0442\u0430\u0432\u0435\u0440\u043d\u0430",
+      "Fresh Seafood, Meze & Grilled Favorites in": "\u0421\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u043c\u0435\u0437\u0435 \u0438 \u043b\u044e\u0431\u0438\u043c\u044b\u0435 \u0431\u043b\u044e\u0434\u0430 \u043d\u0430 \u0433\u0440\u0438\u043b\u0435 \u0432",
+      "Ormylia": "\u041e\u0440\u043c\u0438\u043b\u0438\u044f",
+      "Toli Family Tavern brings together classic Greek flavors, fresh seafood, seasonal salads, and grilled meats in a relaxed family setting in the heart of Halkidiki.": "Toli Family Tavern \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442 \u043a\u043b\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0435 \u0432\u043a\u0443\u0441\u044b, \u0441\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u0441\u0435\u0437\u043e\u043d\u043d\u044b\u0435 \u0441\u0430\u043b\u0430\u0442\u044b \u0438 \u043c\u044f\u0441\u043e \u043d\u0430 \u0433\u0440\u0438\u043b\u0435 \u0432 \u0440\u0430\u0441\u0441\u043b\u0430\u0431\u043b\u0435\u043d\u043d\u043e\u0439 \u0441\u0435\u043c\u0435\u0439\u043d\u043e\u0439 \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0435 \u0432 \u0441\u0435\u0440\u0434\u0446\u0435 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "Book a Table": "\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0441\u0442\u043e\u043b",
+      "A Family Tavern Built on": "\u0421\u0435\u043c\u0435\u0439\u043d\u0430\u044f \u0442\u0430\u0432\u0435\u0440\u043d\u0430, \u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u0430\u044f \u043d\u0430",
+      "Greek Hospitality": "\u0433\u0440\u0435\u0447\u0435\u0441\u043a\u043e\u043c \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u0435",
+      "For more than 30 years, we have welcomed locals and visitors to Ormylia with generous portions, honest cooking, and a menu shaped by Greek tradition and the flavors of Halkidiki.": "\u0411\u043e\u043b\u0435\u0435 30 \u043b\u0435\u0442 \u043c\u044b \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u043c \u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0436\u0438\u0442\u0435\u043b\u0435\u0439 \u0438 \u0433\u043e\u0441\u0442\u0435\u0439 \u041e\u0440\u043c\u0438\u043b\u0438\u0438 \u0441 \u0449\u0435\u0434\u0440\u044b\u043c\u0438 \u043f\u043e\u0440\u0446\u0438\u044f\u043c\u0438, \u0447\u0435\u0441\u0442\u043d\u043e\u0439 \u043a\u0443\u0445\u043d\u0435\u0439 \u0438 \u043c\u0435\u043d\u044e, \u0432\u0434\u043e\u0445\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u043c \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u043c\u0438 \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u044f\u043c\u0438 \u0438 \u0432\u043a\u0443\u0441\u0430\u043c\u0438 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "fresh seafood, local produce, and Greek meze": "\u0441\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u0438 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0435 \u043c\u0435\u0437\u0435",
+      "comfortable family atmosphere for lunch and dinner": "\u0443\u044e\u0442\u043d\u0430\u044f \u0441\u0435\u043c\u0435\u0439\u043d\u0430\u044f \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0430 \u0434\u043b\u044f \u043e\u0431\u0435\u0434\u0430 \u0438 \u0443\u0436\u0438\u043d\u0430",
+      "friendly service for locals, families, and travelers": "\u0434\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u043e\u0435 \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0434\u043b\u044f \u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0436\u0438\u0442\u0435\u043b\u0435\u0439, \u0441\u0435\u043c\u0435\u0439 \u0438 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u043e\u0432",
+      "Call Us": "\u041f\u043e\u0437\u0432\u043e\u043d\u0438\u0442\u0435 \u043d\u0430\u043c",
+      "fresh ingredients": "\u0441\u0432\u0435\u0436\u0438\u0435 \u0438\u043d\u0433\u0440\u0435\u0434\u0438\u0435\u043d\u0442\u044b",
+      "We cook with quality produce, seafood, and ingredients selected for flavor.": "\u041c\u044b \u0433\u043e\u0442\u043e\u0432\u0438\u043c \u0438\u0437 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0445 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432, \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0438 \u0438\u043d\u0433\u0440\u0435\u0434\u0438\u0435\u043d\u0442\u043e\u0432, \u043e\u0442\u043e\u0431\u0440\u0430\u043d\u043d\u044b\u0445 \u0440\u0430\u0434\u0438 \u0432\u043a\u0443\u0441\u0430.",
+      "traditional recipes": "\u0442\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0440\u0435\u0446\u0435\u043f\u0442\u044b",
+      "Greek favorites prepared simply, carefully, and the way guests love them.": "\u041b\u044e\u0431\u0438\u043c\u044b\u0435 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0435 \u0431\u043b\u044e\u0434\u0430, \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u0435 \u043f\u0440\u043e\u0441\u0442\u043e, \u0430\u043a\u043a\u0443\u0440\u0430\u0442\u043d\u043e \u0438 \u0442\u0430\u043a, \u043a\u0430\u043a \u0438\u0445 \u043b\u044e\u0431\u044f\u0442 \u0433\u043e\u0441\u0442\u0438.",
+      "warm hospitality": "\u0442\u0435\u043f\u043b\u043e\u0435 \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u043e",
+      "A welcoming tavern experience for couples, families, and groups.": "\u0413\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u043d\u0430\u044f \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0434\u043b\u044f \u043f\u0430\u0440, \u0441\u0435\u043c\u0435\u0439 \u0438 \u0433\u0440\u0443\u043f\u043f.",
+      "popular dishes": "\u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0435 \u0431\u043b\u044e\u0434\u0430",
+      "Discover Local Favorites from": "\u041e\u0442\u043a\u0440\u043e\u0439\u0442\u0435 \u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u043b\u044e\u0431\u0438\u043c\u044b\u0435 \u0431\u043b\u044e\u0434\u0430 \u0438\u0437",
+      "Our Menu": "\u043d\u0430\u0448\u0435\u0433\u043e \u043c\u0435\u043d\u044e",
+      "A quick look at the dishes guests order most for lunch and dinner in Ormylia.": "\u041a\u0440\u0430\u0442\u043a\u0438\u0439 \u043e\u0431\u0437\u043e\u0440 \u0431\u043b\u044e\u0434, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0433\u043e\u0441\u0442\u0438 \u0447\u0430\u0449\u0435 \u0432\u0441\u0435\u0433\u043e \u0437\u0430\u043a\u0430\u0437\u044b\u0432\u0430\u044e\u0442 \u043d\u0430 \u043e\u0431\u0435\u0434 \u0438 \u0443\u0436\u0438\u043d \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438.",
+      "Looking for the complete food and drinks list?": "\u0418\u0449\u0435\u0442\u0435 \u043f\u043e\u043b\u043d\u044b\u0439 \u0441\u043f\u0438\u0441\u043e\u043a \u0431\u043b\u044e\u0434 \u0438 \u043d\u0430\u043f\u0438\u0442\u043a\u043e\u0432?",
+      "Open the full menu and prices.": "\u041e\u0442\u043a\u0440\u043e\u0439\u0442\u0435 \u043f\u043e\u043b\u043d\u043e\u0435 \u043c\u0435\u043d\u044e \u0438 \u0446\u0435\u043d\u044b.",
+      "guest reviews": "\u043e\u0442\u0437\u044b\u0432\u044b \u0433\u043e\u0441\u0442\u0435\u0439",
+      "What Guests Love About": "\u0427\u0442\u043e \u0433\u043e\u0441\u0442\u044f\u043c \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u0432",
+      "Book your table and": "\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u0443\u0439\u0442\u0435 \u0441\u0442\u043e\u043b \u0438",
+      "enjoy Greek hospitality.": "\u043d\u0430\u0441\u043b\u0430\u0434\u0438\u0442\u0435\u0441\u044c \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u043c \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u043e\u043c.",
+      "Open every day in Ormylia for lunch and dinner. Reservations are recommended during the summer season.": "\u041e\u0442\u043a\u0440\u044b\u0442\u043e \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438 \u0434\u043b\u044f \u043e\u0431\u0435\u0434\u0430 \u0438 \u0443\u0436\u0438\u043d\u0430. \u0412 \u043b\u0435\u0442\u043d\u0438\u0439 \u0441\u0435\u0437\u043e\u043d \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f \u0431\u0440\u043e\u043d\u044c.",
+      "Traditional Greek food, seafood, and grilled favorites in Ormylia, Halkidiki.": "\u0422\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u0430\u044f \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0430\u044f \u0435\u0434\u0430, \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u0438 \u043b\u044e\u0431\u0438\u043c\u044b\u0435 \u0431\u043b\u044e\u0434\u0430 \u043d\u0430 \u0433\u0440\u0438\u043b\u0435 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "Beautiful family tavern with generous portions, very friendly service, and one of the best grilled octopus dishes we tried in Halkidiki.": "\u041f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0441\u0435\u043c\u0435\u0439\u043d\u0430\u044f \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0441 \u0449\u0435\u0434\u0440\u044b\u043c\u0438 \u043f\u043e\u0440\u0446\u0438\u044f\u043c\u0438, \u043e\u0447\u0435\u043d\u044c \u0434\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u044b\u043c \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u043c \u0438 \u043e\u0434\u043d\u0438\u043c \u0438\u0437 \u043b\u0443\u0447\u0448\u0438\u0445 \u0431\u043b\u044e\u0434 \u0438\u0437 \u043e\u0441\u044c\u043c\u0438\u043d\u043e\u0433\u0430 \u043d\u0430 \u0433\u0440\u0438\u043b\u0435, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043c\u044b \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438 \u0432 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "We came for lunch and returned again for dinner. Fresh seafood, clean flavors, fast service, and a warm atmosphere for families.": "\u041c\u044b \u043f\u0440\u0438\u0448\u043b\u0438 \u043d\u0430 \u043e\u0431\u0435\u0434 \u0438 \u0432\u0435\u0440\u043d\u0443\u043b\u0438\u0441\u044c \u0441\u043d\u043e\u0432\u0430 \u043d\u0430 \u0443\u0436\u0438\u043d. \u0421\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u0447\u0438\u0441\u0442\u044b\u0435 \u0432\u043a\u0443\u0441\u044b, \u0431\u044b\u0441\u0442\u0440\u043e\u0435 \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0438 \u0442\u0435\u043f\u043b\u0430\u044f \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0430 \u0434\u043b\u044f \u0441\u0435\u043c\u0435\u0439.",
+      "Excellent souvlaki, tasty meze, fair prices, and staff who made us feel welcome even on a busy evening. We will definitely come back.": "\u041e\u0442\u043b\u0438\u0447\u043d\u043e\u0435 \u0441\u0443\u0432\u043b\u0430\u043a\u0438, \u0432\u043a\u0443\u0441\u043d\u044b\u0435 \u043c\u0435\u0437\u0435, \u0447\u0435\u0441\u0442\u043d\u044b\u0435 \u0446\u0435\u043d\u044b \u0438 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0437\u0430\u0441\u0442\u0430\u0432\u0438\u043b \u043d\u0430\u0441 \u0447\u0443\u0432\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c \u0441\u0435\u0431\u044f \u0436\u0435\u043b\u0430\u043d\u043d\u044b\u043c\u0438 \u0433\u043e\u0441\u0442\u044f\u043c\u0438 \u0434\u0430\u0436\u0435 \u0432 \u043e\u0447\u0435\u043d\u044c \u0437\u0430\u043d\u044f\u0442\u044b\u0439 \u0432\u0435\u0447\u0435\u0440. \u041c\u044b \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u0432\u0435\u0440\u043d\u0435\u043c\u0441\u044f.",
+      "Maria K., Google Review 5/5": "Maria K., \u041e\u0442\u0437\u044b\u0432 Google 5/5",
+      "Thomas R., Google Review 5/5": "Thomas R., \u041e\u0442\u0437\u044b\u0432 Google 5/5",
+      "Elena P., Google Review 5/5": "Elena P., \u041e\u0442\u0437\u044b\u0432 Google 5/5"
+    },
+    bg: {
+      "See the Menu": "\u0412\u0438\u0436 \u043c\u0435\u043d\u044e\u0442\u043e",
+      "authentic greek tavern": "\u0430\u0432\u0442\u0435\u043d\u0442\u0438\u0447\u043d\u0430 \u0433\u0440\u044a\u0446\u043a\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430",
+      "Fresh Seafood, Meze & Grilled Favorites in": "\u041f\u0440\u0435\u0441\u043d\u0438 \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435, \u043c\u0435\u0437\u0435 \u0438 \u043b\u044e\u0431\u0438\u043c\u0438 \u044f\u0441\u0442\u0438\u044f \u043d\u0430 \u0441\u043a\u0430\u0440\u0430 \u0432",
+      "Ormylia": "\u041e\u0440\u043c\u0438\u043b\u0438\u044f",
+      "Toli Family Tavern brings together classic Greek flavors, fresh seafood, seasonal salads, and grilled meats in a relaxed family setting in the heart of Halkidiki.": "Toli Family Tavern \u0441\u044a\u0447\u0435\u0442\u0430\u0432\u0430 \u043a\u043b\u0430\u0441\u0438\u0447\u0435\u0441\u043a\u0438 \u0433\u0440\u044a\u0446\u043a\u0438 \u0432\u043a\u0443\u0441\u043e\u0432\u0435, \u043f\u0440\u0435\u0441\u043d\u0438 \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435, \u0441\u0435\u0437\u043e\u043d\u043d\u0438 \u0441\u0430\u043b\u0430\u0442\u0438 \u0438 \u043c\u0435\u0441\u0430 \u043d\u0430 \u0441\u043a\u0430\u0440\u0430 \u0432 \u0441\u043f\u043e\u043a\u043e\u0439\u043d\u0430 \u0441\u0435\u043c\u0435\u0439\u043d\u0430 \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0430 \u0432 \u0441\u044a\u0440\u0446\u0435\u0442\u043e \u043d\u0430 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "Book a Table": "\u0420\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u0439 \u043c\u0430\u0441\u0430",
+      "A Family Tavern Built on": "\u0421\u0435\u043c\u0435\u0439\u043d\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430, \u0438\u0437\u0433\u0440\u0430\u0434\u0435\u043d\u0430 \u0432\u044a\u0440\u0445\u0443",
+      "Greek Hospitality": "\u0433\u0440\u044a\u0446\u043a\u043e \u0433\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u0435\u043c\u0441\u0442\u0432\u043e",
+      "For more than 30 years, we have welcomed locals and visitors to Ormylia with generous portions, honest cooking, and a menu shaped by Greek tradition and the flavors of Halkidiki.": "\u041f\u043e\u0432\u0435\u0447\u0435 \u043e\u0442 30 \u0433\u043e\u0434\u0438\u043d\u0438 \u043f\u043e\u0441\u0440\u0435\u0449\u0430\u043c\u0435 \u043c\u0435\u0441\u0442\u043d\u0438 \u0445\u043e\u0440\u0430 \u0438 \u0433\u043e\u0441\u0442\u0438 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f \u0441 \u0449\u0435\u0434\u0440\u0438 \u043f\u043e\u0440\u0446\u0438\u0438, \u0447\u0435\u0441\u0442\u043d\u0430 \u043a\u0443\u0445\u043d\u044f \u0438 \u043c\u0435\u043d\u044e, \u043e\u0444\u043e\u0440\u043c\u0435\u043d\u043e \u043e\u0442 \u0433\u0440\u044a\u0446\u043a\u0430\u0442\u0430 \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u044f \u0438 \u0432\u043a\u0443\u0441\u043e\u0432\u0435\u0442\u0435 \u043d\u0430 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "fresh seafood, local produce, and Greek meze": "\u043f\u0440\u0435\u0441\u043d\u0438 \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435, \u043c\u0435\u0441\u0442\u043d\u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0438 \u0438 \u0433\u0440\u044a\u0446\u043a\u043e \u043c\u0435\u0437\u0435",
+      "comfortable family atmosphere for lunch and dinner": "\u0443\u0434\u043e\u0431\u043d\u0430 \u0441\u0435\u043c\u0435\u0439\u043d\u0430 \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0430 \u0437\u0430 \u043e\u0431\u044f\u0434 \u0438 \u0432\u0435\u0447\u0435\u0440\u044f",
+      "friendly service for locals, families, and travelers": "\u043f\u0440\u0438\u044f\u0442\u0435\u043b\u0441\u043a\u043e \u043e\u0431\u0441\u043b\u0443\u0436\u0432\u0430\u043d\u0435 \u0437\u0430 \u043c\u0435\u0441\u0442\u043d\u0438, \u0441\u0435\u043c\u0435\u0439\u0441\u0442\u0432\u0430 \u0438 \u043f\u044a\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043d\u0438\u0446\u0438",
+      "Call Us": "\u041e\u0431\u0430\u0434\u0438 \u043d\u0438 \u0441\u0435",
+      "fresh ingredients": "\u043f\u0440\u0435\u0441\u043d\u0438 \u0441\u044a\u0441\u0442\u0430\u0432\u043a\u0438",
+      "We cook with quality produce, seafood, and ingredients selected for flavor.": "\u0413\u043e\u0442\u0432\u0438\u043c \u0441 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0438, \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435 \u0438 \u0441\u044a\u0441\u0442\u0430\u0432\u043a\u0438, \u0438\u0437\u0431\u0440\u0430\u043d\u0438 \u0437\u0430 \u0432\u043a\u0443\u0441.",
+      "traditional recipes": "\u0442\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u0438 \u0440\u0435\u0446\u0435\u043f\u0442\u0438",
+      "Greek favorites prepared simply, carefully, and the way guests love them.": "\u0413\u0440\u044a\u0446\u043a\u0438 \u043b\u044e\u0431\u0438\u043c\u0438 \u044f\u0441\u0442\u0438\u044f, \u043f\u0440\u0438\u0433\u043e\u0442\u0432\u0435\u043d\u0438 \u043f\u0440\u043e\u0441\u0442\u043e, \u0432\u043d\u0438\u043c\u0430\u0442\u0435\u043b\u043d\u043e \u0438 \u0442\u0430\u043a\u0430, \u043a\u0430\u043a\u0442\u043e \u0433\u043e\u0441\u0442\u0438\u0442\u0435 \u0433\u0438 \u043e\u0431\u0438\u0447\u0430\u0442.",
+      "warm hospitality": "\u0442\u043e\u043f\u043b\u043e \u0433\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u0435\u043c\u0441\u0442\u0432\u043e",
+      "A welcoming tavern experience for couples, families, and groups.": "\u041f\u0440\u0438\u0432\u0435\u0442\u043b\u0438\u0432\u043e \u0438\u0437\u0436\u0438\u0432\u044f\u0432\u0430\u043d\u0435 \u0432 \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0437\u0430 \u0434\u0432\u043e\u0439\u043a\u0438, \u0441\u0435\u043c\u0435\u0439\u0441\u0442\u0432\u0430 \u0438 \u0433\u0440\u0443\u043f\u0438.",
+      "popular dishes": "\u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u0438 \u044f\u0441\u0442\u0438\u044f",
+      "Discover Local Favorites from": "\u041e\u0442\u043a\u0440\u0438\u0439 \u043c\u0435\u0441\u0442\u043d\u0438 \u043b\u044e\u0431\u0438\u043c\u0438 \u044f\u0441\u0442\u0438\u044f \u043e\u0442",
+      "Our Menu": "\u043d\u0430\u0448\u0435\u0442\u043e \u043c\u0435\u043d\u044e",
+      "A quick look at the dishes guests order most for lunch and dinner in Ormylia.": "\u041a\u0440\u0430\u0442\u044a\u043a \u043f\u043e\u0433\u043b\u0435\u0434 \u043a\u044a\u043c \u044f\u0441\u0442\u0438\u044f\u0442\u0430, \u043a\u043e\u0438\u0442\u043e \u0433\u043e\u0441\u0442\u0438\u0442\u0435 \u043d\u0430\u0439-\u0447\u0435\u0441\u0442\u043e \u043f\u043e\u0440\u044a\u0447\u0432\u0430\u0442 \u0437\u0430 \u043e\u0431\u044f\u0434 \u0438 \u0432\u0435\u0447\u0435\u0440\u044f \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f.",
+      "Looking for the complete food and drinks list?": "\u0422\u044a\u0440\u0441\u0438\u0448 \u043f\u044a\u043b\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u044a\u043a \u0441 \u0445\u0440\u0430\u043d\u0438 \u0438 \u043d\u0430\u043f\u0438\u0442\u043a\u0438?",
+      "Open the full menu and prices.": "\u041e\u0442\u0432\u043e\u0440\u0438 \u043f\u044a\u043b\u043d\u043e\u0442\u043e \u043c\u0435\u043d\u044e \u0438 \u0446\u0435\u043d\u0438.",
+      "guest reviews": "\u043e\u0442\u0437\u0438\u0432\u0438 \u043e\u0442 \u0433\u043e\u0441\u0442\u0438",
+      "What Guests Love About": "\u041a\u0430\u043a\u0432\u043e \u0445\u0430\u0440\u0435\u0441\u0432\u0430\u0442 \u0433\u043e\u0441\u0442\u0438\u0442\u0435 \u0432",
+      "Book your table and": "\u0420\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u0439 \u043c\u0430\u0441\u0430\u0442\u0430 \u0441\u0438 \u0438",
+      "enjoy Greek hospitality.": "\u0441\u0435 \u043d\u0430\u0441\u043b\u0430\u0434\u0438 \u043d\u0430 \u0433\u0440\u044a\u0446\u043a\u043e\u0442\u043e \u0433\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u0435\u043c\u0441\u0442\u0432\u043e.",
+      "Open every day in Ormylia for lunch and dinner. Reservations are recommended during the summer season.": "\u041e\u0442\u0432\u043e\u0440\u0435\u043d\u043e \u0432\u0441\u0435\u043a\u0438 \u0434\u0435\u043d \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f \u0437\u0430 \u043e\u0431\u044f\u0434 \u0438 \u0432\u0435\u0447\u0435\u0440\u044f. \u041f\u0440\u0435\u043f\u043e\u0440\u044a\u0447\u0432\u0430\u0442 \u0441\u0435 \u0440\u0435\u0437\u0435\u0440\u0432\u0430\u0446\u0438\u0438 \u043f\u0440\u0435\u0437 \u043b\u044f\u0442\u043e\u0442\u043e.",
+      "Traditional Greek food, seafood, and grilled favorites in Ormylia, Halkidiki.": "\u0422\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u0430 \u0433\u0440\u044a\u0446\u043a\u0430 \u0445\u0440\u0430\u043d\u0430, \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435 \u0438 \u043b\u044e\u0431\u0438\u043c\u0438 \u044f\u0441\u0442\u0438\u044f \u043d\u0430 \u0441\u043a\u0430\u0440\u0430 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "Beautiful family tavern with generous portions, very friendly service, and one of the best grilled octopus dishes we tried in Halkidiki.": "\u041f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u0430 \u0441\u0435\u043c\u0435\u0439\u043d\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0441 \u0433\u043e\u043b\u0435\u043c\u0438 \u043f\u043e\u0440\u0446\u0438\u0438, \u043c\u043d\u043e\u0433\u043e \u043f\u0440\u0438\u044f\u0442\u0435\u043b\u0441\u043a\u043e \u043e\u0431\u0441\u043b\u0443\u0436\u0432\u0430\u043d\u0435 \u0438 \u0435\u0434\u043d\u043e \u043e\u0442 \u043d\u0430\u0439-\u0434\u043e\u0431\u0440\u0438\u0442\u0435 \u044f\u0441\u0442\u0438\u044f \u0441 \u043e\u043a\u0442\u043e\u043f\u043e\u0434 \u043d\u0430 \u0441\u043a\u0430\u0440\u0430, \u043a\u043e\u0438\u0442\u043e \u043e\u043f\u0438\u0442\u0430\u0445\u043c\u0435 \u0432 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "We came for lunch and returned again for dinner. Fresh seafood, clean flavors, fast service, and a warm atmosphere for families.": "\u0414\u043e\u0439\u0434\u043e\u0445\u043c\u0435 \u0437\u0430 \u043e\u0431\u044f\u0434 \u0438 \u0441\u0435 \u0432\u044a\u0440\u043d\u0430\u0445\u043c\u0435 \u043e\u0442\u043d\u043e\u0432\u043e \u0437\u0430 \u0432\u0435\u0447\u0435\u0440\u044f. \u041f\u0440\u0435\u0441\u043d\u0438 \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435, \u0447\u0438\u0441\u0442\u0438 \u0432\u043a\u0443\u0441\u043e\u0432\u0435, \u0431\u044a\u0440\u0437\u043e \u043e\u0431\u0441\u043b\u0443\u0436\u0432\u0430\u043d\u0435 \u0438 \u0442\u043e\u043f\u043b\u0430 \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0430 \u0437\u0430 \u0441\u0435\u043c\u0435\u0439\u0441\u0442\u0432\u0430.",
+      "Excellent souvlaki, tasty meze, fair prices, and staff who made us feel welcome even on a busy evening. We will definitely come back.": "\u041e\u0442\u043b\u0438\u0447\u043d\u043e \u0441\u0443\u0432\u043b\u0430\u043a\u0438, \u0432\u043a\u0443\u0441\u043d\u043e \u043c\u0435\u0437\u0435, \u0447\u0435\u0441\u0442\u043d\u0438 \u0446\u0435\u043d\u0438 \u0438 \u0435\u043a\u0438\u043f, \u043a\u043e\u0439\u0442\u043e \u043d\u0438 \u043d\u0430\u043a\u0430\u0440\u0430 \u0434\u0430 \u0441\u0435 \u0447\u0443\u0432\u0441\u0442\u0432\u0430\u043c\u0435 \u0434\u043e\u0431\u0440\u0435 \u0434\u043e\u0448\u043b\u0438 \u0434\u043e\u0440\u0438 \u0432 \u043d\u0430\u0442\u043e\u0432\u0430\u0440\u0435\u043d\u0430 \u0432\u0435\u0447\u0435\u0440. \u0421 \u0441\u0438\u0433\u0443\u0440\u043d\u043e\u0441\u0442 \u0449\u0435 \u0441\u0435 \u0432\u044a\u0440\u043d\u0435\u043c \u043e\u0442\u043d\u043e\u0432\u043e.",
+      "Maria K., Google Review 5/5": "Maria K., Google \u043e\u0442\u0437\u0438\u0432 5/5",
+      "Thomas R., Google Review 5/5": "Thomas R., Google \u043e\u0442\u0437\u0438\u0432 5/5",
+      "Elena P., Google Review 5/5": "Elena P., Google \u043e\u0442\u0437\u0438\u0432 5/5"
+    }
+  };
+
+  var CONTACT_PAGE_MANUAL_TRANSLATIONS = {
+    el: {
+      "plan your visit": "σχεδιάστε την επίσκεψή σας",
+      "Contact Toli Family Tavern": "Επικοινωνία με το Toli Family Tavern",
+      "Find us in Ormylia, call for reservations, or open the map for directions.": "Βρείτε μας στην Ορμύλια, καλέστε για κρατήσεις ή ανοίξτε τον χάρτη για οδηγίες.",
+      "get in touch": "επικοινωνήστε μαζί μας",
+      "Visit, call or message us": "Επισκεφθείτε μας, καλέστε μας ή στείλτε μήνυμα",
+      "We are open every day for lunch and dinner. For reservations, availability, and directions, the fastest way is to call us.": "Είμαστε ανοιχτά κάθε μέρα για μεσημεριανό και βραδινό. Για κρατήσεις, διαθεσιμότητα και οδηγίες, ο πιο γρήγορος τρόπος είναι να μας καλέσετε.",
+      "Phone": "Τηλέφωνο",
+      "Address": "Διεύθυνση",
+      "Instagram": "Instagram",
+      "quick links": "γρήγοροι σύνδεσμοι",
+      "Use the buttons below to call us, open directions, or browse the full menu before you come.": "Χρησιμοποιήστε τα παρακάτω κουμπιά για να μας καλέσετε, να ανοίξετε οδηγίες ή να δείτε το πλήρες μενού πριν έρθετε.",
+      "Open in Google Maps": "Άνοιγμα στους Χάρτες Google"
+    },
+    de: {
+      "plan your visit": "planen Sie Ihren Besuch",
+      "Contact Toli Family Tavern": "Kontakt mit Toli Family Tavern",
+      "Find us in Ormylia, call for reservations, or open the map for directions.": "Finden Sie uns in Ormylia, rufen Sie fuer Reservierungen an oder oeffnen Sie die Karte fuer die Wegbeschreibung.",
+      "get in touch": "kontaktieren Sie uns",
+      "Visit, call or message us": "Besuchen Sie uns, rufen Sie an oder schreiben Sie uns",
+      "We are open every day for lunch and dinner. For reservations, availability, and directions, the fastest way is to call us.": "Wir haben taeglich fuer Mittag- und Abendessen geoeffnet. Fuer Reservierungen, Verfuegbarkeit und Wegbeschreibung ist ein Anruf der schnellste Weg.",
+      "Phone": "Telefon",
+      "Address": "Adresse",
+      "Instagram": "Instagram",
+      "quick links": "schnelle Links",
+      "Use the buttons below to call us, open directions, or browse the full menu before you come.": "Nutzen Sie die Schaltflaechen unten, um uns anzurufen, die Route zu oeffnen oder vor Ihrem Besuch die komplette Speisekarte anzusehen.",
+      "Open in Google Maps": "In Google Maps oeffnen"
+    },
+    ru: {
+      "plan your visit": "планируйте свой визит",
+      "Contact Toli Family Tavern": "Свяжитесь с Toli Family Tavern",
+      "Find us in Ormylia, call for reservations, or open the map for directions.": "Найдите нас в Ормилии, позвоните для бронирования или откройте карту для маршрута.",
+      "get in touch": "свяжитесь с нами",
+      "Visit, call or message us": "Приезжайте, звоните или пишите нам",
+      "We are open every day for lunch and dinner. For reservations, availability, and directions, the fastest way is to call us.": "Мы открыты каждый день на обед и ужин. Для бронирования, наличия мест и маршрута быстрее всего позвонить нам.",
+      "Phone": "Телефон",
+      "Address": "Адрес",
+      "Instagram": "Instagram",
+      "quick links": "быстрые ссылки",
+      "Use the buttons below to call us, open directions, or browse the full menu before you come.": "Используйте кнопки ниже, чтобы позвонить нам, открыть маршрут или посмотреть полное меню перед визитом.",
+      "Open in Google Maps": "Открыть в Google Maps"
+    },
+    bg: {
+      "plan your visit": "планирайте посещението си",
+      "Contact Toli Family Tavern": "Свържете се с Toli Family Tavern",
+      "Find us in Ormylia, call for reservations, or open the map for directions.": "Намерете ни в Ормилия, обадете се за резервации или отворете картата за упътване.",
+      "get in touch": "свържете се с нас",
+      "Visit, call or message us": "Посетете ни, обадете се или ни пишете",
+      "We are open every day for lunch and dinner. For reservations, availability, and directions, the fastest way is to call us.": "Отворени сме всеки ден за обяд и вечеря. За резервации, наличност и упътване най-бързият начин е да ни се обадите.",
+      "Phone": "Телефон",
+      "Address": "Адрес",
+      "Instagram": "Instagram",
+      "quick links": "бързи връзки",
+      "Use the buttons below to call us, open directions, or browse the full menu before you come.": "Използвайте бутоните по-долу, за да ни се обадите, да отворите упътването или да разгледате пълното меню преди да дойдете.",
+      "Open in Google Maps": "Отвори в Google Maps"
+    }
+  };
+
+  var INDEX_PAGE_SEO_TRANSLATIONS = {
+    el: {
+      "greek restaurant in ormylia": "\u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc \u03b5\u03c3\u03c4\u03b9\u03b1\u03c4\u03cc\u03c1\u03b9\u03bf \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1",
+      "Toli Family Tavern is a family-run Greek restaurant in Ormylia, Halkidiki serving fresh seafood, seasonal salads, meze, and grilled meats in a relaxed setting.": "\u03a4\u03bf Toli Family Tavern \u03b5\u03af\u03bd\u03b1\u03b9 \u03ad\u03bd\u03b1 \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03cc \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc \u03b5\u03c3\u03c4\u03b9\u03b1\u03c4\u03cc\u03c1\u03b9\u03bf \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae \u03bc\u03b5 \u03c6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03b5\u03c0\u03bf\u03c7\u03b9\u03ba\u03ad\u03c2 \u03c3\u03b1\u03bb\u03ac\u03c4\u03b5\u03c2, \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03c8\u03b7\u03c4\u03ac \u03ba\u03c1\u03ad\u03b1\u03c4\u03b1 \u03c3\u03b5 \u03ad\u03bd\u03b1 \u03c7\u03b1\u03bb\u03b1\u03c1\u03cc \u03c0\u03b5\u03c1\u03b9\u03b2\u03ac\u03bb\u03bb\u03bf\u03bd.",
+      "our tavern in halkidiki": "\u03b7 \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1 \u03bc\u03b1\u03c2 \u03c3\u03c4\u03b7 \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae",
+      "Our tavern in Ormylia welcomes locals and visitors with generous portions, honest cooking, and Greek recipes inspired by the flavors of Halkidiki.": "\u0397 \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1 \u03bc\u03b1\u03c2 \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1 \u03c5\u03c0\u03bf\u03b4\u03ad\u03c7\u03b5\u03c4\u03b1\u03b9 \u03bd\u03c4\u03cc\u03c0\u03b9\u03bf\u03c5\u03c2 \u03ba\u03b1\u03b9 \u03b5\u03c0\u03b9\u03c3\u03ba\u03ad\u03c0\u03c4\u03b5\u03c2 \u03bc\u03b5 \u03b3\u03b5\u03bd\u03bd\u03b1\u03b9\u03cc\u03b4\u03c9\u03c1\u03b5\u03c2 \u03bc\u03b5\u03c1\u03af\u03b4\u03b5\u03c2, \u03b5\u03b9\u03bb\u03b9\u03ba\u03c1\u03b9\u03bd\u03ae \u03bc\u03b1\u03b3\u03b5\u03b9\u03c1\u03b9\u03ba\u03ae \u03ba\u03b1\u03b9 \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ad\u03c2 \u03c3\u03c5\u03bd\u03c4\u03b1\u03b3\u03ad\u03c2 \u03b5\u03bc\u03c0\u03bd\u03b5\u03c5\u03c3\u03bc\u03ad\u03bd\u03b5\u03c2 \u03b1\u03c0\u03cc \u03c4\u03b9\u03c2 \u03b3\u03b5\u03cd\u03c3\u03b5\u03b9\u03c2 \u03c4\u03b7\u03c2 \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae\u03c2.",
+      "full name": "\u03bf\u03bd\u03bf\u03bc\u03b1\u03c4\u03b5\u03c0\u03ce\u03bd\u03c5\u03bc\u03bf",
+      "email": "email",
+      "phone": "\u03c4\u03b7\u03bb\u03ad\u03c6\u03c9\u03bd\u03bf",
+      "guests": "\u03ac\u03c4\u03bf\u03bc\u03b1",
+      "number of guests": "\u03b1\u03c1\u03b9\u03b8\u03bc\u03cc\u03c2 \u03b1\u03c4\u03cc\u03bc\u03c9\u03bd",
+      "book a table": "\u03ba\u03bb\u03b5\u03af\u03c3\u03c4\u03b5 \u03c4\u03c1\u03b1\u03c0\u03ad\u03b6\u03b9",
+      "send reservation request": "\u03c3\u03c4\u03b5\u03af\u03bb\u03c4\u03b5 \u03b1\u03af\u03c4\u03b7\u03bc\u03b1 \u03ba\u03c1\u03ac\u03c4\u03b7\u03c3\u03b7\u03c2",
+      "opening hours": "\u03c9\u03c1\u03ac\u03c1\u03b9\u03bf \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03af\u03b1\u03c2",
+      "Daily": "\u039a\u03ac\u03b8\u03b5 \u03bc\u03ad\u03c1\u03b1",
+      "Family-run Greek restaurant in Ormylia, Halkidiki for seafood, meze, grilled meats, and relaxed dining.": "\u039f\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03cc \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc \u03b5\u03c3\u03c4\u03b9\u03b1\u03c4\u03cc\u03c1\u03b9\u03bf \u03c3\u03c4\u03b7\u03bd \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae, \u03b3\u03b9\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2, \u03c8\u03b7\u03c4\u03ac \u03ba\u03c1\u03ad\u03b1\u03c4\u03b1 \u03ba\u03b1\u03b9 \u03c7\u03b1\u03bb\u03b1\u03c1\u03cc \u03b3\u03b5\u03cd\u03bc\u03b1.",
+      "Aggelaki Agapitou, Ormylia, Halkidiki 630 71, Greece": "\u0391\u03b3\u03b3\u03b5\u03bb\u03ac\u03ba\u03b7 \u0391\u03b3\u03b1\u03c0\u03b7\u03c4\u03bf\u03cd, \u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1, \u03a7\u03b1\u03bb\u03ba\u03b9\u03b4\u03b9\u03ba\u03ae 630 71, \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+      "Copyright \u00a9 2026 All Rights Reserved.": "\u03a0\u03bd\u03b5\u03c5\u03bc\u03b1\u03c4\u03b9\u03ba\u03ac \u03b4\u03b9\u03ba\u03b1\u03b9\u03ce\u03bc\u03b1\u03c4\u03b1 \u00a9 2026. \u039c\u03b5 \u03b5\u03c0\u03b9\u03c6\u03cd\u03bb\u03b1\u03be\u03b7 \u03c0\u03b1\u03bd\u03c4\u03cc\u03c2 \u03b4\u03b9\u03ba\u03b1\u03b9\u03ce\u03bc\u03b1\u03c4\u03bf\u03c2."
+    },
+    de: {
+      "greek restaurant in ormylia": "griechisches Restaurant in Ormylia",
+      "Toli Family Tavern is a family-run Greek restaurant in Ormylia, Halkidiki serving fresh seafood, seasonal salads, meze, and grilled meats in a relaxed setting.": "Toli Family Tavern ist ein familiengefuehrtes griechisches Restaurant in Ormylia, Chalkidiki mit frischen Meeresfruechten, saisonalen Salaten, Meze und Grillgerichten in entspannter Atmosphaere.",
+      "our tavern in halkidiki": "unsere Taverne in Chalkidiki",
+      "Our tavern in Ormylia welcomes locals and visitors with generous portions, honest cooking, and Greek recipes inspired by the flavors of Halkidiki.": "Unsere Taverne in Ormylia empfaengt Einheimische und Besucher mit grosszuegigen Portionen, ehrlicher Kueche und griechischen Rezepten, inspiriert von den Aromen Chalkidikis.",
+      "full name": "voller Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "guests": "Gaeste",
+      "number of guests": "Anzahl der Gaeste",
+      "book a table": "Tisch reservieren",
+      "send reservation request": "Reservierungsanfrage senden",
+      "opening hours": "Oeffnungszeiten",
+      "Daily": "Taeglich",
+      "Family-run Greek restaurant in Ormylia, Halkidiki for seafood, meze, grilled meats, and relaxed dining.": "Familiengefuehrtes griechisches Restaurant in Ormylia, Chalkidiki fuer Meeresfruechte, Meze, Grillgerichte und entspanntes Essen.",
+      "Aggelaki Agapitou, Ormylia, Halkidiki 630 71, Greece": "Aggelaki Agapitou, Ormylia, Chalkidiki 630 71, Griechenland",
+      "Copyright \u00a9 2026 All Rights Reserved.": "Copyright \u00a9 2026 Alle Rechte vorbehalten."
+    },
+    ru: {
+      "greek restaurant in ormylia": "\u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438",
+      "Toli Family Tavern is a family-run Greek restaurant in Ormylia, Halkidiki serving fresh seafood, seasonal salads, meze, and grilled meats in a relaxed setting.": "Toli Family Tavern \u2014 \u0441\u0435\u043c\u0435\u0439\u043d\u044b\u0439 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438, \u0433\u0434\u0435 \u043f\u043e\u0434\u0430\u044e\u0442 \u0441\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u0441\u0435\u0437\u043e\u043d\u043d\u044b\u0435 \u0441\u0430\u043b\u0430\u0442\u044b, \u043c\u0435\u0437\u0435 \u0438 \u0431\u043b\u044e\u0434\u0430 \u043d\u0430 \u0433\u0440\u0438\u043b\u0435 \u0432 \u0441\u043f\u043e\u043a\u043e\u0439\u043d\u043e\u0439 \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0435.",
+      "our tavern in halkidiki": "\u043d\u0430\u0448\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0432 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+      "Our tavern in Ormylia welcomes locals and visitors with generous portions, honest cooking, and Greek recipes inspired by the flavors of Halkidiki.": "\u041d\u0430\u0448\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438 \u043f\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0436\u0438\u0442\u0435\u043b\u0435\u0439 \u0438 \u0433\u043e\u0441\u0442\u0435\u0439 \u0449\u0435\u0434\u0440\u044b\u043c\u0438 \u043f\u043e\u0440\u0446\u0438\u044f\u043c\u0438, \u0447\u0435\u0441\u0442\u043d\u043e\u0439 \u043a\u0443\u0445\u043d\u0435\u0439 \u0438 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u043c\u0438 \u0440\u0435\u0446\u0435\u043f\u0442\u0430\u043c\u0438, \u0432\u0434\u043e\u0445\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u043c\u0438 \u0432\u043a\u0443\u0441\u0430\u043c\u0438 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438.",
+      "full name": "\u043f\u043e\u043b\u043d\u043e\u0435 \u0438\u043c\u044f",
+      "email": "email",
+      "phone": "\u0442\u0435\u043b\u0435\u0444\u043e\u043d",
+      "guests": "\u0433\u043e\u0441\u0442\u0438",
+      "number of guests": "\u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0433\u043e\u0441\u0442\u0435\u0439",
+      "book a table": "\u0437\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0441\u0442\u043e\u043b",
+      "send reservation request": "\u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u0431\u0440\u043e\u043d\u044c",
+      "opening hours": "\u0447\u0430\u0441\u044b \u0440\u0430\u0431\u043e\u0442\u044b",
+      "Daily": "\u0415\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e",
+      "Family-run Greek restaurant in Ormylia, Halkidiki for seafood, meze, grilled meats, and relaxed dining.": "\u0421\u0435\u043c\u0435\u0439\u043d\u044b\u0439 \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u0438, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 \u0441 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430\u043c\u0438, \u043c\u0435\u0437\u0435, \u0431\u043b\u044e\u0434\u0430\u043c\u0438 \u043d\u0430 \u0433\u0440\u0438\u043b\u0435 \u0438 \u0441\u043f\u043e\u043a\u043e\u0439\u043d\u043e\u0439 \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u043e\u0439.",
+      "Aggelaki Agapitou, Ormylia, Halkidiki 630 71, Greece": "Aggelaki Agapitou, \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 630 71, \u0413\u0440\u0435\u0446\u0438\u044f",
+      "Copyright \u00a9 2026 All Rights Reserved.": "\u0410\u0432\u0442\u043e\u0440\u0441\u043a\u0438\u0435 \u043f\u0440\u0430\u0432\u0430 \u00a9 2026. \u0412\u0441\u0435 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b."
+    },
+    bg: {
+      "greek restaurant in ormylia": "\u0433\u0440\u044a\u0446\u043a\u0438 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u0442 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f",
+      "Toli Family Tavern is a family-run Greek restaurant in Ormylia, Halkidiki serving fresh seafood, seasonal salads, meze, and grilled meats in a relaxed setting.": "Toli Family Tavern е семеен гръцки ресторант в Ормилия, Халкидики с пресни морски дарове, сезонни салати, мезе и меса на скара в спокойна обстановка.",
+      "our tavern in halkidiki": "\u043d\u0430\u0448\u0430\u0442\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430 \u0432 \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438",
+      "Our tavern in Ormylia welcomes locals and visitors with generous portions, honest cooking, and Greek recipes inspired by the flavors of Halkidiki.": "Нашата таверна в Ормилия посреща местни хора и гости с щедри порции, честна кухня и гръцки рецепти, вдъхновени от вкусовете на Халкидики.",
+      "full name": "\u0438\u043c\u0435 \u0438 \u0444\u0430\u043c\u0438\u043b\u0438\u044f",
+      "email": "\u0438\u043c\u0435\u0439\u043b",
+      "phone": "\u0442\u0435\u043b\u0435\u0444\u043e\u043d",
+      "guests": "\u0433\u043e\u0441\u0442\u0438",
+      "number of guests": "\u0431\u0440\u043e\u0439 \u0433\u043e\u0441\u0442\u0438",
+      "book a table": "\u0440\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u0439 \u043c\u0430\u0441\u0430",
+      "send reservation request": "\u0438\u0437\u043f\u0440\u0430\u0442\u0438 \u0437\u0430\u044f\u0432\u043a\u0430 \u0437\u0430 \u0440\u0435\u0437\u0435\u0440\u0432\u0430\u0446\u0438\u044f",
+      "opening hours": "\u0440\u0430\u0431\u043e\u0442\u043d\u043e \u0432\u0440\u0435\u043c\u0435",
+      "Daily": "\u0412\u0441\u0435\u043a\u0438 \u0434\u0435\u043d",
+      "Family-run Greek restaurant in Ormylia, Halkidiki for seafood, meze, grilled meats, and relaxed dining.": "\u0421\u0435\u043c\u0435\u0435\u043d \u0433\u0440\u044a\u0446\u043a\u0438 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u0442 \u0432 \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 \u0437\u0430 \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435, \u043c\u0435\u0437\u0435, \u043c\u0435\u0441\u0430 \u043d\u0430 \u0441\u043a\u0430\u0440\u0430 \u0438 \u0441\u043f\u043e\u043a\u043e\u0439\u043d\u043e \u0445\u0440\u0430\u043d\u0435\u043d\u0435.",
+      "Aggelaki Agapitou, Ormylia, Halkidiki 630 71, Greece": "Aggelaki Agapitou, \u041e\u0440\u043c\u0438\u043b\u0438\u044f, \u0425\u0430\u043b\u043a\u0438\u0434\u0438\u043a\u0438 630 71, \u0413\u044a\u0440\u0446\u0438\u044f",
+      "Copyright \u00a9 2026 All Rights Reserved.": "\u0410\u0432\u0442\u043e\u0440\u0441\u043a\u0438 \u043f\u0440\u0430\u0432\u0430 \u00a9 2026. \u0412\u0441\u0438\u0447\u043a\u0438 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u043f\u0430\u0437\u0435\u043d\u0438."
+    }
+  };
+
+  var HTML_TRANSLATIONS_BY_LANGUAGE = {
+    el: {
+      hero_heading: "\u03a6\u03c1\u03ad\u03c3\u03ba\u03b1 \u03b8\u03b1\u03bb\u03b1\u03c3\u03c3\u03b9\u03bd\u03ac, \u03bc\u03b5\u03b6\u03ad\u03b4\u03b5\u03c2 \u03ba\u03b1\u03b9 \u03b1\u03b3\u03b1\u03c0\u03b7\u03bc\u03ad\u03bd\u03b1 \u03c8\u03b7\u03c4\u03ac \u03c3\u03c4\u03b7\u03bd <span>\u039f\u03c1\u03bc\u03cd\u03bb\u03b9\u03b1</span>",
+      about_heading: "\u039c\u03b9\u03b1 \u03bf\u03b9\u03ba\u03bf\u03b3\u03b5\u03bd\u03b5\u03b9\u03b1\u03ba\u03ae \u03c4\u03b1\u03b2\u03ad\u03c1\u03bd\u03b1 \u03b2\u03b1\u03c3\u03b9\u03c3\u03bc\u03ad\u03bd\u03b7 \u03c3\u03c4\u03b7\u03bd <span>\u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03c6\u03b9\u03bb\u03bf\u03be\u03b5\u03bd\u03af\u03b1</span>",
+      menu_heading: "\u0391\u03bd\u03b1\u03ba\u03b1\u03bb\u03cd\u03c8\u03c4\u03b5 \u03c4\u03bf\u03c0\u03b9\u03ba\u03ac \u03b1\u03b3\u03b1\u03c0\u03b7\u03bc\u03ad\u03bd\u03b1 \u03c0\u03b9\u03ac\u03c4\u03b1 \u03b1\u03c0\u03cc \u03c4\u03bf <span>\u03bc\u03b5\u03bd\u03bf\u03cd \u03bc\u03b1\u03c2</span>",
+      contact_header_heading: "\u0395\u03c0\u03b9\u03ba\u03bf\u03b9\u03bd\u03c9\u03bd\u03af\u03b1 \u03bc\u03b5 \u03c4\u03bf Toli Family Tavern",
+      contact_info_heading: "\u0395\u03c0\u03b9\u03c3\u03ba\u03b5\u03c6\u03b8\u03b5\u03af\u03c4\u03b5 \u03bc\u03b1\u03c2, \u03ba\u03b1\u03bb\u03ad\u03c3\u03c4\u03b5 \u03bc\u03b1\u03c2 \u03ae \u03c3\u03c4\u03b5\u03af\u03bb\u03c4\u03b5 \u03bc\u03ae\u03bd\u03c5\u03bc\u03b1",
+      testimonial_heading: "\u03a4\u03b9 \u03b1\u03b3\u03b1\u03c0\u03bf\u03cd\u03bd \u03bf\u03b9 \u03b5\u03c0\u03b9\u03c3\u03ba\u03ad\u03c0\u03c4\u03b5\u03c2 \u03c3\u03c4\u03bf <span>Toli Family Tavern</span>",
+      reservation_heading: "\u039a\u03bb\u03b5\u03af\u03c3\u03c4\u03b5 \u03c4\u03c1\u03b1\u03c0\u03ad\u03b6\u03b9 \u03ba\u03b1\u03b9 <span>\u03b1\u03c0\u03bf\u03bb\u03b1\u03cd\u03c3\u03c4\u03b5 \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03c6\u03b9\u03bb\u03bf\u03be\u03b5\u03bd\u03af\u03b1.</span>",
+    },
+    de: {
+      hero_heading: "Frische Meeresfruechte, Meze und Grillgerichte in <span>Ormylia</span>",
+      about_heading: "Eine Familien-Taverne mit <span>griechischer Gastfreundschaft</span>",
+      menu_heading: "Entdecken Sie lokale Favoriten aus <span>unserer Speisekarte</span>",
+      contact_header_heading: "Kontakt mit Toli Family Tavern",
+      contact_info_heading: "Besuchen Sie uns, rufen Sie an oder schreiben Sie uns",
+      testimonial_heading: "Was Gaeste an <span>Toli Family Tavern</span> lieben",
+      reservation_heading: "Reservieren Sie Ihren Tisch und <span>geniessen Sie griechische Gastfreundschaft.</span>",
+    },
+    ru: {
+      hero_heading: "\u0421\u0432\u0435\u0436\u0438\u0435 \u043c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u043c\u0435\u0437\u0435 \u0438 \u043b\u044e\u0431\u0438\u043c\u044b\u0435 \u0431\u043b\u044e\u0434\u0430 \u043d\u0430 \u0433\u0440\u0438\u043b\u0435 \u0432 <span>\u041e\u0440\u043c\u0438\u043b\u0438\u0438</span>",
+      about_heading: "\u0421\u0435\u043c\u0435\u0439\u043d\u0430\u044f \u0442\u0430\u0432\u0435\u0440\u043d\u0430, \u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u0430\u044f \u043d\u0430 <span>\u0433\u0440\u0435\u0447\u0435\u0441\u043a\u043e\u043c \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u0435</span>",
+      menu_heading: "\u041e\u0442\u043a\u0440\u043e\u0439\u0442\u0435 \u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u043b\u044e\u0431\u0438\u043c\u044b\u0435 \u0431\u043b\u044e\u0434\u0430 \u0438\u0437 <span>\u043d\u0430\u0448\u0435\u0433\u043e \u043c\u0435\u043d\u044e</span>",
+      contact_header_heading: "\u0421\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 Toli Family Tavern",
+      contact_info_heading: "\u041f\u0440\u0438\u0435\u0437\u0436\u0430\u0439\u0442\u0435, \u0437\u0432\u043e\u043d\u0438\u0442\u0435 \u0438\u043b\u0438 \u043f\u0438\u0448\u0438\u0442\u0435 \u043d\u0430\u043c",
+      testimonial_heading: "\u0427\u0442\u043e \u0433\u043e\u0441\u0442\u044f\u043c \u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u0432 <span>Toli Family Tavern</span>",
+      reservation_heading: "\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u0443\u0439\u0442\u0435 \u0441\u0442\u043e\u043b \u0438 <span>\u043d\u0430\u0441\u043b\u0430\u0434\u0438\u0442\u0435\u0441\u044c \u0433\u0440\u0435\u0447\u0435\u0441\u043a\u0438\u043c \u0433\u043e\u0441\u0442\u0435\u043f\u0440\u0438\u0438\u043c\u0441\u0442\u0432\u043e\u043c.</span>",
+    },
+    bg: {
+      hero_heading: "\u041f\u0440\u0435\u0441\u043d\u0438 \u043c\u043e\u0440\u0441\u043a\u0438 \u0434\u0430\u0440\u043e\u0432\u0435, \u043c\u0435\u0437\u0435 \u0438 \u043b\u044e\u0431\u0438\u043c\u0438 \u044f\u0441\u0442\u0438\u044f \u043d\u0430 \u0441\u043a\u0430\u0440\u0430 \u0432 <span>\u041e\u0440\u043c\u0438\u043b\u0438\u044f</span>",
+      about_heading: "\u0421\u0435\u043c\u0435\u0439\u043d\u0430 \u0442\u0430\u0432\u0435\u0440\u043d\u0430, \u0438\u0437\u0433\u0440\u0430\u0434\u0435\u043d\u0430 \u0432\u044a\u0440\u0445\u0443 <span>\u0433\u0440\u044a\u0446\u043a\u043e \u0433\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u0435\u043c\u0441\u0442\u0432\u043e</span>",
+      menu_heading: "\u041e\u0442\u043a\u0440\u0438\u0439 \u043c\u0435\u0441\u0442\u043d\u0438 \u043b\u044e\u0431\u0438\u043c\u0438 \u044f\u0441\u0442\u0438\u044f \u043e\u0442 <span>\u043d\u0430\u0448\u0435\u0442\u043e \u043c\u0435\u043d\u044e</span>",
+      contact_header_heading: "\u0421\u0432\u044a\u0440\u0436\u0435\u0442\u0435 \u0441\u0435 \u0441 Toli Family Tavern",
+      contact_info_heading: "\u041f\u043e\u0441\u0435\u0442\u0435\u0442\u0435 \u043d\u0438, \u043e\u0431\u0430\u0434\u0435\u0442\u0435 \u0441\u0435 \u0438\u043b\u0438 \u043d\u0438 \u043f\u0438\u0448\u0435\u0442\u0435",
+      testimonial_heading: "\u041a\u0430\u043a\u0432\u043e \u0445\u0430\u0440\u0435\u0441\u0432\u0430\u0442 \u0433\u043e\u0441\u0442\u0438\u0442\u0435 \u0432 <span>Toli Family Tavern</span>",
+      reservation_heading: "\u0420\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u0439 \u043c\u0430\u0441\u0430\u0442\u0430 \u0441\u0438 \u0438 <span>\u0441\u0435 \u043d\u0430\u0441\u043b\u0430\u0434\u0438 \u043d\u0430 \u0433\u0440\u044a\u0446\u043a\u043e\u0442\u043e \u0433\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u0435\u043c\u0441\u0442\u0432\u043e.</span>",
+    },
+  };
+
   var TEXT_TRANSLATIONS_BY_LANGUAGE = {
-    el: Object.assign({}, EL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.el),
-    de: Object.assign({}, DE_TRANSLATIONS, DE_ADDITIONAL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.de),
-    ru: Object.assign({}, RU_TRANSLATIONS, RU_ADDITIONAL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.ru),
-    bg: Object.assign({}, BG_TRANSLATIONS, BG_ADDITIONAL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.bg),
+    el: Object.assign({}, EL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.el, INDEX_PAGE_MANUAL_TRANSLATIONS.el, CONTACT_PAGE_MANUAL_TRANSLATIONS.el, INDEX_PAGE_SEO_TRANSLATIONS.el),
+    de: Object.assign({}, DE_TRANSLATIONS, DE_ADDITIONAL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.de, INDEX_PAGE_MANUAL_TRANSLATIONS.de, CONTACT_PAGE_MANUAL_TRANSLATIONS.de, INDEX_PAGE_SEO_TRANSLATIONS.de),
+    ru: Object.assign({}, RU_TRANSLATIONS, RU_ADDITIONAL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.ru, INDEX_PAGE_MANUAL_TRANSLATIONS.ru, CONTACT_PAGE_MANUAL_TRANSLATIONS.ru, INDEX_PAGE_SEO_TRANSLATIONS.ru),
+    bg: Object.assign({}, BG_TRANSLATIONS, BG_ADDITIONAL_TRANSLATIONS, MENU_PAGE_TRANSLATION_PATCHES.bg, INDEX_PAGE_MANUAL_TRANSLATIONS.bg, CONTACT_PAGE_MANUAL_TRANSLATIONS.bg, INDEX_PAGE_SEO_TRANSLATIONS.bg),
   };
 
   var PLACEHOLDER_TRANSLATIONS_BY_LANGUAGE = {
@@ -1447,6 +1922,34 @@
     }
   }
 
+  function updateMetaTags(currentLanguage) {
+    if (!META_BY_LANGUAGE) {
+      return;
+    }
+
+    var metaConfig = META_BY_LANGUAGE[currentLanguage] || META_BY_LANGUAGE.en;
+    if (!metaConfig) {
+      return;
+    }
+
+    function setMetaContent(selector, value) {
+      var element = document.querySelector(selector);
+      if (element && value) {
+        element.setAttribute("content", value);
+      }
+    }
+
+    setMetaContent('meta[name="description"]', metaConfig.description);
+    setMetaContent('meta[name="keywords"]', metaConfig.keywords);
+    setMetaContent('meta[property="og:title"]', metaConfig.title);
+    setMetaContent('meta[property="og:description"]', metaConfig.description);
+    setMetaContent('meta[property="og:locale"]', LANGUAGE_TO_LOCALE[currentLanguage] || LANGUAGE_TO_LOCALE.en);
+    setMetaContent('meta[property="og:image:alt"]', metaConfig.imageAlt);
+    setMetaContent('meta[name="twitter:title"]', metaConfig.title);
+    setMetaContent('meta[name="twitter:description"]', metaConfig.description);
+    setMetaContent('meta[name="twitter:image:alt"]', metaConfig.imageAlt);
+  }
+
   function createTextNodeRecords() {
     var walker = document.createTreeWalker(
       document.body,
@@ -1461,6 +1964,10 @@
           }
 
           if (parent.closest(".language-switcher, .mobile-language-switcher")) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          if (parent.closest("[data-i18n-html]")) {
             return NodeFilter.FILTER_REJECT;
           }
 
@@ -1493,11 +2000,49 @@
     return records;
   }
 
+  function refreshAnimatedHeadings() {
+    if (typeof SplitText === "undefined" || typeof gsap === "undefined") {
+      return;
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll(".text-anime-style-2"), function (element) {
+      if (element._menuI18nTween && typeof element._menuI18nTween.kill === "function") {
+        element._menuI18nTween.kill();
+      }
+
+      if (element._menuI18nSplit && typeof element._menuI18nSplit.revert === "function") {
+        element._menuI18nSplit.revert();
+      }
+
+      var split = new SplitText(element, { type: "chars, words" });
+      var tween = gsap.from(split.chars, {
+        duration: 1,
+        delay: 0.1,
+        x: 20,
+        autoAlpha: 0,
+        stagger: 0.03,
+        ease: "power2.out",
+        scrollTrigger: { trigger: element, start: "top 85%" },
+      });
+
+      element._menuI18nSplit = split;
+      element._menuI18nTween = tween;
+    });
+  }
+
   function initLanguageSwitcher() {
     var buttons = Array.prototype.slice.call(document.querySelectorAll(".lang-btn[data-lang]"));
     if (!buttons.length) {
       return;
     }
+
+    var htmlRecords = Array.prototype.slice.call(document.querySelectorAll("[data-i18n-html]")).map(function (element) {
+      return {
+        element: element,
+        key: element.getAttribute("data-i18n-html") || "",
+        original: element.getAttribute("data-i18n-html-default") || element.innerHTML,
+      };
+    });
 
     var textNodeRecords = createTextNodeRecords();
     var placeholderRecords = Array.prototype.slice.call(document.querySelectorAll("[placeholder]")).map(function (element) {
@@ -1511,6 +2056,25 @@
       var currentLanguage = language === "el" || language === "de" || language === "ru" || language === "bg" ? language : "en";
       var textTranslations = TEXT_TRANSLATIONS_BY_LANGUAGE[currentLanguage] || null;
       var placeholderTranslations = PLACEHOLDER_TRANSLATIONS_BY_LANGUAGE[currentLanguage] || null;
+      var htmlTranslations = HTML_TRANSLATIONS_BY_LANGUAGE[currentLanguage] || null;
+
+      htmlRecords.forEach(function (record) {
+        if (record.element._menuI18nTween && typeof record.element._menuI18nTween.kill === "function") {
+          record.element._menuI18nTween.kill();
+          record.element._menuI18nTween = null;
+        }
+
+        if (record.element._menuI18nSplit && typeof record.element._menuI18nSplit.revert === "function") {
+          record.element._menuI18nSplit.revert();
+          record.element._menuI18nSplit = null;
+        }
+
+        if (htmlTranslations && htmlTranslations[record.key]) {
+          record.element.innerHTML = htmlTranslations[record.key];
+        } else {
+          record.element.innerHTML = record.original;
+        }
+      });
 
       textNodeRecords.forEach(function (record) {
         if (!textTranslations) {
@@ -1542,6 +2106,8 @@
 
       document.documentElement.setAttribute("lang", currentLanguage);
       document.title = TITLE_BY_LANGUAGE[currentLanguage] || TITLE_BY_LANGUAGE.en;
+      updateMetaTags(currentLanguage);
+      refreshAnimatedHeadings();
 
       buttons.forEach(function (button) {
         button.classList.toggle("active", button.getAttribute("data-lang") === currentLanguage);

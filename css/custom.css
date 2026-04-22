@@ -803,6 +803,11 @@ header.main-header .header-sticky.active{
     margin-bottom: 60px;
 }
 
+.hero-content .section-title h1{
+	font-size: 56px;
+	line-height: 1.08em;
+}
+
 .hero-btn{
     display: flex;
     flex-wrap: wrap;
@@ -1638,6 +1643,35 @@ header.main-header .header-sticky.active{
 	color: rgba(255,255,255,0.6);
 }
 
+#homepage-menu .section-title{
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+#homepage-menu .section-title p{
+	max-width: 620px;
+	margin: 18px auto 0;
+	color: rgba(255,255,255,0.72);
+}
+
+#homepage-menu .our-menu-list{
+	gap: 40px 34px;
+}
+
+#homepage-menu .menu-item-content p{
+	max-width: 32ch;
+}
+
+@media only screen and (max-width: 991px){
+	#homepage-menu .our-menu-list{
+		gap: 28px;
+	}
+
+	#homepage-menu .menu-item-content p{
+		max-width: none;
+	}
+}
+
 .our-menu .section-footer-text{
 	margin-top: 60px;
 }
@@ -2252,6 +2286,12 @@ header.main-header .header-sticky.active{
 	padding: 100px 0 0;
 }
 
+.reserve-table .section-title h2{
+	font-size: 36px;
+	line-height: 1.15em;
+	max-width: 640px;
+}
+
 .reserve-table-body h3{
 	font-size: 20px;
 	text-transform: capitalize;
@@ -2267,9 +2307,11 @@ header.main-header .header-sticky.active{
 .reserve-table-body ul li{
     position: relative;
 	width: 100%;
-    text-transform: capitalize;
 	display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
     margin-bottom: 15px;
 }
 
@@ -2277,12 +2319,23 @@ header.main-header .header-sticky.active{
     margin-bottom: 0;
 }
 
-.reserve-table-body ul li span{
-	width: 85%;
+.reserve-table-day{
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--primary-color);
+    text-transform: capitalize;
+}
+
+.reserve-table-time{
+	width: auto;
     font-size: 16px;
     font-weight: 400;
     text-transform: initial;
     color: var(--text-color);
+}
+
+.reserve-table-body p{
+	max-width: 560px;
 }
 
 .reserve-table-form{
@@ -4304,9 +4357,13 @@ header.main-header .header-sticky.active{
         margin-bottom: 30px;
     }
 
-    .hero-content .section-title{
+	.hero-content .section-title{
         margin-bottom: 30px;
     }
+
+	.hero-content .section-title h1{
+		font-size: 44px;
+	}
 
     .hero-images{
         max-width: 60%;
@@ -4700,6 +4757,10 @@ header.main-header .header-sticky.active{
 
 	.reserve-table-content{
 		margin-bottom: 30px;
+	}
+
+	.reserve-table .section-title h2{
+		font-size: 30px;
 	}
 
 	.reserve-table-form{
@@ -5209,6 +5270,14 @@ header.main-header .header-sticky.active{
 
 	.section-title h2{
 		font-size: 24px;
+	}
+
+	.reserve-table .section-title h2{
+		font-size: 26px;
+	}
+
+	.hero-content .section-title h1{
+		font-size: 28px;
 	}
 
     .hero-btn{
