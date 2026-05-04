@@ -1249,13 +1249,13 @@
                         <div data-fs-success class="reserve-form-success">Your reservation request has been sent! We will contact you soon to confirm.</div>
                         <div data-fs-error class="reserve-form-error"></div>
                         <form id="appointmentForm" action="https://formspree.io/f/xzdoedzd" method="POST" class="wow fadeInUp">
-                            <input type="hidden" name="_subject" value="New Reservation – Toli Family Tavern">
+                            <input type="hidden" name="_subject" value="Νέα Κράτηση – Toli Family Tavern">
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
                                     <label class="form-label">full name</label>
-                                    <input type="text" name="name" class="form-control" id="name"
+                                    <input type="text" name="Ονομα" class="form-control" id="name"
                                         placeholder="e.g. John" required data-fs-field>
-                                    <span data-fs-error="name" class="help-block with-errors"></span>
+                                    <span data-fs-error="Ονομα" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-6 mb-4">
@@ -1267,42 +1267,43 @@
 
                                 <div class="form-group col-md-6 mb-4">
                                     <label class="form-label">phone</label>
-                                    <input type="text" name="phone" class="form-control" id="phone"
+                                    <input type="text" name="Τηλεφωνο" class="form-control" id="phone"
                                         placeholder="e.g. + 123 456 8792" required data-fs-field>
-                                    <span data-fs-error="phone" class="help-block with-errors"></span>
+                                    <span data-fs-error="Τηλεφωνο" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-4 mb-4">
                                     <label class="form-label">date</label>
-                                    <input type="date" name="date" class="form-control" id="date" required data-fs-field>
+                                    <input type="date" class="form-control" id="date" required data-fs-field>
+                                    <input type="hidden" name="Ημερομηνια" id="date_formatted">
                                     <span data-fs-error="date" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-4 mb-4">
                                     <label class="form-label">time</label>
-                                    <select name="time" class="form-control form-select" id="time" required data-fs-field>
-                                        <option value="" disabled selected>Select time</option>
-                                        <option value="6_30pm">06:30 PM</option>
-                                        <option value="7_00pm">07:00 PM</option>
-                                        <option value="7_30pm">07:30 PM</option>
-                                        <option value="8_00pm">08:00 PM</option>
-                                        <option value="8_30pm">08:30 PM</option>
-                                        <option value="9_00pm">09:00 PM</option>
+                                    <select name="Ωρα" class="form-control form-select" id="time" required data-fs-field>
+                                        <option value="" disabled selected>Επιλογή ώρας</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
                                     </select>
-                                    <span data-fs-error="time" class="help-block with-errors"></span>
+                                    <span data-fs-error="Ωρα" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-4 mb-4">
                                     <label class="form-label">guests</label>
-                                    <select name="person" class="form-control form-select" id="person" required data-fs-field>
-                                        <option value="" disabled selected>number of guests</option>
-                                        <option value="1_person">1 Person</option>
-                                        <option value="5_person">5 Person</option>
-                                        <option value="10_person">10 Person</option>
-                                        <option value="15_person">15 Person</option>
-                                        <option value="20_person">20 Person</option>
+                                    <select name="Ατομα" class="form-control form-select" id="person" required data-fs-field>
+                                        <option value="" disabled selected>Αριθμός ατόμων</option>
+                                        <option value="1 άτομο">1 άτομο</option>
+                                        <option value="5 άτομα">5 άτομα</option>
+                                        <option value="10 άτομα">10 άτομα</option>
+                                        <option value="15 άτομα">15 άτομα</option>
+                                        <option value="20 άτομα">20 άτομα</option>
                                     </select>
-                                    <span data-fs-error="person" class="help-block with-errors"></span>
+                                    <span data-fs-error="Ατομα" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="col-lg-12">
@@ -1755,6 +1756,19 @@
             var observer = new MutationObserver(syncCode);
             observer.observe(panel, { attributes: true, subtree: true, attributeFilter: ['class'] });
             setTimeout(syncCode, 150);
+        })();
+    </script>
+    <script>
+        (function () {
+            var picker = document.getElementById('date');
+            var hidden = document.getElementById('date_formatted');
+            if (!picker || !hidden) return;
+            var months = ['Ιανουαρίου','Φεβρουαρίου','Μαρτίου','Απριλίου','Μαΐου','Ιουνίου','Ιουλίου','Αυγούστου','Σεπτεμβρίου','Οκτωβρίου','Νοεμβρίου','Δεκεμβρίου'];
+            picker.addEventListener('change', function () {
+                if (!this.value) { hidden.value = ''; return; }
+                var p = this.value.split('-');
+                hidden.value = parseInt(p[2], 10) + ' ' + months[parseInt(p[1], 10) - 1] + ' ' + p[0];
+            });
         })();
     </script>
     <script>
