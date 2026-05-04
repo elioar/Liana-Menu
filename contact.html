@@ -4,6 +4,14 @@
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VND1YBSWH7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VND1YBSWH7');
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="Contact Toli Family Tavern in Ormylia, Halkidiki for reservations, directions, opening hours, and restaurant details.">
@@ -89,7 +97,7 @@
             "postalCode": "630 71",
             "addressCountry": "GR"
           },
-          "hasMap": "https://www.google.com/maps?q=Aggelaki%20Agapitou%2C%20Ormylia%2C%20Halkidiki%20630%2071%2C%20Greece",
+          "hasMap": "https://maps.app.goo.gl/Mj22wm7Zjqqjgo9b8",
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -505,6 +513,125 @@
                 cursor: auto !important;
             }
         }
+
+        .contact-map-section {
+            padding: 0 0 80px;
+        }
+
+        .contact-map-inner {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            height: 380px;
+        }
+
+        .contact-map-inner iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 0;
+        }
+
+        .footer-links-widget h4 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin: 0 0 18px;
+        }
+
+        .footer-links-widget ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px;
+        }
+
+        .footer-links-widget ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links-widget ul li a {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links-widget ul li a:hover {
+            color: #ce9b35;
+        }
+
+        .footer-hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-hours-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .footer-hours-list .fh-day {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .footer-hours-list .fh-time {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+        }
+
+        .reserve-form-success {
+            display: none;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: rgba(80, 180, 100, 0.12);
+            border: 1px solid rgba(80, 180, 100, 0.35);
+            color: #7dda8a;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .reserve-form-error {
+            display: none;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            background: rgba(220, 70, 70, 0.1);
+            border: 1px solid rgba(220, 70, 70, 0.3);
+            color: #f07070;
+            font-size: 14px;
+        }
+        [data-fs-submit-btn]:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 991px) {
+            .footer-links-widget {
+                margin-top: 32px;
+            }
+
+            .contact-map-inner {
+                height: 280px;
+                border-radius: 14px;
+            }
+
+            .contact-map-section {
+                padding-bottom: 56px;
+            }
+        }
     </style>
 </head>
 
@@ -702,28 +829,79 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="contact-form contact-quick-card wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="reserve-table-form contact-quick-card wow fadeInUp" data-wow-delay="0.2s">
                             <div class="section-title">
-                                <h3>quick links</h3>
-                                <h2>plan your visit</h2>
-                                <p>Use the buttons below to call us, open directions, or browse the full menu before you come.</p>
+                                <h3>reservations</h3>
+                                <h2>Book a table</h2>
+                                <p>Fill in the form and we will confirm your reservation as soon as possible.</p>
                             </div>
+                            <div data-fs-success class="reserve-form-success">Your reservation request has been sent! We will contact you soon to confirm.</div>
+                            <div data-fs-error class="reserve-form-error"></div>
+                            <form id="appointmentForm" action="https://formspree.io/f/xzdoedzd" method="POST">
+                                <input type="hidden" name="_subject" value="Νέα Κράτηση – Toli Family Tavern">
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-4">
+                                        <label class="form-label">full name</label>
+                                        <input type="text" name="Ονομα" class="form-control" id="name"
+                                            placeholder="e.g. John" required data-fs-field>
+                                        <span data-fs-error="Ονομα" class="help-block with-errors"></span>
+                                    </div>
 
-                            <div class="contact-quick-actions">
-                                <a href="tel:+302375309009" class="btn-default">Call Us</a>
-                                <a href="https://www.google.com/maps?q=Aggelaki%20Agapitou%2C%20Ormylia%2C%20Halkidiki%20630%2071%2C%20Greece" class="download-app-btn" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-                                <a href="menu.html" class="download-app-btn">See the Menu</a>
-                            </div>
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label class="form-label">email</label>
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="e.g. John@example.com" required data-fs-field>
+                                        <span data-fs-error="email" class="help-block with-errors"></span>
+                                    </div>
 
-                            <p class="contact-quick-note">Open every day in Ormylia for lunch and dinner. Reservations are recommended during the summer season.</p>
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label class="form-label">phone</label>
+                                        <input type="text" name="Τηλεφωνο" class="form-control" id="phone"
+                                            placeholder="e.g. + 123 456 8792" required data-fs-field>
+                                        <span data-fs-error="Τηλεφωνο" class="help-block with-errors"></span>
+                                    </div>
 
-                            <div class="contact-social-list">
-                                <ul>
-                                    <li><a href="tel:+302375309009" aria-label="Call Toli Family Tavern"><i class="fa-solid fa-phone"></i></a></li>
-                                    <li><a href="https://www.google.com/maps?q=Aggelaki%20Agapitou%2C%20Ormylia%2C%20Halkidiki%20630%2071%2C%20Greece" target="_blank" rel="noopener noreferrer" aria-label="Open Toli Family Tavern in Google Maps"><i class="fa-solid fa-map-location-dot"></i></a></li>
-                                    <li><a href="https://www.instagram.com/tolifamilytavern/" target="_blank" rel="noopener noreferrer" aria-label="Visit Toli Family Tavern on Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
+                                    <div class="form-group col-md-4 mb-4">
+                                        <label class="form-label">date</label>
+                                        <input type="date" class="form-control" id="date" required data-fs-field>
+                                        <input type="hidden" name="Ημερομηνια" id="date_formatted">
+                                        <span data-fs-error="date" class="help-block with-errors"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4 mb-4">
+                                        <label class="form-label">time</label>
+                                        <select name="Ωρα" class="form-control form-select" id="time" required data-fs-field>
+                                            <option value="" disabled selected>Επιλογή ώρας</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                            <option value="21:00">21:00</option>
+                                        </select>
+                                        <span data-fs-error="Ωρα" class="help-block with-errors"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4 mb-4">
+                                        <label class="form-label">guests</label>
+                                        <select name="Ατομα" class="form-control form-select" id="person" required data-fs-field>
+                                            <option value="" disabled selected>Αριθμός ατόμων</option>
+                                            <option value="1 άτομο">1 άτομο</option>
+                                            <option value="5 άτομα">5 άτομα</option>
+                                            <option value="10 άτομα">10 άτομα</option>
+                                            <option value="15 άτομα">15 άτομα</option>
+                                            <option value="20 άτομα">20 άτομα</option>
+                                        </select>
+                                        <span data-fs-error="Ατομα" class="help-block with-errors"></span>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="reserve-table-btn">
+                                            <button type="submit" class="btn-default" data-fs-submit-btn>send reservation request</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -732,12 +910,12 @@
         <!-- Contact Section End -->
 
         <!-- Google Map Start -->
-        <div class="google-map">
-            <div class="container-fluid">
-                <div class="google-map-iframe">
+        <div class="contact-map-section">
+            <div class="container">
+                <div class="contact-map-inner">
                     <iframe
-                        src="https://www.google.com/maps?q=Aggelaki%20Agapitou%2C%20Ormylia%2C%20Halkidiki%20630%2071%2C%20Greece&amp;output=embed"
-                        style="border:0;" allowfullscreen="" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.8!2d23.5442802!3d40.2920093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a88f2a6034b659%3A0x8ad1fa8977ec22bc!2sToli+Family+Tavern!5e0!3m2!1sen!2sgr!4v1746400000000!5m2!1sen!2sgr"
+                        allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -778,6 +956,32 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links-widget">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="https://www.instagram.com/tolifamilytavern/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://maps.app.goo.gl/Mj22wm7Zjqqjgo9b8" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links-widget">
+                        <h4>Opening Hours</h4>
+                        <ul class="footer-hours-list">
+                            <li>
+                                <span class="fh-day">Monday – Sunday</span>
+                                <span class="fh-time">11:00 – 23:00</span>
+                            </li>
+                        </ul>
+                        <p style="margin-top:14px; font-size:13px; color:rgba(255,255,255,0.5); line-height:1.6;">Open every day for lunch and dinner. Reservations recommended in summer.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-copyright">
@@ -794,6 +998,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="footer-copyright-text">
                             <p>Copyright &copy; 2026 All Rights Reserved.</p>
+                            <p style="margin-top:6px; font-size:13px; color:rgba(255,255,255,0.4);">Designed &amp; Developed by <a href="https://eliodev.com" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#ce9b35'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Elio Dev</a></p>
                         </div>
                     </div>
                 </div>
@@ -896,6 +1101,24 @@
             toggleScrollTopButton();
         });
     </script>
+    <script>
+        (function () {
+            var picker = document.getElementById('date');
+            var hidden = document.getElementById('date_formatted');
+            if (!picker || !hidden) return;
+            var months = ['Ιανουαρίου','Φεβρουαρίου','Μαρτίου','Απριλίου','Μαΐου','Ιουνίου','Ιουλίου','Αυγούστου','Σεπτεμβρίου','Οκτωβρίου','Νοεμβρίου','Δεκεμβρίου'];
+            picker.addEventListener('change', function () {
+                if (!this.value) { hidden.value = ''; return; }
+                var p = this.value.split('-');
+                hidden.value = parseInt(p[2], 10) + ' ' + months[parseInt(p[1], 10) - 1] + ' ' + p[0];
+            });
+        })();
+    </script>
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#appointmentForm', formId: 'xzdoedzd' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 
 </html>
