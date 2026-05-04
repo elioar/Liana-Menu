@@ -693,6 +693,32 @@
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
         }
         .mobile-language-switcher.lang-open .lang-mobile-panel { display: flex; }
+
+        .reserve-form-success {
+            display: none;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: rgba(80, 180, 100, 0.12);
+            border: 1px solid rgba(80, 180, 100, 0.35);
+            color: #7dda8a;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .reserve-form-error {
+            display: none;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            background: rgba(220, 70, 70, 0.1);
+            border: 1px solid rgba(220, 70, 70, 0.3);
+            color: #f07070;
+            font-size: 14px;
+        }
+        [data-fs-submit-btn]:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
 	</style>
 </head>
 <body>
@@ -1220,39 +1246,41 @@
                 <div class="col-lg-6">
                     <!-- Reserve Table Form Start -->
                     <div class="reserve-table-form">
-                        <form id="appointmentForm" action="#" method="POST" data-toggle="validator"
-                            class="wow fadeInUp">
+                        <div data-fs-success class="reserve-form-success">Your reservation request has been sent! We will contact you soon to confirm.</div>
+                        <div data-fs-error class="reserve-form-error"></div>
+                        <form id="appointmentForm" action="https://formspree.io/f/xzdoedzd" method="POST" class="wow fadeInUp">
+                            <input type="hidden" name="_subject" value="New Reservation – Toli Family Tavern">
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
                                     <label class="form-label">full name</label>
                                     <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="e.g. John" required>
-                                    <div class="help-block with-errors"></div>
+                                        placeholder="e.g. John" required data-fs-field>
+                                    <span data-fs-error="name" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-6 mb-4">
                                     <label class="form-label">email</label>
                                     <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="e.g. John@example.com" required>
-                                    <div class="help-block with-errors"></div>
+                                        placeholder="e.g. John@example.com" required data-fs-field>
+                                    <span data-fs-error="email" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-6 mb-4">
                                     <label class="form-label">phone</label>
                                     <input type="text" name="phone" class="form-control" id="phone"
-                                        placeholder="e.g. + 123 456 8792" required>
-                                    <div class="help-block with-errors"></div>
+                                        placeholder="e.g. + 123 456 8792" required data-fs-field>
+                                    <span data-fs-error="phone" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-4 mb-4">
                                     <label class="form-label">date</label>
-                                    <input type="date" name="date" class="form-control" id="date" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="date" name="date" class="form-control" id="date" required data-fs-field>
+                                    <span data-fs-error="date" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-4 mb-4">
                                     <label class="form-label">time</label>
-                                    <select name="time" class="form-control form-select" id="time" required>
+                                    <select name="time" class="form-control form-select" id="time" required data-fs-field>
                                         <option value="" disabled selected>Select time</option>
                                         <option value="6_30pm">06:30 PM</option>
                                         <option value="7_00pm">07:00 PM</option>
@@ -1261,12 +1289,12 @@
                                         <option value="8_30pm">08:30 PM</option>
                                         <option value="9_00pm">09:00 PM</option>
                                     </select>
-                                    <div class="help-block with-errors"></div>
+                                    <span data-fs-error="time" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="form-group col-md-4 mb-4">
                                     <label class="form-label">guests</label>
-                                    <select name="person" class="form-control form-select" id="person" required>
+                                    <select name="person" class="form-control form-select" id="person" required data-fs-field>
                                         <option value="" disabled selected>number of guests</option>
                                         <option value="1_person">1 Person</option>
                                         <option value="5_person">5 Person</option>
@@ -1274,13 +1302,12 @@
                                         <option value="15_person">15 Person</option>
                                         <option value="20_person">20 Person</option>
                                     </select>
-                                    <div class="help-block with-errors"></div>
+                                    <span data-fs-error="person" class="help-block with-errors"></span>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="reserve-table-btn">
-                                        <button type="submit" class="btn-default">send reservation request</button>
-                                        <div id="msgSubmit" class="h3 hidden"></div>
+                                        <button type="submit" class="btn-default" data-fs-submit-btn>send reservation request</button>
                                     </div>
                                 </div>
                             </div>
@@ -1730,6 +1757,11 @@
             setTimeout(syncCode, 150);
         })();
     </script>
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#appointmentForm', formId: 'xzdoedzd' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 
 </html>

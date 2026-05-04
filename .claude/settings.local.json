@@ -6,7 +6,8 @@
       "Bash(echo \"exit: $?\")",
       "Bash(del \"d:/Projects/Toli-Tavern.com Website/replace_menu.js\")",
       "Bash(node fix_lang.js)",
-      "Bash(rm \"fix_lang.js\")"
+      "Bash(rm \"fix_lang.js\")",
+      "Bash(node -e ' *)"
     ]
   }
 }
